@@ -19,7 +19,7 @@ namespace UScene
 {
     
     TopScene::TopScene()
-    : demoPlayer_(nullptr)
+    : demoPlayerAction_(nullptr)
     {
         
     }
@@ -39,9 +39,9 @@ namespace UScene
         action->gotoFrameAndPlay(0, 35, true);
         this->runAction(action);
         
-        this->demoPlayer_ = CSLoader::createTimeline("DemoPlayer.csb");
-        this->demoPlayer_->gotoFrameAndPlay(0, 316, true);
-        this->runAction(this->demoPlayer_);
+        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
+        this->runAction(this->demoPlayerAction_);
         
     }
     
@@ -60,28 +60,26 @@ namespace UScene
     
     void TopScene::onWalkBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName)
     {
-        if (this->demoPlayer_)
+        if (this->demoPlayerAction_)
         {
-            this->stopAction(this->demoPlayer_);
-//            CC_SAFE_RELEASE_NULL(this->demoPlayer_);
+            this->stopAction(this->demoPlayerAction_);
         }
         
-        this->demoPlayer_ = CSLoader::createTimeline("DemoPlayer.csb");
-        this->demoPlayer_->gotoFrameAndPlay(115, 160, true);
-        this->runAction(this->demoPlayer_);
+        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_->gotoFrameAndPlay(115, 160, true);
+        this->runAction(this->demoPlayerAction_);
     }
     
     void TopScene::onAttackBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName)
     {
-        if (this->demoPlayer_)
+        if (this->demoPlayerAction_)
         {
-            this->stopAction(this->demoPlayer_);
-//            CC_SAFE_RELEASE_NULL(this->demoPlayer_);
+            this->stopAction(this->demoPlayerAction_);
         }
         
-        this->demoPlayer_ = CSLoader::createTimeline("DemoPlayer.csb");
-        this->demoPlayer_->gotoFrameAndPlay(131, 250, true);
-        this->runAction(this->demoPlayer_);
+        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_->gotoFrameAndPlay(131, 250, true);
+        this->runAction(this->demoPlayerAction_);
     }
     
     static TopSceneReader* _instanceTopSceneReader = nullptr;

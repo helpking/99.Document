@@ -36,7 +36,7 @@ namespace UScene
         
     private:
         
-        cocostudio::timeline::ActionTimeline* demoPlayer_;
+        cocostudio::timeline::ActionTimeline* demoPlayerAction_;
         
     };
     
