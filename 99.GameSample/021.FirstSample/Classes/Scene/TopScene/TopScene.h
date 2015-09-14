@@ -26,8 +26,10 @@ namespace UScene
         CREATE_FUNC(TopScene)
         TopScene();
         
+//        virtual void onEnter() override;
+        
         // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-        virtual bool init();
+        virtual void onEnter() override;
         
         virtual cocos2d::ui::Widget::ccWidgetTouchCallback
         onLocateTouchCallback(const std::string &callBackName);

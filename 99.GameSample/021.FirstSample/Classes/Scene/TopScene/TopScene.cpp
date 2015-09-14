@@ -24,24 +24,26 @@ namespace UScene
     }
     
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    bool TopScene::init()
+    void TopScene::onEnter()
     {
-//        //加载动画：
-//        cocostudio::timeline::ActionTimeline *action = NULL;
-//        action = CSLoader::createTimeline("Role.csb");
-//        action->gotoFrameAndPlay(0, 25, true);
-//        this->runAction(action);
-//        
-//        action = CSLoader::createTimeline("WindMill.csb");
-//        action->gotoFrameAndPlay(0, 35, true);
-//        this->runAction(action);
-//        
-//        action = CSLoader::createTimeline("DemoPlayer.csb");
-//        action->gotoFrameAndPlay(0, 316, true);
-//        this->runAction(action);
+        CCNode::onEnter();
         
-        return true;
+        //加载动画：
+        cocostudio::timeline::ActionTimeline *action = NULL;
+        action = CSLoader::createTimeline("Role.csb");
+        action->gotoFrameAndPlay(0, 25, true);
+        this->runAction(action);
+        
+        action = CSLoader::createTimeline("WindMill.csb");
+        action->gotoFrameAndPlay(0, 35, true);
+        this->runAction(action);
+        
+        action = CSLoader::createTimeline("DemoPlayer.csb");
+        action->gotoFrameAndPlay(0, 316, true);
+        this->runAction(action);
+        
     }
+
     
     cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::onLocateTouchCallback(const string &callBackName)
     {
