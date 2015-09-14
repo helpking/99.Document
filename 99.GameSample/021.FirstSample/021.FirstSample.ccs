@@ -1,0 +1,37 @@
+<Solution>
+  <PropertyGroup Name="021.FirstSample" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Image Name="101.png" />
+        <Project Name="Role.csd" Type="Node" />
+        <Folder Name="Role">
+          <Image Name="run1.png" />
+          <Image Name="run2.png" />
+          <Image Name="run3.png" />
+          <Image Name="run4.png" />
+          <Image Name="run5.png" />
+          <Image Name="run6.png" />
+        </Folder>
+        <Project Name="WindMill.csd" Type="Node" />
+        <Image Name="WindMill.png" />
+        <Project Name="DemoPlayer.csd" Type="Skeleton" />
+        <Folder Name="testAnimationResource">
+          <Image Name="1.png" />
+          <Image Name="2.png" />
+          <Image Name="3.png" />
+          <Image Name="4.png" />
+          <Image Name="5.png" />
+          <Image Name="6.png" />
+          <Image Name="7.png" />
+          <Image Name="8.png" />
+          <Image Name="hat.png" />
+        </Folder>
+        <Image Name="01.png" />
+        <Image Name="25.png" />
+        <PlistParticleFile Name="Comet.plist" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

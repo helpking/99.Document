@@ -1,0 +1,28 @@
+<Solution>
+  <PropertyGroup Name="DemoPlayer" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <PlistParticleFile Name="fire.plist" />
+        <PlistParticleFile Name="Comet.plist" />
+        <PlistParticleFile Name="BoilingFoam.plist" />
+        <Image Name="01.png" />
+        <Image Name="25.png" />
+        <Image Name="Stock_Draw_Circle.png" />
+        <Folder Name="testAnimationResource">
+          <Image Name="1.png" />
+          <Image Name="2.png" />
+          <Image Name="3.png" />
+          <Image Name="4.png" />
+          <Image Name="5.png" />
+          <Image Name="6.png" />
+          <Image Name="7.png" />
+          <Image Name="8.png" />
+          <Image Name="hat.png" />
+        </Folder>
+        <Project Name="DemoPlayer.csd" Type="Skeleton" />
+        <Project Name="MainScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
