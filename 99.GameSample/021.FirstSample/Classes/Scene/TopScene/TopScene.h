@@ -26,7 +26,6 @@ namespace UScene
     public:
         CREATE_FUNC(TopScene)
         TopScene();
-                
         // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
         virtual void onEnter() override;
         

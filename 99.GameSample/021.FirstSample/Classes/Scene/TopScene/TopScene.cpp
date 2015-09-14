@@ -41,9 +41,9 @@ namespace UScene
         
         this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
         this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
-        this->runAction(this->demoPlayerAction_);
-        
+        this->runAction(this->demoPlayerAction_);        
     }
+
     
     cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::onLocateTouchCallback(const std::string &callBackName)
     {
