@@ -1,0 +1,4 @@
+lua 
+dofile("01_01_02_11_lib.lua")
+n = norm(3.4, 1.0)
+print(twice(n))
