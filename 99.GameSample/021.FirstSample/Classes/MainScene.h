@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 
-class HelloWorld
+class MainScene
 : public cocos2d::Layer
 {
 public:
@@ -14,7 +14,7 @@ public:
     virtual bool init();
 
     // implement the "static create()" method manually
-    CREATE_FUNC(HelloWorld);
+    CREATE_FUNC(MainScene);
     
 };
 

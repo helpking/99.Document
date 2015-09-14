@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Scene" Name="MainScene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="2.3.2.3" />
+  <PropertyGroup Type="Scene" Name="TopScene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="2.3.2.3" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -37,7 +37,7 @@
             <PreSize X="0.0007" Y="0.0013" />
             <FileData Type="Normal" Path="DemoPlayer.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="walkBtn" ActionTag="1971825809" CallBackType="Touch" CallBackName="onTouch" Tag="155" IconVisible="False" LeftMargin="727.0000" RightMargin="561.0000" TopMargin="242.0000" BottomMargin="472.0000" TouchEnable="True" FontSize="14" ButtonText="Walk" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="walkBtn" ActionTag="1971825809" CallBackType="Touch" CallBackName="onWalkBtnTouch" Tag="155" IconVisible="False" LeftMargin="727.0000" RightMargin="561.0000" TopMargin="242.0000" BottomMargin="472.0000" TouchEnable="True" FontSize="14" ButtonText="Walk" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="46.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="750.0000" Y="490.0000" />
@@ -52,7 +52,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="attackBtn" ActionTag="-1920334847" CallBackType="Touch" CallBackName="onTouch" Tag="156" IconVisible="False" LeftMargin="727.0000" RightMargin="561.0000" TopMargin="282.0000" BottomMargin="432.0000" TouchEnable="True" FontSize="14" ButtonText="Attack" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="attackBtn" ActionTag="-1920334847" CallBackType="Touch" CallBackName="onAttackBtnTouch" Tag="156" IconVisible="False" LeftMargin="727.0000" RightMargin="561.0000" TopMargin="282.0000" BottomMargin="432.0000" TouchEnable="True" FontSize="14" ButtonText="Attack" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="46.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="750.0000" Y="450.0000" />

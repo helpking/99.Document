@@ -15,33 +15,29 @@
 #include "cocostudio/CocosStudioExport.h"
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
 
+#include "SceneBase.h"
+
 namespace UScene
 {
     
     class TopScene
-    : public cocos2d::Node
-    , public cocostudio::WidgetCallBackHandlerProtocol
+    : public SceneBase
     {
     public:
         CREATE_FUNC(TopScene)
         TopScene();
-        
+                
         // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-        virtual bool init();
+        virtual void onEnter() override;
         
-        virtual cocos2d::ui::Widget::ccWidgetTouchCallback
-        onLocateTouchCallback(const std::string &callBackName);
-        virtual cocos2d::ui::Widget::ccWidgetClickCallback
-        onLocateClickCallback(const std::string &callBackName);
-        virtual cocos2d::ui::Widget::ccWidgetEventCallback
-        onLocateEventCallback(const std::string &callBackName);
-        void onTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
-        void onClick(cocos2d::Ref* sender);
-        void onEvent(cocos2d::Ref* sender, int eventType);
+        virtual cocos2d::ui::Widget::ccWidgetTouchCallback onLocateTouchCallback(const std::string &callBackName) override;
+        virtual void onWalkBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName);
+        virtual void onAttackBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName);
+        
     private:
-        std::vector<std::string> _touchTypes;
-        std::string _click;
-        std::vector<std::string> _eventTypes;
+        
+        cocostudio::timeline::ActionTimeline* demoPlayer_;
+        
     };
     
     class TopSceneReader : public cocostudio::NodeReader

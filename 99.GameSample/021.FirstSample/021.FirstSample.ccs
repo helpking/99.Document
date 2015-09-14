@@ -3,7 +3,7 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Project Name="MainScene.csd" Type="Scene" />
+        <Project Name="TopScene.csd" Type="Scene" />
         <Image Name="101.png" />
         <Project Name="Role.csd" Type="Node" />
         <Folder Name="Role">
