@@ -19,70 +19,67 @@ namespace UScene
 {
     
     TopScene::TopScene()
+    : demoPlayerAction_(nullptr)
     {
         
     }
     
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    bool TopScene::init()
+    void TopScene::onEnter()
     {
-//        //加载动画：
-//        cocostudio::timeline::ActionTimeline *action = NULL;
-//        action = CSLoader::createTimeline("Role.csb");
-//        action->gotoFrameAndPlay(0, 25, true);
-//        this->runAction(action);
-//        
-//        action = CSLoader::createTimeline("WindMill.csb");
-//        action->gotoFrameAndPlay(0, 35, true);
-//        this->runAction(action);
-//        
-//        action = CSLoader::createTimeline("DemoPlayer.csb");
-//        action->gotoFrameAndPlay(0, 316, true);
-//        this->runAction(action);
+        SceneBase::onEnter();
         
-        return true;
+        //加载动画：
+        cocostudio::timeline::ActionTimeline *action = NULL;
+        action = CSLoader::createTimeline("Role.csb");
+        action->gotoFrameAndPlay(0, 25, true);
+        this->runAction(action);
+        
+        action = CSLoader::createTimeline("WindMill.csb");
+        action->gotoFrameAndPlay(0, 35, true);
+        this->runAction(action);
+        
+        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
+        this->runAction(this->demoPlayerAction_);        
     }
+
     
-    cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::onLocateTouchCallback(const string &callBackName)
+    cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::onLocateTouchCallback(const std::string &callBackName)
     {
-        if (callBackName == "onTouch")//判断事件名，返回对应的函数。下同
+        if (callBackName == "onWalkBtnTouch")
         {
-            return CC_CALLBACK_2(TopScene::onTouch, this);
+            return CC_CALLBACK_2(TopScene::onWalkBtnTouch, this, callBackName);
+        }
+        else if (callBackName == "onAttackBtnTouch")
+        {
+            return CC_CALLBACK_2(TopScene::onAttackBtnTouch, this, callBackName);
         }
         return nullptr;
     }
     
-    cocos2d::ui::Widget::ccWidgetClickCallback TopScene::onLocateClickCallback(const string &callBackName)
+    void TopScene::onWalkBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName)
     {
-        if (callBackName == "onClick")
+        if (this->demoPlayerAction_)
         {
-            return CC_CALLBACK_1(TopScene::onClick, this);
+            this->stopAction(this->demoPlayerAction_);
         }
-        return nullptr;
+        
+        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_->gotoFrameAndPlay(115, 160, true);
+        this->runAction(this->demoPlayerAction_);
     }
     
-    cocos2d::ui::Widget::ccWidgetEventCallback TopScene::onLocateEventCallback(const string &callBackName)
+    void TopScene::onAttackBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName)
     {
-        if (callBackName == "onEvent")
+        if (this->demoPlayerAction_)
         {
-            return CC_CALLBACK_2(TopScene::onEvent, this);
+            this->stopAction(this->demoPlayerAction_);
         }
-        return nullptr;
-    }
-    
-    void TopScene::onTouch(cocos2d::Ref* object, cocos2d::ui::Widget::TouchEventType type)
-    {
-        CCLOG("onTouch");
-    }
-    
-    void TopScene::onClick(cocos2d::Ref* sender)
-    { 
-        CCLOG("onClick"); 
-    } 
-    
-    void TopScene::onEvent(cocos2d::Ref* sender, int eventType) 
-    { 
-        CCLOG("onEvent"); 
+        
+        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_->gotoFrameAndPlay(131, 250, true);
+        this->runAction(this->demoPlayerAction_);
     }
     
     static TopSceneReader* _instanceTopSceneReader = nullptr;

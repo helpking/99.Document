@@ -1127,10 +1127,10 @@
       <ObjectData Name="DemoPlayer" Length="20.0000" RotationSkewX="0.0000" RotationSkewY="0.0000" ctype="SkeletonNodeObjectData">
         <Size X="1.0000" Y="1.0000" />
         <Children>
-          <AbstractNodeData Name="Layer3" ActionTag="6250253" ZOrder="9" Length="20.0000" RotationSkewX="407.8585" RotationSkewY="407.8585" ctype="BoneNodeObjectData">
+          <AbstractNodeData Name="Layer3" ActionTag="6250253" ZOrder="9" Length="20.0000" RotationSkewX="0.0000" RotationSkewY="0.0000" ctype="BoneNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="01" ActionTag="56252285" IconVisible="False" LeftMargin="-99.9998" RightMargin="-106.0002" TopMargin="-121.0321" BottomMargin="-129.9679" ctype="SpriteObjectData">
+              <AbstractNodeData Name="01" ActionTag="56252285" VisibleForFrame="False" IconVisible="False" LeftMargin="-99.9998" RightMargin="-106.0002" TopMargin="-121.0321" BottomMargin="-129.9679" ctype="SpriteObjectData">
                 <Size X="206.0000" Y="251.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="3.0002" Y="-4.4679" />
@@ -1144,7 +1144,7 @@
               <AbstractNodeData Name="Layer1" ActionTag="36508524" ZOrder="11" Length="20.0000" RotationSkewX="0.0000" RotationSkewY="0.0000" ctype="BoneNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Comet.plist" ActionTag="60141268" IconVisible="False" ctype="ParticleObjectData">
+                  <AbstractNodeData Name="Comet.plist" ActionTag="60141268" VisibleForFrame="False" IconVisible="False" ctype="ParticleObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
                     <Position />
@@ -1156,20 +1156,20 @@
                     <BlendFunc Src="770" Dst="1" />
                   </AbstractNodeData>
                 </Children>
-                <Position X="-11.6318" Y="61.5842" />
+                <Position X="13.0000" Y="19.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <BlendFunc Src="770" Dst="1" />
                 <BoneColor A="255" R="25" G="25" B="25" />
               </AbstractNodeData>
             </Children>
-            <Position X="-1299.6195" Y="277.2857" />
+            <Position X="-57.0000" Y="-32.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <BlendFunc Src="770" Dst="771" />
             <BoneColor A="255" R="25" G="25" B="25" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Layer15" ActionTag="4400500" ZOrder="5" Length="220.0000" RotationSkewX="-89.4791" RotationSkewY="-89.4791" ctype="BoneNodeObjectData">
+          <AbstractNodeData Name="Layer15" ActionTag="4400500" ZOrder="5" Length="220.0000" RotationSkewX="-68.3956" RotationSkewY="-68.3956" ctype="BoneNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="testAnimationResource/6" ActionTag="39604502" RotationSkewX="89.4791" RotationSkewY="89.4791" IconVisible="False" LeftMargin="-22.7025" RightMargin="-451.2975" TopMargin="-252.5362" BottomMargin="-149.4638" ctype="SpriteObjectData">
@@ -1183,7 +1183,7 @@
                 <FileData Type="Normal" Path="testAnimationResource/6.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Layer19" ActionTag="20896204" ZOrder="10" Length="275.0000" RotationSkewX="184.5501" RotationSkewY="184.5501" ctype="BoneNodeObjectData">
+              <AbstractNodeData Name="Layer19" ActionTag="20896204" ZOrder="10" Length="275.0000" RotationSkewX="192.2709" RotationSkewY="192.2709" ctype="BoneNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="testAnimationResource/1" ActionTag="53848109" RotationSkewX="-63.4349" RotationSkewY="-63.4349" IconVisible="False" LeftMargin="-50.1246" RightMargin="-150.8754" TopMargin="-25.0000" BottomMargin="-295.0000" ctype="SpriteObjectData">
@@ -1215,7 +1215,7 @@
                 <BlendFunc Src="770" Dst="771" />
                 <BoneColor A="255" R="25" G="25" B="25" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Layer14" ActionTag="66729601" ZOrder="8" Length="301.0000" RotationSkewX="-25.8124" RotationSkewY="-25.8124" ctype="BoneNodeObjectData">
+              <AbstractNodeData Name="Layer14" ActionTag="66729601" ZOrder="8" Length="301.0000" RotationSkewX="31.2908" RotationSkewY="31.2908" ctype="BoneNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="testAnimationResource/hat" ActionTag="63695501" RotationSkewX="115.2921" RotationSkewY="115.2921" IconVisible="False" LeftMargin="-351.9427" RightMargin="-100.0573" TopMargin="-504.7343" BottomMargin="46.7343" ctype="SpriteObjectData">
@@ -1236,7 +1236,7 @@
                 <BlendFunc Src="770" Dst="771" />
                 <BoneColor A="255" R="25" G="25" B="25" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Layer26" ActionTag="36388601" ZOrder="6" Length="168.0000" RotationSkewX="171.6916" RotationSkewY="171.6916" ctype="BoneNodeObjectData">
+              <AbstractNodeData Name="Layer26" ActionTag="36388601" ZOrder="6" Length="168.0000" RotationSkewX="-192.8513" RotationSkewY="-192.8513" ctype="BoneNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="testAnimationResource/2" ActionTag="59061958" RotationSkewX="-82.2130" RotationSkewY="-82.2130" IconVisible="False" LeftMargin="-66.9449" RightMargin="-119.0551" TopMargin="-44.5115" BottomMargin="-207.4885" ctype="SpriteObjectData">
@@ -1250,7 +1250,7 @@
                     <FileData Type="Normal" Path="testAnimationResource/2.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Layer27" ActionTag="61795582" ZOrder="7" Length="122.0000" RotationSkewX="24.8229" RotationSkewY="24.8229" ctype="BoneNodeObjectData">
+                  <AbstractNodeData Name="Layer27" ActionTag="61795582" ZOrder="7" Length="122.0000" RotationSkewX="14.6730" RotationSkewY="14.6730" ctype="BoneNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="testAnimationResource/7" ActionTag="19289328" RotationSkewX="252.9638" RotationSkewY="252.9638" IconVisible="False" LeftMargin="-83.3824" RightMargin="-62.6176" TopMargin="6.7890" BottomMargin="-118.7890" ctype="SpriteObjectData">
@@ -1265,20 +1265,20 @@
                         <BlendFunc Src="770" Dst="771" />
                       </AbstractNodeData>
                     </Children>
-                    <Position X="200.0000" Y="55.0000" />
+                    <Position X="196.0625" Y="38.4656" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <BlendFunc Src="770" Dst="771" />
                     <BoneColor A="255" R="25" G="25" B="25" />
                   </AbstractNodeData>
                 </Children>
-                <Position X="20.0000" Y="-33.0000" />
+                <Position X="19.9158" Y="8.7997" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <BlendFunc Src="770" Dst="771" />
                 <BoneColor A="255" R="25" G="25" B="25" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Layer16" ActionTag="39386231" ZOrder="3" Length="160.0000" RotationSkewX="205.4041" RotationSkewY="205.4041" ctype="BoneNodeObjectData">
+              <AbstractNodeData Name="Layer16" ActionTag="39386231" ZOrder="3" Length="160.0000" RotationSkewX="173.7863" RotationSkewY="173.7863" ctype="BoneNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="testAnimationResource/5" ActionTag="18931763" RotationSkewX="244.0751" RotationSkewY="244.0751" IconVisible="False" LeftMargin="-160.5717" RightMargin="-29.4283" TopMargin="-51.2171" BottomMargin="-184.7829" ctype="SpriteObjectData">
@@ -1292,7 +1292,7 @@
                     <FileData Type="Normal" Path="testAnimationResource/5.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Layer17" ActionTag="36168141" ZOrder="4" Length="150.0000" RotationSkewX="12.3178" RotationSkewY="12.3178" ctype="BoneNodeObjectData">
+                  <AbstractNodeData Name="Layer17" ActionTag="36168141" ZOrder="4" Length="150.0000" RotationSkewX="27.6743" RotationSkewY="27.6743" ctype="BoneNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="testAnimationResource/4" ActionTag="57077814" RotationSkewX="231.7570" RotationSkewY="231.7570" IconVisible="False" LeftMargin="-120.0185" RightMargin="-20.9815" TopMargin="-8.0147" BottomMargin="-101.9853" ctype="SpriteObjectData">
@@ -1307,20 +1307,20 @@
                         <BlendFunc Src="770" Dst="771" />
                       </AbstractNodeData>
                     </Children>
-                    <Position X="197.0000" Y="28.0000" />
+                    <Position X="199.7825" Y="16.6700" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <BlendFunc Src="770" Dst="771" />
                     <BoneColor A="255" R="25" G="25" B="25" />
                   </AbstractNodeData>
                 </Children>
-                <Position X="16.0000" Y="20.0000" />
+                <Position X="9.0831" Y="22.7772" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <BlendFunc Src="770" Dst="771" />
                 <BoneColor A="255" R="25" G="25" B="25" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Layer21" ActionTag="43938279" ZOrder="1" Length="165.0000" RotationSkewX="201.1097" RotationSkewY="201.1097" ctype="BoneNodeObjectData">
+              <AbstractNodeData Name="Layer21" ActionTag="43938279" ZOrder="1" Length="165.0000" RotationSkewX="224.7553" RotationSkewY="224.7553" ctype="BoneNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="testAnimationResource/8" ActionTag="59900193" RotationSkewX="232.7294" RotationSkewY="232.7294" IconVisible="False" LeftMargin="-143.4312" RightMargin="8.4312" TopMargin="-6.6459" BottomMargin="-173.3541" ctype="SpriteObjectData">
@@ -1334,7 +1334,7 @@
                     <FileData Type="Normal" Path="testAnimationResource/8.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Layer20" ActionTag="2230829" ZOrder="2" Length="313.0000" RotationSkewX="72.7801" RotationSkewY="72.7801" ctype="BoneNodeObjectData">
+                  <AbstractNodeData Name="Layer20" ActionTag="2230829" ZOrder="2" Length="313.0000" RotationSkewX="45.3911" RotationSkewY="45.3911" ctype="BoneNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <Children>
                       <AbstractNodeData Name="testAnimationResource/3" ActionTag="20077469" RotationSkewX="84.0616" RotationSkewY="84.0616" IconVisible="False" LeftMargin="-148.5777" RightMargin="-98.4223" TopMargin="-400.3293" BottomMargin="-78.6707" ctype="SpriteObjectData">
@@ -1349,21 +1349,21 @@
                         <BlendFunc Src="770" Dst="771" />
                       </AbstractNodeData>
                     </Children>
-                    <Position X="103.9346" Y="-0.2726" />
+                    <Position X="87.8954" Y="-15.8115" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <BlendFunc Src="770" Dst="771" />
                     <BoneColor A="255" R="25" G="25" B="25" />
                   </AbstractNodeData>
                 </Children>
-                <Position X="116.4204" Y="72.5871" />
+                <Position X="116.2662" Y="69.9071" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <BlendFunc Src="770" Dst="771" />
                 <BoneColor A="255" R="25" G="25" B="25" />
               </AbstractNodeData>
             </Children>
-            <Position X="54.0000" Y="-25.0000" />
+            <Position X="164.0000" Y="13.3333" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <BlendFunc Src="770" Dst="771" />
