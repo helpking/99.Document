@@ -18,6 +18,13 @@
 namespace UScene
 {
     
+    // 変数の自動設定マクロ
+#define CCS_MEMBER_VARIABLE_ASSIGNER(TARGET, MEMBERNAME, MEMBERTYPE, MEMBER)    \
+    if ( TARGET && (strcmp(MEMBERNAME, "") != 0) )                                          \
+    {                                                                           \
+        MEMBER = static_cast<MEMBERTYPE>(TARGET->getChildByName(MEMBERNAME));   \
+    }
+    
     class SceneBase
     : public cocos2d::Node
     , public cocostudio::WidgetCallBackHandlerProtocol
@@ -36,6 +43,29 @@ namespace UScene
         virtual void onSceneTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName);
         virtual void onSceneClick(cocos2d::Ref* sender, const std::string &callBackName);
         virtual void onSceneEvent(cocos2d::Ref* sender, int eventType, const std::string &callBackName);
+        
+        /**
+         * @brief 変数一覧の初期化
+         */
+        virtual void initCcsMemberVariables() {};
+        
+        /**
+         * @brief タッチコールバックの初期化
+         * @param[in] iCallBackName コールバック名
+         */
+        virtual cocos2d::ui::Widget::ccWidgetTouchCallback initCcsOnTouchCallbackInfo(const std::string& iCallBackName);
+        
+        /**
+         * @brief クリックコールバックの初期化
+         * @param[in] iCallBackName コールバック名
+         */
+        virtual cocos2d::ui::Widget::ccWidgetClickCallback initCcsOnClickCallbackInfo(const std::string& iCallBackName);
+        
+        /**
+         * @brief イベントコールバックの初期化
+         * @param[in] iCallBackName コールバック名
+         */
+        virtual cocos2d::ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName);
                 
     private:
         

@@ -20,8 +20,14 @@ namespace UScene
     
     TopScene::TopScene()
     : demoPlayerAction_(nullptr)
+    , walkBtn_(nullptr)
     {
         
+    }
+    
+    TopScene::~TopScene()
+    {
+        CC_SAFE_RELEASE_NULL(walkBtn_);
     }
     
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
@@ -41,24 +47,42 @@ namespace UScene
         
         this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
         this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
-        this->runAction(this->demoPlayerAction_);        
-    }
-
-    
-    cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::onLocateTouchCallback(const std::string &callBackName)
-    {
-        if (callBackName == "onWalkBtnTouch")
+        this->runAction(this->demoPlayerAction_);
+        
+        if (this->walkBtn_)
         {
-            return CC_CALLBACK_2(TopScene::onWalkBtnTouch, this, callBackName);
+            this->walkBtn_->setEnabled(false);
+            this->walkBtn_->setTouchEnabled(false);
         }
-        else if (callBackName == "onAttackBtnTouch")
+    }
+    
+    /**
+     * @brief 変数一覧の初期化
+     */
+    void TopScene::initCcsMemberVariables()
+    {
+        CCS_MEMBER_VARIABLE_ASSIGNER(this, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);
+    }
+    
+    /**
+     * @brief タッチコールバックの初期化
+     * @param[in] iCallBackName コールバック名
+     */
+    cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::initCcsOnTouchCallbackInfo(const std::string& iCallBackName)
+    {
+        if (iCallBackName == "onWalkBtnTouch")
         {
-            return CC_CALLBACK_2(TopScene::onAttackBtnTouch, this, callBackName);
+            return CC_CALLBACK_2(TopScene::onWalkBtnTouch, this);
+        }
+        else if (iCallBackName == "onAttackBtnTouch")
+        {
+            return CC_CALLBACK_2(TopScene::onAttackBtnTouch, this);
         }
         return nullptr;
     }
     
-    void TopScene::onWalkBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName)
+    
+    void TopScene::onWalkBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type)
     {
         if (this->demoPlayerAction_)
         {
@@ -70,7 +94,7 @@ namespace UScene
         this->runAction(this->demoPlayerAction_);
     }
     
-    void TopScene::onAttackBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type, const std::string &callBackName)
+    void TopScene::onAttackBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type)
     {
         if (this->demoPlayerAction_)
         {

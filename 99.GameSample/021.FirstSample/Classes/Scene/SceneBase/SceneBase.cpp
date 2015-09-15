@@ -7,49 +7,81 @@
 //
 
 #include "SceneBase.h"
+#include "UIButton.h"
 
 USING_NS_CC;
 
 namespace UScene
 {
     SceneBase::SceneBase()
+    : uiLayer_(nullptr)
     {
         
     }
     SceneBase::~SceneBase()
     {
-        
+        CC_SAFE_RELEASE_NULL(this->uiLayer_);
     }
     
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     void SceneBase::onEnter()
     {
         cocos2d::CCNode::onEnter();
+        
+        // 変数一覧の初期化
+        this->initCcsMemberVariables();
     }
     
     cocos2d::ui::Widget::ccWidgetTouchCallback SceneBase::onLocateTouchCallback(const std::string &callBackName)
     {
-        if (callBackName == "onTouch")
-        {
-            return CC_CALLBACK_2(SceneBase::onSceneTouch, this, callBackName);
-        }
-        return nullptr;
+        return this->initCcsOnTouchCallbackInfo(callBackName);
     }
     
     cocos2d::ui::Widget::ccWidgetClickCallback SceneBase::onLocateClickCallback(const std::string &callBackName)
     {
-        if (callBackName == "onClick")
-        {
-            return CC_CALLBACK_1(SceneBase::onSceneClick, this, callBackName);
-        }
-        return nullptr;
+        return this->initCcsOnClickCallbackInfo(callBackName);
     }
     
     cocos2d::ui::Widget::ccWidgetEventCallback SceneBase::onLocateEventCallback(const std::string &callBackName)
     {
-        if (callBackName == "onEvent")
+        return this->initCcsOnEnentCallbackInfo(callBackName);
+    }
+    
+    /**
+     * @brief タッチコールバックの初期化
+     * @param[in] iCallBackName コールバック名
+     */
+    cocos2d::ui::Widget::ccWidgetTouchCallback SceneBase::initCcsOnTouchCallbackInfo(const std::string& iCallBackName)
+    {
+        if (iCallBackName == "onSceneTouch")
         {
-            return CC_CALLBACK_2(SceneBase::onSceneEvent, this, callBackName);
+            return CC_CALLBACK_2(SceneBase::onSceneTouch, this, iCallBackName);
+        }
+        return nullptr;
+    }
+    
+    /**
+     * @brief クリックコールバックの初期化
+     * @param[in] iCallBackName コールバック名
+     */
+    cocos2d::ui::Widget::ccWidgetClickCallback SceneBase::initCcsOnClickCallbackInfo(const std::string& iCallBackName)
+    {
+        if (iCallBackName == "onSceneClick")
+        {
+            return CC_CALLBACK_1(SceneBase::onSceneClick, this, iCallBackName);
+        }
+        return nullptr;
+    }
+    
+    /**
+     * @brief イベントコールバックの初期化
+     * @param[in] iCallBackName コールバック名
+     */
+    cocos2d::ui::Widget::ccWidgetEventCallback SceneBase::initCcsOnEnentCallbackInfo(const std::string& iCallBackName)
+    {
+        if (iCallBackName == "onSceneEvent")
+        {
+            return CC_CALLBACK_2(SceneBase::onSceneEvent, this, iCallBackName);
         }
         return nullptr;
     }
