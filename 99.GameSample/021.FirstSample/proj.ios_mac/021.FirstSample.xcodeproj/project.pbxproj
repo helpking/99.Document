@@ -17,6 +17,7 @@
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
 		46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
+		46C464BC1BA7F854001D5DCA /* DebugMeshLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46C464BA1BA7F854001D5DCA /* DebugMeshLayer.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -80,6 +81,9 @@
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		46880B8719C43A87006E1F66 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		46C464BA1BA7F854001D5DCA /* DebugMeshLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DebugMeshLayer.cpp; path = Parts/DebugMeshLayer/DebugMeshLayer.cpp; sourceTree = "<group>"; };
+		46C464BB1BA7F854001D5DCA /* DebugMeshLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugMeshLayer.h; path = Parts/DebugMeshLayer/DebugMeshLayer.h; sourceTree = "<group>"; };
+		46C464BD1BA7F91F001D5DCA /* UCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCommon.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -276,14 +280,33 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				46C464B81BA7F363001D5DCA /* Parts */,
 				4646DA031BA69E40007F37FF /* Scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* MainScene.cpp */,
 				46880B8719C43A87006E1F66 /* MainScene.h */,
+				46C464BD1BA7F91F001D5DCA /* UCommon.h */,
 			);
 			name = Classes;
 			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		46C464B81BA7F363001D5DCA /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				46C464B91BA7F370001D5DCA /* DebugMeshLayer */,
+			);
+			name = Parts;
+			sourceTree = "<group>";
+		};
+		46C464B91BA7F370001D5DCA /* DebugMeshLayer */ = {
+			isa = PBXGroup;
+			children = (
+				46C464BA1BA7F854001D5DCA /* DebugMeshLayer.cpp */,
+				46C464BB1BA7F854001D5DCA /* DebugMeshLayer.h */,
+			);
+			name = DebugMeshLayer;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -461,6 +484,7 @@
 				46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */,
 				4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				46C464BC1BA7F854001D5DCA /* DebugMeshLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4646DA0D1BA6B631007F37FF /* SceneBase.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,

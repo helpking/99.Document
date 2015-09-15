@@ -36,7 +36,7 @@ bool MainScene::init()
     CSLoader* instance = CSLoader::getInstance();
     instance->registReaderObject("TopSceneReader",(ObjectFactory::Instance)UScene::TopSceneReader::getInstance);
 
-    auto rootNode = CSLoader::createNode("TopScene.csb");
+    auto rootNode = CSLoader::createNode("Scene/TopScene.csb");
     addChild(rootNode);
     
     return true;

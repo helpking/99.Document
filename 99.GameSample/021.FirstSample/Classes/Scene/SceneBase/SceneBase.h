@@ -9,11 +9,7 @@
 #ifndef ___21_FirstSample__SceneBase__
 #define ___21_FirstSample__SceneBase__
 
-#include "cocos2d.h"
-#include "cocostudio/CocoStudio.h"
-#include "cocostudio/WidgetCallBackHandlerProtocol.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
+#include "UCommon.h"
 
 namespace UScene
 {
@@ -47,7 +43,7 @@ namespace UScene
         /**
          * @brief 変数一覧の初期化
          */
-        virtual void initCcsMemberVariables() {};
+        virtual void initCcsMemberVariables();
         
         /**
          * @brief タッチコールバックの初期化
@@ -66,10 +62,20 @@ namespace UScene
          * @param[in] iCallBackName コールバック名
          */
         virtual cocos2d::ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName);
+        
+    protected:
+        
+        /**
+         * @brief シーンの情報を初期化する
+         */
+        void initSceneInfo();
                 
     private:
         
-        cocos2d::CCLayer* uiLayer_;
+        cocos2d::Node* uiLayerNode_;
+        
+        // 画面のサイズ
+        cocos2d::Size sceneSize_;
     };
 }
 

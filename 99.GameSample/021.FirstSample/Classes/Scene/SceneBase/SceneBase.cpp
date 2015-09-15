@@ -14,13 +14,14 @@ USING_NS_CC;
 namespace UScene
 {
     SceneBase::SceneBase()
-    : uiLayer_(nullptr)
+    : uiLayerNode_(nullptr)
+    , sceneSize_(Size::ZERO)
     {
         
     }
     SceneBase::~SceneBase()
     {
-        CC_SAFE_RELEASE_NULL(this->uiLayer_);
+        CC_SAFE_RELEASE_NULL(this->uiLayerNode_);
     }
     
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
@@ -28,8 +29,27 @@ namespace UScene
     {
         cocos2d::CCNode::onEnter();
         
+        // シーンの情報を初期化する
+        this->initSceneInfo();
+        
         // 変数一覧の初期化
         this->initCcsMemberVariables();
+    }
+    
+    /**
+     * @brief シーンの情報を初期化する
+     */
+    void SceneBase::initSceneInfo()
+    {
+       this->sceneSize_ = CCDirector::getInstance()->getOpenGLView()->getDesignResolutionSize();
+    }
+    
+    /**
+     * @brief 変数一覧の初期化
+     */
+    void SceneBase::initCcsMemberVariables()
+    {
+        CCS_MEMBER_VARIABLE_ASSIGNER(this, "uiLayerNode", cocos2d::Node*, this->uiLayerNode_);
     }
     
     cocos2d::ui::Widget::ccWidgetTouchCallback SceneBase::onLocateTouchCallback(const std::string &callBackName)

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FA46633E-5AFA-4EAF-B690-F591C7118432</string>
+	<key>IDESourceControlProjectName</key>
+	<string>91.Login</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E70617EBDA79822C1DDFF03497EBCDFAF15972D6</key>
+		<string>https://github.com/helpking/99.Document.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>99.GameSample/91.Login/proj.ios_mac/91.Login.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E70617EBDA79822C1DDFF03497EBCDFAF15972D6</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/helpking/99.Document.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E70617EBDA79822C1DDFF03497EBCDFAF15972D6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E70617EBDA79822C1DDFF03497EBCDFAF15972D6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>97.TestDir</string>
+		</dict>
+	</array>
+</dict>
+</plist>

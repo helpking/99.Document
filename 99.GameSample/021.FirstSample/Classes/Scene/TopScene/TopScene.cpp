@@ -37,15 +37,15 @@ namespace UScene
         
         //加载动画：
         cocostudio::timeline::ActionTimeline *action = NULL;
-        action = CSLoader::createTimeline("Role.csb");
+        action = CSLoader::createTimeline("Parts/Role.csb");
         action->gotoFrameAndPlay(0, 25, true);
         this->runAction(action);
         
-        action = CSLoader::createTimeline("WindMill.csb");
+        action = CSLoader::createTimeline("Parts/WindMill.csb");
         action->gotoFrameAndPlay(0, 35, true);
         this->runAction(action);
         
-        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_ = CSLoader::createTimeline("Parts/DemoPlayer.csb");
         this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
         this->runAction(this->demoPlayerAction_);
         
@@ -61,6 +61,8 @@ namespace UScene
      */
     void TopScene::initCcsMemberVariables()
     {
+        SceneBase::initCcsMemberVariables();
+        
         CCS_MEMBER_VARIABLE_ASSIGNER(this, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);
     }
     
@@ -102,7 +104,7 @@ namespace UScene
         }
         
         this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
-        this->demoPlayerAction_->gotoFrameAndPlay(131, 250, true);
+        this->demoPlayerAction_->gotoFrameAndPlay(131, 250, false);
         this->runAction(this->demoPlayerAction_);
     }
     

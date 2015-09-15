@@ -9,11 +9,7 @@
 #ifndef ___21_FirstSample__TopScene__
 #define ___21_FirstSample__TopScene__
 
-#include "cocos2d.h"
-#include "cocostudio/CocoStudio.h"
-#include "cocostudio/WidgetCallBackHandlerProtocol.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
+#include "UCommon.h"
 
 #include "SceneBase.h"
 #include "UIButton.h"
