@@ -15,7 +15,7 @@ namespace UParts
 {
     
     class DebugMeshLayer
-    : public cocos2d::CCLayer
+    : public cocos2d::Layer
     {
     public:
         CREATE_FUNC(DebugMeshLayer)

@@ -29,6 +29,16 @@
           <AbstractNodeData Name="uiLayerNode" ActionTag="1328849840" Tag="89" IconVisible="True" RightMargin="960.0000" TopMargin="640.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
+              <AbstractNodeData Name="DebugMeshNode" ActionTag="1924476703" Tag="42" IconVisible="True" RightMargin="-960.0000" TopMargin="-640.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+                <Size X="960.0000" Y="640.0000" />
+                <AnchorPoint />
+                <Position />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="Parts/DebugMesh.csd" Plist="" />
+              </AbstractNodeData>
               <AbstractNodeData Name="buttonListNode" ActionTag="-1254322717" Tag="100" IconVisible="True" LeftMargin="850.0000" RightMargin="-850.0000" TopMargin="-550.0000" BottomMargin="550.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
@@ -92,13 +102,13 @@
                 <FileData Type="Normal" Path="GUIRes/Cn02.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="RightTop" ActionTag="-1384848611" Tag="200" IconVisible="False" LeftMargin="975.0000" RightMargin="-109.0000" TopMargin="-5.0000" BottomMargin="545.0000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="RightTop" ActionTag="-1384848611" Tag="200" IconVisible="False" LeftMargin="975.0000" RightMargin="-1069.0000" TopMargin="-655.0000" BottomMargin="555.0000" ctype="SpriteObjectData">
                 <Size X="94.0000" Y="100.0000" />
                 <AnchorPoint ScaleY="1.0000" />
-                <Position X="975.0000" Y="645.0000" />
+                <Position X="975.0000" Y="655.0000" />
                 <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="1.0156" Y="1.0078" />
+                <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="GUIRes/Cn03.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
