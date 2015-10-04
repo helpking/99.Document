@@ -69,6 +69,8 @@
 		ECCA4FDDA67B1D94F5543B74 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 59034C45B7318DA5E4A7B462 /* res */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
+		EF123DAE1BC1800D00ECAC61 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */; };
+		EF123DAF1BC1800D00ECAC61 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,7 +94,6 @@
 		467C52951BD238EC00A080E0 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = Common/Singleton.h; sourceTree = "<group>"; };
 		467C52981BD2390400A080E0 /* CommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonHeader.h; path = Common/CommonHeader.h; sourceTree = "<group>"; };
 		467C52991BD2436E00A080E0 /* CsbLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CsbLoader.h; path = Common/Csb/Reader/CsbLoader.h; sourceTree = "<group>"; };
-		467C529A1BD2438B00A080E0 /* ManagerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ManagerHeader.h; path = Manager/ManagerHeader.h; sourceTree = "<group>"; };
 		467C529B1BD243D700A080E0 /* SceneHistory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneHistory.cpp; path = Manager/History/SceneHistory/SceneHistory.cpp; sourceTree = "<group>"; };
 		467C529C1BD243D700A080E0 /* SceneHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneHistory.h; path = Manager/History/SceneHistory/SceneHistory.h; sourceTree = "<group>"; };
 		467C52A01BD24BEC00A080E0 /* ResInfoPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ResInfoPool.cpp; path = Manager/ResInfoPool/ResInfoPool.cpp; sourceTree = "<group>"; };
@@ -148,6 +149,9 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameManager.cpp; path = Manager/GameManager.cpp; sourceTree = "<group>"; };
+		EF123DAD1BC1800D00ECAC61 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameManager.h; path = Manager/GameManager.h; sourceTree = "<group>"; };
+		EF123DB01BC183ED00ECAC61 /* ManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,7 +341,9 @@
 				467C528B1BD2351300A080E0 /* UserData */,
 				467C528A1BD2350000A080E0 /* History */,
 				467C52891BD234F300A080E0 /* BattleData */,
-				467C529A1BD2438B00A080E0 /* ManagerHeader.h */,
+				EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */,
+				EF123DAD1BC1800D00ECAC61 /* GameManager.h */,
+				EF123DB01BC183ED00ECAC61 /* ManagerHeader.h */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				EF123DAE1BC1800D00ECAC61 /* GameManager.cpp in Sources */,
 				467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
 				467C52A21BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
 				467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */,
@@ -616,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				EF123DAF1BC1800D00ECAC61 /* GameManager.cpp in Sources */,
 				467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				467C52A31BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
