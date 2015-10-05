@@ -16,7 +16,7 @@
         <AndroidkeyStore Value="" />
         <AndroidVersion Value="" />
         <iOS_Target Value="021.FirstSample-mobile" />
-        <iOS_BundleID Value="" />
+        <iOS_BundleID Value="iPhone Developer: システム 経営管理本部 (QFZ2FEFV6Z)" />
         <Platform Value="None" />
         <RunPlatform Value="Mac" />
         <FrameworkVersion Value="cocos2d-x-3.8" />
@@ -26,6 +26,15 @@
         <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="Parts/CoordinateMesh.csd" />
+          <FilePathData Path="Scene/TopScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="Parts/CoordinateMesh.csd" />
       </Value>
     </Item>
   </Properties>

@@ -8,18 +8,15 @@
 
 #include "GameManager.h"
 #include "ManagerHeader.h"
-#include "Singleton.h"
-//#include "ResInfoPool.h"
 
 USING_NS_MANAGER
-//USING_NS_RESINFO_POOL
 
 /**
  * @brief コンストラクター
  */
 GameManager::GameManager()
 {
-//    Singleton<ResInfoPool>::getInstance();
+    
 }
 
 /**
@@ -28,6 +25,15 @@ GameManager::GameManager()
 GameManager::~GameManager()
 {
     
+}
+
+/**
+ * @brief 初期化する
+ */
+void GameManager::init()
+{
+    // リソースプール
+    getResInfoPool();
 }
 
 

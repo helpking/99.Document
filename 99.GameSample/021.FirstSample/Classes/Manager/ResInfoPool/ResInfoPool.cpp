@@ -8,14 +8,15 @@
 
 #include "ResInfoPool.h"
 
-USING_NS_RESINFO_POOL
+USING_NS_RESINFO
 
 /**
  * @brief コンストラクター
  */
 ResInfoPool::ResInfoPool()
 {
-    
+    // 初期化する
+    this->init();
 }
 
 /**
@@ -24,6 +25,43 @@ ResInfoPool::ResInfoPool()
 ResInfoPool::~ResInfoPool()
 {
     
+}
+
+/**
+ * @brief リソース情報を初期化する
+ * @param[in] iResInfo リソース情報
+ */
+void ResInfoPool::initResInfo(S_RES_INFO& iResInfo)
+{
+    iResInfo.ResID = E_RES_ID::E_INVALID;
+    iResInfo.ResType = E_RES_TYPE::E_INVALID;
+    iResInfo.Name = "";
+    iResInfo.Path = "";
+}
+
+/**
+ * @brief 初期化する
+ */
+void ResInfoPool::init()
+{
+    // リソースの定義
+    S_RES_INFO resInfo[] =
+    {
+        // シーン
+        // トップシーン
+        {E_RES_ID::E_SCENE_TOP,                    E_RES_TYPE::E_SCENE,      "TopScene",             "Scene/TopScene.csb"},
+        
+        // パーツ
+        {E_RES_ID::E_PARTS_COORDINATE_MESH,        E_RES_TYPE::E_PARTS,      "CoordinateMesh",       "Parts/CoordinateMesh.csb"},
+        {E_RES_ID::E_PARTS_DEMO_PLAYER,            E_RES_TYPE::E_PARTS,      "DemoPlayer",           "Parts/DemoPlayer.csb"},
+        {E_RES_ID::E_PARTS_ROLE,                   E_RES_TYPE::E_PARTS,      "Role",                 "Parts/Role.csb"},
+        {E_RES_ID::E_PARTS_WINDMILL,               E_RES_TYPE::E_PARTS,      "WindMill",             "Parts/WindMill.csb"},
+    };
+    
+    for (S_RES_INFO resInfoTmp : resInfo)
+    {
+        this->addResInfo(resInfoTmp.ResID, resInfoTmp);
+    }
 }
 
 /**
@@ -36,6 +74,11 @@ ResInfoPool::S_RES_INFO ResInfoPool::getResInfo(const E_RES_ID iResId)
     if (_resInfoPool.find(iResId) != _resInfoPool.end())
     {
         retInfo = _resInfoPool[iResId];
+    }
+    else
+    {
+        // 無効化するため、初期化にする
+        this->initResInfo(retInfo);
     }
     
     return retInfo;

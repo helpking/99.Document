@@ -11,7 +11,7 @@
 
 #include "ManagerHeader.h"
 
-NS_BEGIN_RESINFO_POOL
+NS_BEGIN_RESINFO
 
 class ResInfoPool
 {
@@ -76,25 +76,31 @@ public:
         E_RES_TYPE ResType;
         
         /**
-         * @brief パス
+         * @brief 名称
          */
-        char* Path;
-        
-        S_RES_INFO()
-        {
-            // クリア
-            clear();
-        }
+        std::string Name;
         
         /**
-         * @brief クリア
+         * @brief パス
          */
-        void clear()
-        {
-            ResID = E_RES_ID::E_INVALID;
-            ResType = E_RES_TYPE::E_INVALID;
-            Path = nullptr;
-        }
+        std::string Path;
+        
+//        S_RES_INFO()
+//        {
+//            // クリア
+//            clear();
+//        }
+//        
+//        /**
+//         * @brief クリア
+//         */
+//        void clear()
+//        {
+//            ResID = E_RES_ID::E_INVALID;
+//            ResType = E_RES_TYPE::E_INVALID;
+//            Name = nullptr;
+//            Path = nullptr;
+//        }
         
     }S_RES_INFO;
     
@@ -115,6 +121,17 @@ public:
     S_RES_INFO getResInfo(const E_RES_ID iResId);
     
     /**
+     * @breif リソース情報が無効かどうかの判定
+     * @return true : 無効 / false : 有効
+     */
+    inline bool isResInfoInvalid(const S_RES_INFO& iResInfo)
+    {
+        return (E_RES_ID::E_INVALID == iResInfo.ResID);
+    };
+    
+protected:
+    
+    /**
      * @brief リソース情報を追加する
      * @param[in] iResId リソースID
      * @param[in] iResInfo リソース情報
@@ -127,8 +144,19 @@ private:
     //! リソースプール
     std::map<E_RES_ID, S_RES_INFO> _resInfoPool;
     
+    /**
+     * @brief 初期化する
+     */
+    void init();
+    
+    /**
+     * @brief リソース情報を初期化する
+     * @param[in] iResInfo リソース情報
+     */
+    void initResInfo(S_RES_INFO& iResInfo);
+    
 };
 
-NS_END_RESINFO_POOL
+NS_END_RESINFO
 
 #endif /* defined(___21_FirstSample__ResInfoPool__) */

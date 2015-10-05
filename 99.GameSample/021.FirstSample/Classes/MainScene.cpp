@@ -3,6 +3,7 @@
 #include "ui/CocosGUI.h"
 #include "TopScene.h"
 #include "ObjectFactory.h"
+#include "GameManager.h"
 
 USING_NS_CC;
 
@@ -32,6 +33,9 @@ bool MainScene::init()
     {
         return false;
     }
+    
+    // マネジャーの初期化する
+    
     
     CSLoader* instance = CSLoader::getInstance();
     instance->registReaderObject("TopSceneReader",(ObjectFactory::Instance)UIScene::TopSceneReader::getInstance);
