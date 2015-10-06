@@ -15,4 +15,11 @@
 #include "cocostudio/WidgetCallBackHandlerProtocol.h"
 #include "cocostudio/CocosStudioExport.h"
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
+
+// cocostudio
+#define USING_NS_COCOS_STUDIO                       using namespace cocostudio;
+
+// cocostudio
+USING_NS_COCOS_STUDIO
+
 #endif

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/Common/Singleton.h"
-            timestampString = "465821993.442665"
+            filePath = "../Classes/Common/Csb/CsbBase/CsbBase.cpp"
+            timestampString = "465828055.436083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getInstance()"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "CsbBase::initSceneInfo()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -11,6 +11,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		4636EFF21BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
+		4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
 		4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
 		467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */; };
 		467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52761BD21B2D00A080E0 /* CsbBase.cpp */; };
@@ -80,6 +82,8 @@
 		1D6058910D05DD3D006BFB54 /* 021.FirstSample-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "021.FirstSample-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4636EFF01BC3F1C300328A90 /* GameDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameDraw.cpp; path = Common/Draw/GameDraw.cpp; sourceTree = "<group>"; };
+		4636EFF11BC3F1C300328A90 /* GameDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDraw.h; path = Common/Draw/GameDraw.h; sourceTree = "<group>"; };
 		4646DA081BA6A5A7007F37FF /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopScene.cpp; path = Scene/TopScene/TopScene.cpp; sourceTree = "<group>"; };
 		4646DA091BA6A5A7007F37FF /* TopScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopScene.h; path = Scene/TopScene/TopScene.h; sourceTree = "<group>"; };
 		467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoordinateMesh.cpp; path = Parts/UI/CoordinateMesh/CoordinateMesh.cpp; sourceTree = "<group>"; };
@@ -262,6 +266,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4636EFEF1BC3F1A700328A90 /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				4636EFF01BC3F1C300328A90 /* GameDraw.cpp */,
+				4636EFF11BC3F1C300328A90 /* GameDraw.h */,
+			);
+			name = Draw;
+			sourceTree = "<group>";
+		};
 		4646DA031BA69E40007F37FF /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +304,7 @@
 		467C52611BD1F22300A080E0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4636EFEF1BC3F1A700328A90 /* Draw */,
 				467C52741BD21B0B00A080E0 /* Csb */,
 				467C52951BD238EC00A080E0 /* Singleton.h */,
 				467C52981BD2390400A080E0 /* CommonHeader.h */,
@@ -612,6 +626,7 @@
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				EF123DAE1BC1800D00ECAC61 /* GameManager.cpp in Sources */,
 				467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
+				4636EFF21BC3F1C300328A90 /* GameDraw.cpp in Sources */,
 				467C52A21BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
 				467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */,
 				467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */,
@@ -625,6 +640,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				EF123DAF1BC1800D00ECAC61 /* GameManager.cpp in Sources */,
 				467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
+				4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				467C52A31BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */,

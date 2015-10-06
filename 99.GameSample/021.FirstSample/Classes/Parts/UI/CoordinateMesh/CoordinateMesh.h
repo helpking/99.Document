@@ -26,6 +26,19 @@ public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual void onEnter() override;
     
+    /**
+     * @brief コンテンツサイズより、初期化を行う
+     * @param[in] iContentSize コンテンツサイズ
+     */
+    void initWithContentSize(const cocos2d::Size& iContentSize);
+    
+private:
+    
+    /**
+     * @brief ライン情報を初期化する
+     * @param[in] iContentSize コンテンツサイズ
+     */
+    void initLineInfo(const cocos2d::Size& iContentSize);
 };
 
 // CSBファイルのローダー

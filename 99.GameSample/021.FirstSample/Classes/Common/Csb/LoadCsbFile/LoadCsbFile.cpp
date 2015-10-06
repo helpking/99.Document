@@ -19,10 +19,8 @@
 
 USING_NS_COMMON_CSB;
 USING_NS_RESINFO;
-USING_UIPARTS;
-USING_UISCENE;
-
-LoadCsbFile* LoadCsbFile::_gInstance = nullptr;
+USING_NS_UIPARTS;
+USING_NS_UISCENE;
 
 // Csbファイル読み込む用名
 #define CSB_READER(__CSB_NAME__)        CCString::createWithFormat("%sReader", __CSB_NAME__)->getCString()
@@ -79,16 +77,18 @@ Node* LoadCsbFile::loadScene(const ResInfoPool::E_RES_ID iSceneId)
 }
 
 /**
- * @brief Csbファイルをロードする
+ * @brief Csbファイル(普通)をロードする
  * @param[in] iPartsId パーツID
+ * @param[in] iContentSize コンテンツサイズ
  */
-Node* LoadCsbFile::loadParts(const ResInfoPool::E_RES_ID iPartsId)
+Node* LoadCsbFile::loadPartsNormal(const ResInfoPool::E_RES_ID iPartsId,
+                                   const cocos2d::Size& iContentSize)
 {
     
     // リスース情報を取得する
     ResInfoPool::S_RES_INFO resInfo = Singleton<ResInfoPool>::getInstance()->getResInfo(iPartsId);
     
-    if (ResInfoPool::E_RES_TYPE::E_PARTS != resInfo.ResType)
+    if (ResInfoPool::E_RES_TYPE::E_PARTS_NORMAL != resInfo.ResType)
     {
         return nullptr;
     }
@@ -111,5 +111,64 @@ Node* LoadCsbFile::loadParts(const ResInfoPool::E_RES_ID iPartsId)
     // パーツを作成する
     Node* partsRet = CSLoader::createNode(resInfo.Path);
     
+    // Csbパーツノードのコンテンツサイズをセットする
+    this->setContentSizeOfCsbParts(partsRet, iContentSize, iPartsId);
+    
     return partsRet;
+}
+
+/**
+ * @brief Csbパーツノードのコンテンツサイズをセットする
+ * @param[in] iPartsNode Csbパーツノード
+ * @param[in] iContentSize コンテンツサイズ
+ * @param[in] iResId リソースID
+ */
+void LoadCsbFile::setContentSizeOfCsbParts(Node* iPartsNode,
+                                           const cocos2d::Size& iContentSize,
+                                           const ResInfoPool::E_RES_ID& iResId)
+{
+    // コンテンツサイズを設定する
+    if (cocos2d::Size::ZERO.equals(iContentSize))
+    {
+        return;
+    }
+    
+    {
+        switch (iResId)
+        {
+            case ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH:
+            {
+                CoordinateMesh* coordinateMeshTmp = dynamic_cast<CoordinateMesh*>(iPartsNode);
+                if (coordinateMeshTmp)
+                {
+                    coordinateMeshTmp->setContentSize(iContentSize);
+                }
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
+/**
+ * @brief Csbファイル(アクション)をロードする
+ * @param[in] iPartsActionId パーツアクションID
+ */
+timeline::ActionTimeline* LoadCsbFile::loadPartsAction(const ResInfoPool::E_RES_ID iPartsActionId)
+{
+    // リスース情報を取得する
+    ResInfoPool::S_RES_INFO resInfo = Singleton<ResInfoPool>::getInstance()->getResInfo(iPartsActionId);
+    
+    if (ResInfoPool::E_RES_TYPE::E_PARTS_ACTION != resInfo.ResType)
+    {
+        return nullptr;
+    }
+    
+    // パーツアクションをロードする
+    timeline::ActionTimeline* partsAction = NULL;
+    partsAction = CSLoader::createTimeline(resInfo.Path);
+    
+    return partsAction;
 }

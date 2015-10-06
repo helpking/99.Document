@@ -10,13 +10,15 @@
 
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "Singleton.h"
 
 USING_NS_CC;
+
 using namespace std;
 using namespace cocos2d::ui;
 
 
-USING_UISCENE
+USING_NS_UISCENE
 
 // Csbファイルローダーを初期化する
 CSB_INIT_LOADER(TopScene)
@@ -39,16 +41,16 @@ void TopScene::onEnter()
     CsbBase::onEnter();
     
     //加载动画：
-    cocostudio::timeline::ActionTimeline *action = NULL;
-    action = CSLoader::createTimeline("Parts/Role.csb");
+    timeline::ActionTimeline *action = NULL;
+    action = Singleton<LoadCsbFile>::getInstance()->loadPartsAction(ResInfoPool::E_RES_ID::E_PARTS_ROLE);
     action->gotoFrameAndPlay(0, 25, true);
     this->runAction(action);
     
-    action = CSLoader::createTimeline("Parts/WindMill.csb");
+    action = Singleton<LoadCsbFile>::getInstance()->loadPartsAction(ResInfoPool::E_RES_ID::E_PARTS_WINDMILL);
     action->gotoFrameAndPlay(0, 35, true);
     this->runAction(action);
     
-    this->demoPlayerAction_ = CSLoader::createTimeline("Parts/DemoPlayer.csb");
+    this->demoPlayerAction_ = action = Singleton<LoadCsbFile>::getInstance()->loadPartsAction(ResInfoPool::E_RES_ID::E_PARTS_DEMO_PLAYER);
     this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
     this->runAction(this->demoPlayerAction_);
     

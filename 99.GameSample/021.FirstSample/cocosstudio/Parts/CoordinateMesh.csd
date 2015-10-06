@@ -3,7 +3,7 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="CoordinateMesh" Tag="1672" ctype="GameLayerObjectData">
+      <ObjectData Name="CoordinateMesh" CustomClassName="CoordinateMesh" Tag="1672" ctype="GameLayerObjectData">
         <Size X="960.0000" Y="640.0000" />
       </ObjectData>
     </Content>

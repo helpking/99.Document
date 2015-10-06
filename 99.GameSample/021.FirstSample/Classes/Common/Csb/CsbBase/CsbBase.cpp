@@ -9,6 +9,11 @@
 #include "CsbBase.h"
 #include "UIButton.h"
 
+#include "Singleton.h"
+
+// Csbファイルローダー
+#include "LoadCsbFile.h"
+
 USING_NS_CC;
 USING_NS_COMMON_CSB;
 
@@ -28,11 +33,11 @@ void CsbBase::onEnter()
 {
     cocos2d::CCNode::onEnter();
     
-    // シーンの情報を初期化する
-    this->initSceneInfo();
-    
     // 変数一覧の初期化
     this->initCcsMemberVariables();
+    
+    // シーンの情報を初期化する
+    this->initSceneInfo();
 }
 
 /**
@@ -41,6 +46,10 @@ void CsbBase::onEnter()
 void CsbBase::initSceneInfo()
 {
     this->sceneSize_ = CCDirector::getInstance()->getOpenGLView()->getDesignResolutionSize();
+    
+    auto coordinateMeshNode = Singleton<LoadCsbFile>::getInstance()->loadPartsNormal(ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH,
+                                                                                     this->sceneSize_);
+    this->getUILayer()->addChild(coordinateMeshNode);
 }
 
 /**

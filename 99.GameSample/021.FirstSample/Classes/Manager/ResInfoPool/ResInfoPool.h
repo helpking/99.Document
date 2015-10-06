@@ -44,9 +44,14 @@ public:
         E_SCENE,
         
         /**
-         * @brief パーツ
+         * @brief パーツ(普通)
          */
-        E_PARTS,
+        E_PARTS_NORMAL,
+        
+        /**
+         * @brief パーツ(アクション)
+         */
+        E_PARTS_ACTION,
         
         /**
          * @brief 画像

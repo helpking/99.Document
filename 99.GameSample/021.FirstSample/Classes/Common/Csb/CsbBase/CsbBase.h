@@ -55,12 +55,21 @@ public:
      */
     virtual cocos2d::ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName);
     
+    /**
+     * @brief UILayerノードを取得する
+     * @return UILayerノード
+     */
+    inline cocos2d::Node* getUILayer()
+    {
+        return this->uiLayerNode_;
+    };
+    
 protected:
     
     /**
      * @brief シーンの情報を初期化する
      */
-    void initSceneInfo();
+    virtual void initSceneInfo();
     
 private:
     

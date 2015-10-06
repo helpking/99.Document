@@ -14,6 +14,10 @@
 #include "CsbBase.h"
 #include "UIButton.h"
 
+// Csbファイルローダー
+#include "LoadCsbFile.h"
+
+USING_NS_COMMON;
 USING_NS_COMMON_CSB;
 
 NS_BEGIN_UISCENE
@@ -44,7 +48,7 @@ public:
     
 private:
     
-    cocostudio::timeline::ActionTimeline* demoPlayerAction_;
+    timeline::ActionTimeline* demoPlayerAction_;
     
     cocos2d::ui::Button* walkBtn_;
     
