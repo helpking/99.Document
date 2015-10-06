@@ -5,6 +5,11 @@
 #include "ObjectFactory.h"
 #include "GameManager.h"
 
+#include "Singleton.h"
+
+// Csbファイルローダー
+#include "LoadCsbFile.h"
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -34,13 +39,8 @@ bool MainScene::init()
         return false;
     }
     
-    // マネジャーの初期化する
-    
-    
-    CSLoader* instance = CSLoader::getInstance();
-    instance->registReaderObject("TopSceneReader",(ObjectFactory::Instance)UIScene::TopSceneReader::getInstance);
-
-    auto rootNode = CSLoader::createNode("Scene/TopScene.csb");
+    // トップシーンでロードする
+    auto rootNode = Singleton<LoadCsbFile>::getInstance()->loadScene(ResInfoPool::E_RES_ID::E_SCENE_TOP);
     addChild(rootNode);
     
     return true;

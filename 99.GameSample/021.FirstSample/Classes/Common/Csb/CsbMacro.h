@@ -51,5 +51,4 @@ MEMBER = static_cast<MEMBERTYPE>(TARGET->getChildByName(MEMBERNAME));           
 
 #define CSB_INIT_LOADER(__CLASS_NAME__)            __CLASS_NAME__##Reader* __CLASS_NAME__##Reader::_instance = nullptr;
 
-
 #endif /* defined(___21_FirstSample__GMacro__) */

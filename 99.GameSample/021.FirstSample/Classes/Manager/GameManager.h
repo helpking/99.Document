@@ -36,15 +36,6 @@ public:
      */
     ~GameManager();
     
-    /**
-     * @brief リソース情報プールを取得する
-     * @return リソース情報プール
-     */
-    inline static ResInfoPool* getResInfoPool()
-    {
-        return Singleton<ResInfoPool>::getInstance();
-    };
-    
 private:
     
     /**

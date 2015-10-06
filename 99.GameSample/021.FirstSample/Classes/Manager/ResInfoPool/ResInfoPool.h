@@ -84,24 +84,7 @@ public:
          * @brief パス
          */
         std::string Path;
-        
-//        S_RES_INFO()
-//        {
-//            // クリア
-//            clear();
-//        }
-//        
-//        /**
-//         * @brief クリア
-//         */
-//        void clear()
-//        {
-//            ResID = E_RES_ID::E_INVALID;
-//            ResType = E_RES_TYPE::E_INVALID;
-//            Name = nullptr;
-//            Path = nullptr;
-//        }
-        
+                
     }S_RES_INFO;
     
     /**
@@ -113,6 +96,12 @@ public:
      * @brief デストラクタ
      */
     ~ResInfoPool();
+    
+    /**
+     * @brief リソース情報を追加する
+     * @param[in] iResId リソースID
+     */
+    S_RES_INFO getResInfoBySceneId(const E_RES_ID iResId);
     
     /**
      * @brief リソース情報を追加する

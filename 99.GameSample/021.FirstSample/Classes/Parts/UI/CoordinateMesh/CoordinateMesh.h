@@ -10,31 +10,27 @@
 #define ___21_FirstSample__CoordinateMesh__
 
 #include "UICommon.h"
+#include "CsbBase.h"
 
-namespace UParts
+NS_BEGIN_UIPARTS
+
+USING_NS_COMMON_CSB
+
+class CoordinateMesh
+: public CsbBase
 {
+public:
+    CREATE_FUNC(CoordinateMesh)
+    CoordinateMesh();
+    ~CoordinateMesh();
+    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+    virtual void onEnter() override;
     
-    class CoordinateMesh
-    : public cocos2d::Layer
-    {
-    public:
-        CREATE_FUNC(CoordinateMesh)
-        CoordinateMesh();
-        ~CoordinateMesh();
-        // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-        virtual void onEnter() override;
-        
-    };
-    
-    class CoordinateMeshReader : public cocostudio::NodeReader
-    {
-    public:
-        CoordinateMeshReader() {};
-        ~CoordinateMeshReader() {};
-        static CoordinateMeshReader* getInstance();
-        static void purge();
-        cocos2d::Node* createNodeWithFlatBuffers(const flatbuffers::Table* nodeOptions);
-    };
-}
+};
+
+// CSBファイルのローダー
+CSB_CREATE_LOADER(CoordinateMesh);
+
+NS_END_UIPARTS
 
 #endif /* defined(___21_FirstSample__CoordinateMesh__) */

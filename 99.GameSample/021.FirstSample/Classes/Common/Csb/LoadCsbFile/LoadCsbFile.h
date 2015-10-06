@@ -10,27 +10,29 @@
 #define ___21_FirstSample__LoadCsbFile__
 
 #include "CsbMacro.h"
+#include "ResInfoPool.h"
 
 USING_NS_CC;
+USING_NS_RESINFO;
 
 NS_BEGIN_COMMON_CSB
 
-enum class E_SCENE_ID
-{
-    E_INVALID = -1,
-    
-    /**
-     * @brief トップシーン
-     */
-    E_TOP,
-    E_MAX
-};
 /**
  * @brief Csbファイルをロードするクラス
  */
 class LoadCsbFile
 {
 public:
+    
+    /**
+     * @brief コンストラクター
+     */
+    LoadCsbFile();
+    
+    /**
+     * @brief デストラクター
+     */
+    ~LoadCsbFile();
     
     /**
      * @brief インスタンスを取得する
@@ -46,32 +48,25 @@ public:
         return _gInstance;
     };
     
-protected:
-    
-    /**
-     * @brief コンストラクター
-     */
-    LoadCsbFile();
-    
-    /**
-     * @brief デストラクター
-     */
-    ~LoadCsbFile();
-    
     /**
      * @brief シーンをロードする
      * @param[in] iSceneId シーンID
      */
-    Node* loadScene(const E_SCENE_ID iSceneId);
+    Node* loadScene(const ResInfoPool::E_RES_ID iSceneId);
+    
+    /**
+     * @brief Csbファイルをロードする
+     * @param[in] iPartsId パーツID
+     */
+    Node* loadParts(const ResInfoPool::E_RES_ID iPartsId);
+    
+protected:
+    
+
     
 private:
     static LoadCsbFile* _gInstance;
     
-    /**
-     * @brief Csbファイルをロードする
-     * @param[in] iCsbFilePath Csbファイル
-     */
-    Node* loadFile(const char* iCsbFilePath);
 };
 
 NS_END_COMMON_CSB

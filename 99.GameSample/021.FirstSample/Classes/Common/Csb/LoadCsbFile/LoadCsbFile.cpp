@@ -8,19 +8,30 @@
 
 #include "LoadCsbFile.h"
 
-#include "TopScene.h"
+#include "ResInfoPool.h"
 #include "Singleton.h"
 
+// Csbファイル：シーン
+#include "TopScene.h"
+
+// Csbファイル：パーツ
+#include "CoordinateMesh.h"
+
 USING_NS_COMMON_CSB;
+USING_NS_RESINFO;
+USING_UIPARTS;
+USING_UISCENE;
 
 LoadCsbFile* LoadCsbFile::_gInstance = nullptr;
+
+// Csbファイル読み込む用名
+#define CSB_READER(__CSB_NAME__)        CCString::createWithFormat("%sReader", __CSB_NAME__)->getCString()
 
 /**
  * @brief コンストラクター
  */
 LoadCsbFile::LoadCsbFile()
 {
-    
 }
 
 /**
@@ -35,17 +46,25 @@ LoadCsbFile::~LoadCsbFile()
  * @brief シーンをロードする
  * @param[in] iSceneId シーンID
  */
-Node* LoadCsbFile::loadScene(const E_SCENE_ID iSceneId)
+Node* LoadCsbFile::loadScene(const ResInfoPool::E_RES_ID iSceneId)
 {
-    CSLoader* instance = CSLoader::getInstance();
-    Node* sceneRet = nullptr;
     
+    // リスース情報を取得する
+    ResInfoPool::S_RES_INFO resInfo = Singleton<ResInfoPool>::getInstance()->getResInfo(iSceneId);
+    
+    if (ResInfoPool::E_RES_TYPE::E_SCENE != resInfo.ResType)
+    {
+        return nullptr;
+    }
+ 
+    CSLoader* instance = CSLoader::getInstance();
+    // シーンIDより、シーンをロースする
     switch (iSceneId)
     {
-        case E_SCENE_ID::E_TOP:
+        case ResInfoPool::E_RES_ID::E_SCENE_TOP:
         {
-            instance->registReaderObject("TopSceneReader",(ObjectFactory::Instance)UIScene::TopSceneReader::getInstance);
-            sceneRet = CSLoader::createNode("Scene/TopScene.csb");
+            instance->registReaderObject(CSB_READER(resInfo.Name.c_str()),
+                                         (ObjectFactory::Instance)TopSceneReader::getInstance);
         }
             break;
             
@@ -53,18 +72,44 @@ Node* LoadCsbFile::loadScene(const E_SCENE_ID iSceneId)
             break;
     }
     
+    // シーンを作成する
+    Node* sceneRet = CSLoader::createNode(resInfo.Path);
+    
     return sceneRet;
 }
 
 /**
  * @brief Csbファイルをロードする
- * @param[in] iCsbFilePath Csbファイル
+ * @param[in] iPartsId パーツID
  */
-Node* LoadCsbFile::loadFile(const char* iCsbFilePath)
+Node* LoadCsbFile::loadParts(const ResInfoPool::E_RES_ID iPartsId)
 {
-    CSLoader* instance = CSLoader::getInstance();
-    instance->registReaderObject("TopSceneReader",(ObjectFactory::Instance)UIScene::TopSceneReader::getInstance);
     
-    auto fileNode = CSLoader::createNode("Scene/TopScene.csb");
-    return fileNode;
+    // リスース情報を取得する
+    ResInfoPool::S_RES_INFO resInfo = Singleton<ResInfoPool>::getInstance()->getResInfo(iPartsId);
+    
+    if (ResInfoPool::E_RES_TYPE::E_PARTS != resInfo.ResType)
+    {
+        return nullptr;
+    }
+    
+    CSLoader* instance = CSLoader::getInstance();
+    // シーンIDより、シーンをロースする
+    switch (iPartsId)
+    {
+        case ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH:
+        {
+            instance->registReaderObject(CSB_READER(resInfo.Name.c_str()),
+                                         (ObjectFactory::Instance)CoordinateMeshReader::getInstance);
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    // パーツを作成する
+    Node* partsRet = CSLoader::createNode(resInfo.Path);
+    
+    return partsRet;
 }

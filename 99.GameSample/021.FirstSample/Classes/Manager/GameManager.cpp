@@ -32,8 +32,7 @@ GameManager::~GameManager()
  */
 void GameManager::init()
 {
-    // リソースプール
-    getResInfoPool();
+
 }
 
 
