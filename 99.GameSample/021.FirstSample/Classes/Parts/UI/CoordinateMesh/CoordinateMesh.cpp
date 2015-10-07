@@ -27,10 +27,7 @@ CoordinateMesh::~CoordinateMesh()
 // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 void CoordinateMesh::onEnter()
 {
-    CsbBase::onEnter();
-    
-    //
-//    cocos2d::LayerColor 
+    BaseParts::onEnter();
 }
 
 /**
@@ -38,7 +35,7 @@ void CoordinateMesh::onEnter()
  */
 void CoordinateMesh::initCcsMemberVariables()
 {
-    CsbBase::initCcsMemberVariables();
+    BaseParts::initCcsMemberVariables();
 }
 
 /**

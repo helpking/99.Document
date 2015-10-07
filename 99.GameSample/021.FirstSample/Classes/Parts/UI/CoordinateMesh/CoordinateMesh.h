@@ -10,7 +10,7 @@
 #define ___21_FirstSample__CoordinateMesh__
 
 #include "UICommon.h"
-#include "CsbBase.h"
+#include "BaseParts.h"
 
 NS_BEGIN_UIPARTS
 
@@ -33,7 +33,7 @@ enum class E_MESH_TYPE
  * @brief 座標メッシュ
  */
 class CoordinateMesh
-: public CsbBase
+: public BaseParts
 {
 public:
     CREATE_FUNC(CoordinateMesh)

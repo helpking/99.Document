@@ -21,6 +21,32 @@ USING_NS_COMMON_CSB;
 
 NS_BEGIN_UISCENE
 
+/**
+ * @brief ZOrderインデックス定義（外 -> 裏）
+ */
+enum class E_ZORDER_IDX
+{
+    E_INVALID = -1,
+    
+    /**
+     * @brief UI系
+     */
+    E_UI_BASE,
+    E_UI_POP_DLG,
+    
+    /**
+     * @brief カレントシーン
+     */
+    E_CUR_SCENE,
+    
+    /**
+     * @brief エンティティ系
+     */
+    E_ENTITY_BASE,
+    
+    E_MAX
+};
+
 class BaseScene
 : public CsbBase
 {
@@ -61,12 +87,33 @@ public:
      */
     virtual cocos2d::ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName) override;
     
+    /**
+     * @brief ZOrderを取得する
+     * @param[in] iZorderIdx ZOrderインデックス
+     */
+    inline static int getZOrderByIdx(const E_ZORDER_IDX iZorderIdx)
+    {
+        int intRet = (int)E_ZORDER_IDX::E_INVALID;
+        
+        if (E_ZORDER_IDX::E_INVALID != iZorderIdx)
+        {
+            intRet = (int)E_ZORDER_IDX::E_MAX - (int)iZorderIdx;
+        }
+        
+        return intRet;
+    };
+    
 protected:
     
     /**
      * @brief Csbファイルの情報を初期化する
      */
     virtual void initCsbFileInfo() override;
+    
+    /**
+     * @brief シーンのZOrderの情報を
+     */
+    virtual void initZOrderInfo() override;
     
     /**
      * @brief シーンの情報を初期化する
@@ -80,6 +127,15 @@ protected:
     inline cocos2d::Node* getUiBaseNode()
     {
         return this->UiBaseNode_;
+    };
+    
+    /**
+     * @brief エンティティベイスノードを取得する
+     * @return エンティティベイスノード
+     */
+    inline cocos2d::Node* getEntityBaseNode()
+    {
+        return this->EntityBaseNode_;
     };
     
     /**

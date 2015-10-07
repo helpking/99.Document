@@ -103,6 +103,24 @@ void BaseScene::initCsbFileInfo()
 }
 
 /**
+ * @brief シーンのZOrderの情報を
+ */
+void BaseScene::initZOrderInfo()
+{
+    CsbBase::initZOrderInfo();
+    
+    if (this->UiBaseNode_)
+    {
+        this->UiBaseNode_->setZOrder(getZOrderByIdx(E_ZORDER_IDX::E_UI_BASE));
+    }
+    
+    if (this->EntityBaseNode_)
+    {
+        this->EntityBaseNode_->setZOrder(getZOrderByIdx(E_ZORDER_IDX::E_ENTITY_BASE));
+    }
+}
+
+/**
  * @brief シーンの情報を初期化する
  */
 void BaseScene::initSceneInfo()

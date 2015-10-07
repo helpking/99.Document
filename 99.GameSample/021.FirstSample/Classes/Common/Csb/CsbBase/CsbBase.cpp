@@ -36,6 +36,9 @@ void CsbBase::onEnter()
     
     // Csbファイルの情報を初期化する
     this->initCsbFileInfo();
+    
+    // ZOrder情報を初期化する
+    this->initZOrderInfo();
 }
 
 /**

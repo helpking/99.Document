@@ -75,6 +75,11 @@ protected:
     virtual void initCsbFileInfo();
     
     /**
+     * @brief ZOrderの情報を
+     */
+    virtual void initZOrderInfo() {};
+    
+    /**
      * @brief ベイスノードを取得する
      * @return ベイスノード
      */
