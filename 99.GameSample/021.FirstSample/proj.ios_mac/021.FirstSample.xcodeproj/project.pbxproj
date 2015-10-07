@@ -79,6 +79,7 @@
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 		EF123DAE1BC1800D00ECAC61 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */; };
 		EF123DAF1BC1800D00ECAC61 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */; };
+		EFE3DE781BC571D500EB9C6F /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -676,6 +677,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				EF123DAF1BC1800D00ECAC61 /* GameManager.cpp in Sources */,
 				467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
+				EFE3DE781BC571D500EB9C6F /* TopScene.cpp in Sources */,
 				4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				467C52A31BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,

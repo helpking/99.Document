@@ -50,13 +50,15 @@ protected:
     
     /**
      * @brief UI系の変数一覧の初期化
+     * @param[in] iUIBaseNode UIベイスノード
      */
-    virtual void initUIMemberVariables() override;
+    virtual bool initUIMemberVariables(Node* iUIBaseNode) override;
     
     /**
      * @brief エンティティ系の変数一覧の初期化
+     * @param[in] iEntityBaseNode エンティティベイスノード
      */
-    virtual void initEntityMemberVariables() override;
+    virtual bool initEntityMemberVariables(Node* iEntityBaseNode) override;
     
 private:
     

@@ -74,18 +74,32 @@ void TopScene::initSceneInfo()
 
 /**
  * @brief UI系の変数一覧の初期化
+ * @param[in] iUIBaseNode UIベイスノード
  */
-void TopScene::initUIMemberVariables()
+bool TopScene::initUIMemberVariables(Node* iUIBaseNode)
 {
-    CSB_MEMBER_VARIABLE_ASSIGNER(this, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);
+    if (BaseScene::initUIMemberVariables(iUIBaseNode) == false)
+    {
+        return false;
+    }
+    CSB_MEMBER_VARIABLE_ASSIGNER(iUIBaseNode, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);;
+    
+    return true;
 }
 
 /**
  * @brief エンティティ系の変数一覧の初期化
+ * @param[in] iEntityBaseNode エンティティベイスノード
  */
-void TopScene::initEntityMemberVariables()
+bool TopScene::initEntityMemberVariables(Node* iEntityBaseNode)
 {
+    if (BaseScene::initEntityMemberVariables(iEntityBaseNode) == false)
+    {
+        return false;
+    }
     
+    
+    return true;
 }
 
 /**

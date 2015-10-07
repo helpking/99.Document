@@ -47,21 +47,39 @@ void BaseScene::initCcsMemberVariables()
         return;
     }
     
-    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "UiBaseNode", cocos2d::Node*, this->UiBaseNode_);
-    
     // UI系の初期化
-    if (this->UiBaseNode_)
-    {
-        this->initUIMemberVariables();
-    }
-    
-    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "EntityBaseNode", cocos2d::Node*, this->EntityBaseNode_);
+    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "UiBaseNode", cocos2d::Node*, this->UiBaseNode_);
+    this->initUIMemberVariables(this->UiBaseNode_);
     
     // エンティティ系の初期化
-    if (this->EntityBaseNode_)
+    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "EntityBaseNode", cocos2d::Node*, this->EntityBaseNode_);
+    this->initEntityMemberVariables(this->EntityBaseNode_);
+}
+
+/**
+ * @brief UI系の変数一覧の初期化
+ * @param[in] iUIBaseNode UIベイスノード
+ */
+bool BaseScene::initUIMemberVariables(Node* iUIBaseNode)
+{
+    if (iUIBaseNode == nullptr)
     {
-        this->initEntityMemberVariables();
+        return false;
     }
+    return true;
+}
+
+/**
+ * @brief エンティティ系の変数一覧の初期化
+ * @param[in] iEntityBaseNode エンティティベイスノード
+ */
+bool BaseScene::initEntityMemberVariables(Node* iEntityBaseNode)
+{
+    if (iEntityBaseNode == nullptr)
+    {
+        return false;
+    }
+    return true;
 }
 
 /**

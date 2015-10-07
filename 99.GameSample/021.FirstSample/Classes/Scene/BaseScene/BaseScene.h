@@ -122,13 +122,15 @@ protected:
     
     /**
      * @brief UI系の変数一覧の初期化
+     * @param[in] iUIBaseNode UIベイスノード
      */
-    virtual void initUIMemberVariables() {};
+    virtual bool initUIMemberVariables(Node* iUIBaseNode);
     
     /**
      * @brief エンティティ系の変数一覧の初期化
+     * @param[in] iEntityBaseNode エンティティベイスノード
      */
-    virtual void initEntityMemberVariables() {};
+    virtual bool initEntityMemberVariables(Node* iEntityBaseNode);
     
     /**
      * @brief UIベイスノードを取得する
