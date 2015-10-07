@@ -17,11 +17,13 @@
 USING_NS_COMMON_CSB;
 
 CsbBase::CsbBase()
+: BaseNode_(nullptr)
 {
     
 }
 CsbBase::~CsbBase()
 {
+    CC_SAFE_RELEASE_NULL(BaseNode_);
 }
 
 // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
@@ -32,14 +34,14 @@ void CsbBase::onEnter()
     // 変数一覧の初期化
     this->initCcsMemberVariables();
     
-    // シーンの情報を初期化する
-    this->initSceneInfo();
+    // Csbファイルの情報を初期化する
+    this->initCsbFileInfo();
 }
 
 /**
- * @brief シーンの情報を初期化する
+ * @brief Csbファイルの情報を初期化する
  */
-void CsbBase::initSceneInfo()
+void CsbBase::initCsbFileInfo()
 {
     
 }
@@ -49,6 +51,7 @@ void CsbBase::initSceneInfo()
  */
 void CsbBase::initCcsMemberVariables()
 {
+    CSB_MEMBER_VARIABLE_ASSIGNER(this, "BaseNode", cocos2d::Node*, this->BaseNode_);
 }
 
 ui::Widget::ccWidgetTouchCallback CsbBase::onLocateTouchCallback(const std::string &callBackName)

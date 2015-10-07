@@ -69,7 +69,7 @@ void TopScene::initSceneInfo()
     BaseScene::initSceneInfo();
     auto coordinateMeshNode = Singleton<LoadCsbFile>::getInstance()->loadPartsNormal(ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH,
                                                                                      this->getSceneSize());
-    this->getUILayer()->addChild(coordinateMeshNode);
+    this->getUiBaseNode()->addChild(coordinateMeshNode);
 }
 
 /**
@@ -88,6 +88,13 @@ void TopScene::initCcsMemberVariables()
  */
 cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::initCcsOnTouchCallbackInfo(const std::string& iCallBackName)
 {
+    
+    ui::Widget::ccWidgetTouchCallback callback = BaseScene::initCcsOnTouchCallbackInfo(iCallBackName);
+    if (callback)
+    {
+        return callback;
+    }
+    
     if (iCallBackName == "onWalkBtnTouch")
     {
         return CC_CALLBACK_2(TopScene::onWalkBtnTouch, this);

@@ -14,7 +14,8 @@ USING_NS_UISCENE;
  * @brief コンストラクター
  */
 BaseScene::BaseScene()
-: uiLayerBaseNode_(nullptr)
+: UiBaseNode_(nullptr)
+, EntityBaseNode_(nullptr)
 , sceneSize_(Size::ZERO)
 {
     
@@ -25,7 +26,8 @@ BaseScene::BaseScene()
  */
 BaseScene::~BaseScene()
 {
-    CC_SAFE_RELEASE_NULL(uiLayerBaseNode_);
+    CC_SAFE_RELEASE_NULL(UiBaseNode_);
+    CC_SAFE_RELEASE_NULL(EntityBaseNode_);
 }
 
 void BaseScene::onEnter()
@@ -40,7 +42,13 @@ void BaseScene::initCcsMemberVariables()
 {
     CsbBase::initCcsMemberVariables();
     
-    CSB_MEMBER_VARIABLE_ASSIGNER(this, "uiLayerNode", cocos2d::Node*, this->uiLayerBaseNode_);
+    if (this->getBaseNode() == nullptr)
+    {
+        return;
+    }
+    
+    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "UiBaseNode", cocos2d::Node*, this->UiBaseNode_);
+    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "EntityBaseNode", cocos2d::Node*, this->EntityBaseNode_);
 }
 
 /**
@@ -49,7 +57,12 @@ void BaseScene::initCcsMemberVariables()
  */
 ui::Widget::ccWidgetTouchCallback BaseScene::initCcsOnTouchCallbackInfo(const std::string& iCallBackName)
 {
-    return CsbBase::initCcsOnTouchCallbackInfo(iCallBackName);
+    ui::Widget::ccWidgetTouchCallback callback = CsbBase::initCcsOnTouchCallbackInfo(iCallBackName);
+    if (callback)
+    {
+        return callback;
+    }
+    return nullptr;
 }
 
 /**
@@ -58,7 +71,12 @@ ui::Widget::ccWidgetTouchCallback BaseScene::initCcsOnTouchCallbackInfo(const st
  */
 ui::Widget::ccWidgetClickCallback BaseScene::initCcsOnClickCallbackInfo(const std::string& iCallBackName)
 {
-    return CsbBase::initCcsOnClickCallbackInfo(iCallBackName);
+    ui::Widget::ccWidgetClickCallback callback = CsbBase::initCcsOnClickCallbackInfo(iCallBackName);
+    if (callback)
+    {
+        return callback;
+    }
+    return nullptr;
 }
 
 /**
@@ -67,7 +85,21 @@ ui::Widget::ccWidgetClickCallback BaseScene::initCcsOnClickCallbackInfo(const st
  */
 cocos2d::ui::Widget::ccWidgetEventCallback BaseScene::initCcsOnEnentCallbackInfo(const std::string& iCallBackName)
 {
-    return CsbBase::initCcsOnEnentCallbackInfo(iCallBackName);
+    ui::Widget::ccWidgetEventCallback callback = CsbBase::initCcsOnEnentCallbackInfo(iCallBackName);
+    if (callback)
+    {
+        return callback;
+    }
+    return nullptr;
+}
+
+/**
+ * @brief Csbファイルの情報を初期化する
+ */
+void BaseScene::initCsbFileInfo()
+{
+    // シーンの情報を初期化する
+    this->initSceneInfo();
 }
 
 /**

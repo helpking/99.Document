@@ -70,9 +70,23 @@ public:
 protected:
     
     /**
-     * @brief シーンの情報を初期化する
+     * @brief Csbファイルの情報を初期化する
      */
-    virtual void initSceneInfo();
+    virtual void initCsbFileInfo();
+    
+    /**
+     * @brief ベイスノードを取得する
+     * @return ベイスノード
+     */
+    inline cocos2d::Node* getBaseNode()
+    {
+        return this->BaseNode_;
+    };
+    
+private:
+    
+    //! ベイスノード
+    Node* BaseNode_;
 };
 
 NS_END_COMMON_CSB

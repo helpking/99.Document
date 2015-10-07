@@ -61,21 +61,26 @@ public:
      */
     virtual cocos2d::ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName) override;
     
-    /**
-     * @brief UILayerノードを取得する
-     * @return UILayerノード
-     */
-    inline cocos2d::Node* getUILayer()
-    {
-        return this->uiLayerBaseNode_;
-    };
-    
 protected:
+    
+    /**
+     * @brief Csbファイルの情報を初期化する
+     */
+    virtual void initCsbFileInfo() override;
     
     /**
      * @brief シーンの情報を初期化する
      */
-    virtual void initSceneInfo() override;
+    virtual void initSceneInfo();
+    
+    /**
+     * @brief UIベイスノードを取得する
+     * @return UIベイスノード
+     */
+    inline cocos2d::Node* getUiBaseNode()
+    {
+        return this->UiBaseNode_;
+    };
     
     /**
      * @brief シーンサイズを取得する
@@ -88,8 +93,10 @@ protected:
     
 private:
     
-    //! UIレイアベイスノード
-    Node* uiLayerBaseNode_;
+    //! UIベイスノード
+    Node* UiBaseNode_;
+    //! UIベイスノード
+    Node* EntityBaseNode_;
     
     //! シーンサイズ
     Size sceneSize_;

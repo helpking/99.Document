@@ -17,6 +17,21 @@ NS_BEGIN_UIPARTS
 USING_NS_CC;
 USING_NS_COMMON_CSB;
 
+/**
+ * @brief メッシュタイプ
+ */
+enum class E_MESH_TYPE
+{
+    E_INVALID = -1,
+    E_SMALL,
+    E_NORMAL,
+    E_LARGE,
+    E_MAX
+};
+
+/**
+ * @brief 座標メッシュ
+ */
 class CoordinateMesh
 : public CsbBase
 {
@@ -45,8 +60,7 @@ private:
      * @param[in] iContentSize コンテンツサイズ
      */
     void initLineInfo(const cocos2d::Size& iContentSize);
-    
-    ParticleSystemQuad* Particle_1_;
+
 };
 
 // CSBファイルのローダー

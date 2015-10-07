@@ -16,14 +16,12 @@ USING_NS_COMMON_GDRAW;
 CSB_INIT_LOADER(CoordinateMesh);
 
 CoordinateMesh::CoordinateMesh()
-: Particle_1_(nullptr)
 {
     
 }
 
 CoordinateMesh::~CoordinateMesh()
 {
-    CC_SAFE_RELEASE_NULL(Particle_1_);
 }
 
 // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
@@ -41,8 +39,6 @@ void CoordinateMesh::onEnter()
 void CoordinateMesh::initCcsMemberVariables()
 {
     CsbBase::initCcsMemberVariables();
-    
-    CSB_MEMBER_VARIABLE_ASSIGNER(this, "Particle_1", ParticleSystemQuad*, this->Particle_1_);
 }
 
 /**

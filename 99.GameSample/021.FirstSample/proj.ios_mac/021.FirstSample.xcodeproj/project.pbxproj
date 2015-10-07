@@ -13,6 +13,8 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		4608EE6C1BC4E22400E3304C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4608EE6A1BC4E22400E3304C /* BaseScene.cpp */; };
 		4608EE6D1BC4E22400E3304C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4608EE6A1BC4E22400E3304C /* BaseScene.cpp */; };
+		4608EE711BC4F54C00E3304C /* BaseParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4608EE6F1BC4F54C00E3304C /* BaseParts.cpp */; };
+		4608EE721BC4F54C00E3304C /* BaseParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4608EE6F1BC4F54C00E3304C /* BaseParts.cpp */; };
 		4636EFF21BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
 		4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
 		4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
@@ -86,6 +88,8 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4608EE6A1BC4E22400E3304C /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseScene.cpp; path = Scene/BaseScene/BaseScene.cpp; sourceTree = "<group>"; };
 		4608EE6B1BC4E22400E3304C /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseScene.h; path = Scene/BaseScene/BaseScene.h; sourceTree = "<group>"; };
+		4608EE6F1BC4F54C00E3304C /* BaseParts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseParts.cpp; path = Parts/BaseParts/BaseParts.cpp; sourceTree = "<group>"; };
+		4608EE701BC4F54C00E3304C /* BaseParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseParts.h; path = Parts/BaseParts/BaseParts.h; sourceTree = "<group>"; };
 		4636EFF01BC3F1C300328A90 /* GameDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameDraw.cpp; path = Common/Draw/GameDraw.cpp; sourceTree = "<group>"; };
 		4636EFF11BC3F1C300328A90 /* GameDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDraw.h; path = Common/Draw/GameDraw.h; sourceTree = "<group>"; };
 		4646DA081BA6A5A7007F37FF /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopScene.cpp; path = Scene/TopScene/TopScene.cpp; sourceTree = "<group>"; };
@@ -279,6 +283,15 @@
 			name = BaseScene;
 			sourceTree = "<group>";
 		};
+		4608EE6E1BC4F53E00E3304C /* BaseParts */ = {
+			isa = PBXGroup;
+			children = (
+				4608EE6F1BC4F54C00E3304C /* BaseParts.cpp */,
+				4608EE701BC4F54C00E3304C /* BaseParts.h */,
+			);
+			name = BaseParts;
+			sourceTree = "<group>";
+		};
 		4636EFEF1BC3F1A700328A90 /* Draw */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +458,7 @@
 		46C464B81BA7F363001D5DCA /* Parts */ = {
 			isa = PBXGroup;
 			children = (
+				4608EE6E1BC4F53E00E3304C /* BaseParts */,
 				467C526F1BD21A3D00A080E0 /* UI */,
 				467C52731BD21A8000A080E0 /* UICommon.h */,
 			);
@@ -643,6 +657,7 @@
 				4608EE6C1BC4E22400E3304C /* BaseScene.cpp in Sources */,
 				4636EFF21BC3F1C300328A90 /* GameDraw.cpp in Sources */,
 				467C52A21BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
+				4608EE711BC4F54C00E3304C /* BaseParts.cpp in Sources */,
 				467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */,
 				467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */,
 			);
@@ -652,6 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4608EE721BC4F54C00E3304C /* BaseParts.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				EF123DAF1BC1800D00ECAC61 /* GameManager.cpp in Sources */,
 				467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
