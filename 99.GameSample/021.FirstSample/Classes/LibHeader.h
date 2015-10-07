@@ -17,9 +17,9 @@
 #include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
 
 // cocostudio
-#define USING_NS_COCOS_STUDIO                       using namespace cocostudio;
+#define USING_NS_COCOS_STUDIO                       using namespace cocostudio
 
 // cocostudio
-USING_NS_COCOS_STUDIO
+USING_NS_COCOS_STUDIO;
 
 #endif

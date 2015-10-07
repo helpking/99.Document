@@ -11,7 +11,7 @@
 
 #include "UICommon.h"
 
-#include "CsbBase.h"
+#include "BaseScene.h"
 #include "UIButton.h"
 
 // Csbファイルローダー
@@ -23,7 +23,7 @@ USING_NS_COMMON_CSB;
 NS_BEGIN_UISCENE
 
 class TopScene
-: public CsbBase
+: public BaseScene
 {
 public:
     CREATE_FUNC(TopScene)
@@ -45,6 +45,13 @@ public:
      * @param[in] iCallBackName コールバック名
      */
     virtual cocos2d::ui::Widget::ccWidgetTouchCallback initCcsOnTouchCallbackInfo(const std::string& iCallBackName) override;
+    
+protected:
+    
+    /**
+     * @brief シーンの情報を初期化する
+     */
+    virtual void initSceneInfo() override;
     
 private:
     

@@ -141,7 +141,7 @@ void LoadCsbFile::setContentSizeOfCsbParts(Node* iPartsNode,
                 CoordinateMesh* coordinateMeshTmp = dynamic_cast<CoordinateMesh*>(iPartsNode);
                 if (coordinateMeshTmp)
                 {
-                    coordinateMeshTmp->setContentSize(iContentSize);
+                    coordinateMeshTmp->initWithContentSize(iContentSize);
                 }
             }
                 break;

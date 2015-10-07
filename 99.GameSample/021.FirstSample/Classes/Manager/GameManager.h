@@ -13,9 +13,8 @@
 #include "ResInfoPool.h"
 #include "Singleton.h"
 
-USING_NS_COMMON
-//USING_NS_RESINFO_POOL
-using namespace Manager::ResInfo;
+USING_NS_COMMON;
+USING_NS_RESINFO;
 
 NS_BEGIN_MANAGER
 

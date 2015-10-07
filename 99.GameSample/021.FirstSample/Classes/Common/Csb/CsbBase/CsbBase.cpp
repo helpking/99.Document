@@ -14,24 +14,20 @@
 // Csbファイルローダー
 #include "LoadCsbFile.h"
 
-USING_NS_CC;
 USING_NS_COMMON_CSB;
 
 CsbBase::CsbBase()
-: uiLayerNode_(nullptr)
-, sceneSize_(Size::ZERO)
 {
     
 }
 CsbBase::~CsbBase()
 {
-    CC_SAFE_RELEASE_NULL(this->uiLayerNode_);
 }
 
 // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 void CsbBase::onEnter()
 {
-    cocos2d::CCNode::onEnter();
+    CCNode::onEnter();
     
     // 変数一覧の初期化
     this->initCcsMemberVariables();
@@ -45,11 +41,7 @@ void CsbBase::onEnter()
  */
 void CsbBase::initSceneInfo()
 {
-    this->sceneSize_ = CCDirector::getInstance()->getOpenGLView()->getDesignResolutionSize();
     
-    auto coordinateMeshNode = Singleton<LoadCsbFile>::getInstance()->loadPartsNormal(ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH,
-                                                                                     this->sceneSize_);
-    this->getUILayer()->addChild(coordinateMeshNode);
 }
 
 /**
@@ -57,20 +49,19 @@ void CsbBase::initSceneInfo()
  */
 void CsbBase::initCcsMemberVariables()
 {
-    CSB_MEMBER_VARIABLE_ASSIGNER(this, "uiLayerNode", cocos2d::Node*, this->uiLayerNode_);
 }
 
-cocos2d::ui::Widget::ccWidgetTouchCallback CsbBase::onLocateTouchCallback(const std::string &callBackName)
+ui::Widget::ccWidgetTouchCallback CsbBase::onLocateTouchCallback(const std::string &callBackName)
 {
     return this->initCcsOnTouchCallbackInfo(callBackName);
 }
 
-cocos2d::ui::Widget::ccWidgetClickCallback CsbBase::onLocateClickCallback(const std::string &callBackName)
+ui::Widget::ccWidgetClickCallback CsbBase::onLocateClickCallback(const std::string &callBackName)
 {
     return this->initCcsOnClickCallbackInfo(callBackName);
 }
 
-cocos2d::ui::Widget::ccWidgetEventCallback CsbBase::onLocateEventCallback(const std::string &callBackName)
+ui::Widget::ccWidgetEventCallback CsbBase::onLocateEventCallback(const std::string &callBackName)
 {
     return this->initCcsOnEnentCallbackInfo(callBackName);
 }
@@ -79,7 +70,7 @@ cocos2d::ui::Widget::ccWidgetEventCallback CsbBase::onLocateEventCallback(const 
  * @brief タッチコールバックの初期化
  * @param[in] iCallBackName コールバック名
  */
-cocos2d::ui::Widget::ccWidgetTouchCallback CsbBase::initCcsOnTouchCallbackInfo(const std::string& iCallBackName)
+ui::Widget::ccWidgetTouchCallback CsbBase::initCcsOnTouchCallbackInfo(const std::string& iCallBackName)
 {
     if (iCallBackName == "onSceneTouch")
     {
@@ -92,7 +83,7 @@ cocos2d::ui::Widget::ccWidgetTouchCallback CsbBase::initCcsOnTouchCallbackInfo(c
  * @brief クリックコールバックの初期化
  * @param[in] iCallBackName コールバック名
  */
-cocos2d::ui::Widget::ccWidgetClickCallback CsbBase::initCcsOnClickCallbackInfo(const std::string& iCallBackName)
+ui::Widget::ccWidgetClickCallback CsbBase::initCcsOnClickCallbackInfo(const std::string& iCallBackName)
 {
     if (iCallBackName == "onSceneClick")
     {
@@ -105,7 +96,7 @@ cocos2d::ui::Widget::ccWidgetClickCallback CsbBase::initCcsOnClickCallbackInfo(c
  * @brief イベントコールバックの初期化
  * @param[in] iCallBackName コールバック名
  */
-cocos2d::ui::Widget::ccWidgetEventCallback CsbBase::initCcsOnEnentCallbackInfo(const std::string& iCallBackName)
+ui::Widget::ccWidgetEventCallback CsbBase::initCcsOnEnentCallbackInfo(const std::string& iCallBackName)
 {
     if (iCallBackName == "onSceneEvent")
     {

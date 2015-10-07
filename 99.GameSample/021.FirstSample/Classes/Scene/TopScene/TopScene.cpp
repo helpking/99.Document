@@ -18,7 +18,7 @@ using namespace std;
 using namespace cocos2d::ui;
 
 
-USING_NS_UISCENE
+USING_NS_UISCENE;
 
 // Csbファイルローダーを初期化する
 CSB_INIT_LOADER(TopScene)
@@ -38,7 +38,7 @@ TopScene::~TopScene()
 // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 void TopScene::onEnter()
 {
-    CsbBase::onEnter();
+    BaseScene::onEnter();
     
     //加载动画：
     timeline::ActionTimeline *action = NULL;
@@ -62,11 +62,22 @@ void TopScene::onEnter()
 }
 
 /**
+ * @brief シーンの情報を初期化する
+ */
+void TopScene::initSceneInfo()
+{
+    BaseScene::initSceneInfo();
+    auto coordinateMeshNode = Singleton<LoadCsbFile>::getInstance()->loadPartsNormal(ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH,
+                                                                                     this->getSceneSize());
+    this->getUILayer()->addChild(coordinateMeshNode);
+}
+
+/**
  * @brief 変数一覧の初期化
  */
 void TopScene::initCcsMemberVariables()
 {
-    CsbBase::initCcsMemberVariables();
+    BaseScene::initCcsMemberVariables();
     
     CSB_MEMBER_VARIABLE_ASSIGNER(this, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);
 }

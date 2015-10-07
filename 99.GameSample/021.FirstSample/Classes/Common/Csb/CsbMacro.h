@@ -11,7 +11,7 @@
 
 #include "CommonHeader.h"
 
-#define USING_NS_COMMON_CSB                  using namespace Common::Csb;
+#define USING_NS_COMMON_CSB                  using namespace Common::Csb
 #define NS_BEGIN_COMMON_CSB                  namespace Common {                     \
                                                  namespace Csb {
 #define NS_END_COMMON_CSB                        }                                  \

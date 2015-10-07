@@ -14,7 +14,8 @@
 
 NS_BEGIN_UIPARTS
 
-USING_NS_COMMON_CSB
+USING_NS_CC;
+USING_NS_COMMON_CSB;
 
 class CoordinateMesh
 : public CsbBase
@@ -25,6 +26,11 @@ public:
     ~CoordinateMesh();
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual void onEnter() override;
+    
+    /**
+     * @brief 変数一覧の初期化
+     */
+    virtual void initCcsMemberVariables() override;
     
     /**
      * @brief コンテンツサイズより、初期化を行う
@@ -39,6 +45,8 @@ private:
      * @param[in] iContentSize コンテンツサイズ
      */
     void initLineInfo(const cocos2d::Size& iContentSize);
+    
+    ParticleSystemQuad* Particle_1_;
 };
 
 // CSBファイルのローダー

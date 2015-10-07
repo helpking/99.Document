@@ -29,16 +29,6 @@
           <AbstractNodeData Name="uiLayerNode" ActionTag="1328849840" Tag="89" IconVisible="True" RightMargin="960.0000" TopMargin="640.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="DebugMeshNode" ActionTag="1924476703" Tag="42" IconVisible="True" RightMargin="-960.0000" TopMargin="-640.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                <Size X="960.0000" Y="640.0000" />
-                <AnchorPoint />
-                <Position />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="Parts/CoordinateMesh.csd" Plist="" />
-              </AbstractNodeData>
               <AbstractNodeData Name="buttonListNode" ActionTag="-1254322717" Tag="100" IconVisible="True" LeftMargin="850.0000" RightMargin="-850.0000" TopMargin="-550.0000" BottomMargin="550.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>

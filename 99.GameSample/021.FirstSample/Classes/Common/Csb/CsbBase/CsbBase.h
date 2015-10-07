@@ -11,6 +11,8 @@
 
 #include "CsbMacro.h"
 
+USING_NS_CC;
+
 NS_BEGIN_COMMON_CSB
 
 class CsbBase
@@ -41,27 +43,28 @@ public:
      * @brief タッチコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual cocos2d::ui::Widget::ccWidgetTouchCallback initCcsOnTouchCallbackInfo(const std::string& iCallBackName);
+    virtual ui::Widget::ccWidgetTouchCallback initCcsOnTouchCallbackInfo(const std::string& iCallBackName);
     
     /**
      * @brief クリックコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual cocos2d::ui::Widget::ccWidgetClickCallback initCcsOnClickCallbackInfo(const std::string& iCallBackName);
+    virtual ui::Widget::ccWidgetClickCallback initCcsOnClickCallbackInfo(const std::string& iCallBackName);
     
     /**
      * @brief イベントコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual cocos2d::ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName);
+    virtual ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName);
+
     
     /**
-     * @brief UILayerノードを取得する
-     * @return UILayerノード
+     * @brief Csbファイルより、ベイスサイズを取得する
+     * @return ベイスサイズ
      */
-    inline cocos2d::Node* getUILayer()
+    inline Size getCsbBaseSize()
     {
-        return this->uiLayerNode_;
+        return this->getContentSize();
     };
     
 protected:
@@ -70,13 +73,6 @@ protected:
      * @brief シーンの情報を初期化する
      */
     virtual void initSceneInfo();
-    
-private:
-    
-    cocos2d::Node* uiLayerNode_;
-    
-    // 画面のサイズ
-    cocos2d::Size sceneSize_;
 };
 
 NS_END_COMMON_CSB
