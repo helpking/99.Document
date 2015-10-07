@@ -48,7 +48,20 @@ void BaseScene::initCcsMemberVariables()
     }
     
     CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "UiBaseNode", cocos2d::Node*, this->UiBaseNode_);
+    
+    // UI系の初期化
+    if (this->UiBaseNode_)
+    {
+        this->initUIMemberVariables();
+    }
+    
     CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "EntityBaseNode", cocos2d::Node*, this->EntityBaseNode_);
+    
+    // エンティティ系の初期化
+    if (this->EntityBaseNode_)
+    {
+        this->initEntityMemberVariables();
+    }
 }
 
 /**

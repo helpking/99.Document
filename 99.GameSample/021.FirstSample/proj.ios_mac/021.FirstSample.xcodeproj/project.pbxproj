@@ -29,6 +29,8 @@
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
 		46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
+		46BDE1081BC5207000BB0B7B /* CsbMacro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46BDE1071BC5207000BB0B7B /* CsbMacro.cpp */; };
+		46BDE1091BC5207000BB0B7B /* CsbMacro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46BDE1071BC5207000BB0B7B /* CsbMacro.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -114,6 +116,7 @@
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		46880B8719C43A87006E1F66 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		46BDE1071BC5207000BB0B7B /* CsbMacro.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CsbMacro.cpp; path = Common/Csb/CsbMacro.cpp; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -363,6 +366,7 @@
 				467C526B1BD2174400A080E0 /* LoadCsbFile */,
 				4646DA0E1BA6B63A007F37FF /* CsbBase */,
 				467C52861BD2308B00A080E0 /* CsbMacro.h */,
+				46BDE1071BC5207000BB0B7B /* CsbMacro.cpp */,
 			);
 			name = Csb;
 			sourceTree = "<group>";
@@ -652,6 +656,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				46BDE1081BC5207000BB0B7B /* CsbMacro.cpp in Sources */,
 				EF123DAE1BC1800D00ECAC61 /* GameManager.cpp in Sources */,
 				467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
 				4608EE6C1BC4E22400E3304C /* BaseScene.cpp in Sources */,
@@ -674,6 +679,7 @@
 				4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				467C52A31BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
+				46BDE1091BC5207000BB0B7B /* CsbMacro.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */,
 				4608EE6D1BC4E22400E3304C /* BaseScene.cpp in Sources */,
 			);

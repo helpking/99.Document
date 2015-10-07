@@ -17,12 +17,15 @@
 #define NS_END_COMMON_CSB                        }                                  \
                                              }
 
+cocos2d::Node* RTNodeSearch(cocos2d::Node* iSearchRootNode, const char* iNodeName);
+
 // 変数の自動設定マクロ
-#define CSB_MEMBER_VARIABLE_ASSIGNER(TARGET, MEMBERNAME, MEMBERTYPE, MEMBER)        \
-if ( TARGET && (strcmp(MEMBERNAME, "") != 0) )                                      \
-{                                                                                   \
-MEMBER = static_cast<MEMBERTYPE>(TARGET->getChildByName(MEMBERNAME));               \
-}
+#define CSB_MEMBER_VARIABLE_ASSIGNER(TARGET, MEMBERNAME, MEMBERTYPE, MEMBER)                \
+        if ( TARGET && (strcmp(MEMBERNAME, "") != 0) )                                      \
+        {                                                                                   \
+            MEMBER = static_cast<MEMBERTYPE>(RTNodeSearch(TARGET,MEMBERNAME));              \
+        }
+
 //! CCSファイルローダーを作成する
 #define CSB_CREATE_LOADER(__CLASS_NAME__)           class __CLASS_NAME__;                                                                       \
                                                     class __CLASS_NAME__##Reader : public cocostudio::NodeReader                                \

@@ -67,7 +67,7 @@ public:
     /**
      * @brief 変数一覧の初期化
      */
-    virtual void initCcsMemberVariables() override;
+    void initCcsMemberVariables() override;
     
     /**
      * @brief タッチコールバックの初期化
@@ -121,6 +121,16 @@ protected:
     virtual void initSceneInfo();
     
     /**
+     * @brief UI系の変数一覧の初期化
+     */
+    virtual void initUIMemberVariables() {};
+    
+    /**
+     * @brief エンティティ系の変数一覧の初期化
+     */
+    virtual void initEntityMemberVariables() {};
+    
+    /**
      * @brief UIベイスノードを取得する
      * @return UIベイスノード
      */
@@ -156,6 +166,7 @@ private:
     
     //! シーンサイズ
     Size sceneSize_;
+    
 };
 
 NS_END_UISCENE

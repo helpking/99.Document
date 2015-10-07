@@ -73,13 +73,19 @@ void TopScene::initSceneInfo()
 }
 
 /**
- * @brief 変数一覧の初期化
+ * @brief UI系の変数一覧の初期化
  */
-void TopScene::initCcsMemberVariables()
+void TopScene::initUIMemberVariables()
 {
-    BaseScene::initCcsMemberVariables();
-    
     CSB_MEMBER_VARIABLE_ASSIGNER(this, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);
+}
+
+/**
+ * @brief エンティティ系の変数一覧の初期化
+ */
+void TopScene::initEntityMemberVariables()
+{
+    
 }
 
 /**

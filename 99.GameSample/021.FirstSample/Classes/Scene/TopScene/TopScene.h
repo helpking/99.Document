@@ -36,11 +36,6 @@ public:
     virtual void onAttackBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
     
     /**
-     * @brief 変数一覧の初期化
-     */
-    virtual void initCcsMemberVariables() override;
-    
-    /**
      * @brief タッチコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
@@ -52,6 +47,16 @@ protected:
      * @brief シーンの情報を初期化する
      */
     virtual void initSceneInfo() override;
+    
+    /**
+     * @brief UI系の変数一覧の初期化
+     */
+    virtual void initUIMemberVariables() override;
+    
+    /**
+     * @brief エンティティ系の変数一覧の初期化
+     */
+    virtual void initEntityMemberVariables() override;
     
 private:
     
