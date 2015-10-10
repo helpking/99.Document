@@ -49,13 +49,18 @@ void ResInfoPool::init()
     {
         // シーン
         // トップシーン
-        {E_RES_ID::E_SCENE_TOP,                    E_RES_TYPE::E_SCENE,            "TopScene",              "Scene/TopScene.csb"},
+        {E_RES_ID::E_SCENE_TOP,                     E_RES_TYPE::E_SCENE,
+            "TopScene",                             "Scene/TopScene.csb"},
         
         // パーツ
-        {E_RES_ID::E_PARTS_COORDINATE_MESH,        E_RES_TYPE::E_PARTS_NORMAL,      "CoordinateMesh",       "Parts/CoordinateMesh.csb"},
-        {E_RES_ID::E_PARTS_DEMO_PLAYER,            E_RES_TYPE::E_PARTS_ACTION,      "DemoPlayer",           "Parts/DemoPlayer.csb"},
-        {E_RES_ID::E_PARTS_ROLE,                   E_RES_TYPE::E_PARTS_ACTION,      "Role",                 "Parts/Role.csb"},
-        {E_RES_ID::E_PARTS_WINDMILL,               E_RES_TYPE::E_PARTS_ACTION,      "WindMill",             "Parts/WindMill.csb"},
+        {E_RES_ID::E_PARTS_COORDINATE_MESH,         E_RES_TYPE::E_PARTS_NORMAL,
+            "CoordinateMesh",                       "Parts/CoordinateMesh.csb"},
+        {E_RES_ID::E_PARTS_DEMO_PLAYER,             E_RES_TYPE::E_PARTS_ACTION,
+            "DemoPlayer",                           "Parts/DemoPlayer.csb"},
+        {E_RES_ID::E_PARTS_ROLE,                    E_RES_TYPE::E_PARTS_ACTION,
+            "Role",                                 "Parts/Role.csb"},
+        {E_RES_ID::E_PARTS_WINDMILL,                E_RES_TYPE::E_PARTS_ACTION,
+            "WindMill",                             "Parts/WindMill.csb"},
     };
     
     for (S_RES_INFO resInfoTmp : resInfo)

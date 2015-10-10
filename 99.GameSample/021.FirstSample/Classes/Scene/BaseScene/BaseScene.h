@@ -9,15 +9,11 @@
 #ifndef ___21_FirstSample__BaseScene__
 #define ___21_FirstSample__BaseScene__
 
+// LoadFileBase
+#include "LoadFileBase.h"
+
+// UI Header File
 #include "UICommon.h"
-
-#include "CsbBase.h"
-
-// Csbファイルローダー
-#include "LoadCsbFile.h"
-
-USING_NS_COMMON;
-USING_NS_COMMON_CSB;
 
 NS_BEGIN_UISCENE
 
@@ -48,7 +44,7 @@ enum class E_ZORDER_IDX
 };
 
 class BaseScene
-: public CsbBase
+: public LoadFileBase
 {
 public:
     
@@ -65,27 +61,27 @@ public:
     virtual void onEnter() override;
     
     /**
-     * @brief 変数一覧の初期化
+     * @brief ロードファイルで指定された、変数一覧を初期化にする
      */
-    void initCcsMemberVariables() override;
+    void initLoadFileMemberInfo() override;
     
     /**
      * @brief タッチコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual cocos2d::ui::Widget::ccWidgetTouchCallback initCcsOnTouchCallbackInfo(const std::string& iCallBackName) override;
+    virtual Widget::ccWidgetTouchCallback initOnTouchCallbackInfo(const std::string& iCallBackName) override;
     
     /**
      * @brief クリックコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual cocos2d::ui::Widget::ccWidgetClickCallback initCcsOnClickCallbackInfo(const std::string& iCallBackName) override;
+    virtual Widget::ccWidgetClickCallback initOnClickCallbackInfo(const std::string& iCallBackName) override;
     
     /**
      * @brief イベントコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual cocos2d::ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName) override;
+    virtual Widget::ccWidgetEventCallback initOnEnentCallbackInfo(const std::string& iCallBackName) override;
     
     /**
      * @brief ZOrderを取得する
@@ -106,9 +102,9 @@ public:
 protected:
     
     /**
-     * @brief Csbファイルの情報を初期化する
+     * @brief ロードファイルの情報を初期化する
      */
-    virtual void initCsbFileInfo() override;
+    virtual void initLoadFileInfo() override;
     
     /**
      * @brief シーンのZOrderの情報を
@@ -136,7 +132,7 @@ protected:
      * @brief UIベイスノードを取得する
      * @return UIベイスノード
      */
-    inline cocos2d::Node* getUiBaseNode()
+    inline Node* getUiBaseNode()
     {
         return this->UiBaseNode_;
     };
@@ -145,7 +141,7 @@ protected:
      * @brief エンティティベイスノードを取得する
      * @return エンティティベイスノード
      */
-    inline cocos2d::Node* getEntityBaseNode()
+    inline Node* getEntityBaseNode()
     {
         return this->EntityBaseNode_;
     };

@@ -106,10 +106,10 @@ bool TopScene::initEntityMemberVariables(Node* iEntityBaseNode)
  * @brief タッチコールバックの初期化
  * @param[in] iCallBackName コールバック名
  */
-cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::initCcsOnTouchCallbackInfo(const std::string& iCallBackName)
+cocos2d::ui::Widget::ccWidgetTouchCallback TopScene::initOnTouchCallbackInfo(const std::string& iCallBackName)
 {
     
-    ui::Widget::ccWidgetTouchCallback callback = BaseScene::initCcsOnTouchCallbackInfo(iCallBackName);
+    ui::Widget::ccWidgetTouchCallback callback = BaseScene::initOnTouchCallbackInfo(iCallBackName);
     if (callback)
     {
         return callback;

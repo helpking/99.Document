@@ -14,9 +14,6 @@
 #include "BaseScene.h"
 #include "UIButton.h"
 
-// Csbファイルローダー
-#include "LoadCsbFile.h"
-
 USING_NS_COMMON;
 USING_NS_COMMON_CSB;
 
@@ -32,14 +29,14 @@ public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual void onEnter() override;
     
-    virtual void onWalkBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
-    virtual void onAttackBtnTouch(cocos2d::Ref* sender, cocos2d::ui::Widget::TouchEventType type);
+    virtual void onWalkBtnTouch(cocos2d::Ref* sender, Widget::TouchEventType type);
+    virtual void onAttackBtnTouch(cocos2d::Ref* sender, Widget::TouchEventType type);
     
     /**
      * @brief タッチコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual cocos2d::ui::Widget::ccWidgetTouchCallback initCcsOnTouchCallbackInfo(const std::string& iCallBackName) override;
+    virtual Widget::ccWidgetTouchCallback initOnTouchCallbackInfo(const std::string& iCallBackName) override;
     
 protected:
     
@@ -64,7 +61,7 @@ private:
     
     timeline::ActionTimeline* demoPlayerAction_;
     
-    cocos2d::ui::Button* walkBtn_;
+    Button* walkBtn_;
     
 };
 

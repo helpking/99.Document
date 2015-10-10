@@ -9,17 +9,8 @@
 #ifndef _21_FirstSample_LibHeader_h
 #define _21_FirstSample_LibHeader_h
 
-#include "cocos2d.h"
+// MARK:HeaderFile
+#include "InterfaceLab.h"
 
-#include "cocostudio/CocoStudio.h"
-#include "cocostudio/WidgetCallBackHandlerProtocol.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
-
-// cocostudio
-#define USING_NS_COCOS_STUDIO                       using namespace cocostudio
-
-// cocostudio
-USING_NS_COCOS_STUDIO;
 
 #endif

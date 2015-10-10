@@ -31,11 +31,11 @@ void CoordinateMesh::onEnter()
 }
 
 /**
- * @brief 変数一覧の初期化
+ * @brief ロードファイルで指定された、変数一覧を初期化にする
  */
-void CoordinateMesh::initCcsMemberVariables()
+void CoordinateMesh::initLoadFileMemberInfo()
 {
-    BaseParts::initCcsMemberVariables();
+    BaseParts::initLoadFileMemberInfo();
 }
 
 /**

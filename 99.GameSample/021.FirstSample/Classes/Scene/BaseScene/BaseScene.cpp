@@ -32,15 +32,15 @@ BaseScene::~BaseScene()
 
 void BaseScene::onEnter()
 {
-    CsbBase::onEnter();
+    LoadFileBase::onEnter();
 }
 
 /**
- * @brief 変数一覧の初期化
+ * @brief ロードファイルで指定された、変数一覧を初期化にする
  */
-void BaseScene::initCcsMemberVariables()
+void BaseScene::initLoadFileMemberInfo()
 {
-    CsbBase::initCcsMemberVariables();
+    LoadFileBase::initLoadFileMemberInfo();
     
     if (this->getBaseNode() == nullptr)
     {
@@ -48,11 +48,11 @@ void BaseScene::initCcsMemberVariables()
     }
     
     // UI系の初期化
-    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "UiBaseNode", cocos2d::Node*, this->UiBaseNode_);
+    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "UiBaseNode", Node*, this->UiBaseNode_);
     this->initUIMemberVariables(this->UiBaseNode_);
     
     // エンティティ系の初期化
-    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "EntityBaseNode", cocos2d::Node*, this->EntityBaseNode_);
+    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "EntityBaseNode", Node*, this->EntityBaseNode_);
     this->initEntityMemberVariables(this->EntityBaseNode_);
 }
 
@@ -86,9 +86,9 @@ bool BaseScene::initEntityMemberVariables(Node* iEntityBaseNode)
  * @brief タッチコールバックの初期化
  * @param[in] iCallBackName コールバック名
  */
-ui::Widget::ccWidgetTouchCallback BaseScene::initCcsOnTouchCallbackInfo(const std::string& iCallBackName)
+Widget::ccWidgetTouchCallback BaseScene::initOnTouchCallbackInfo(const std::string& iCallBackName)
 {
-    ui::Widget::ccWidgetTouchCallback callback = CsbBase::initCcsOnTouchCallbackInfo(iCallBackName);
+    Widget::ccWidgetTouchCallback callback = LoadFileBase::initOnTouchCallbackInfo(iCallBackName);
     if (callback)
     {
         return callback;
@@ -100,9 +100,9 @@ ui::Widget::ccWidgetTouchCallback BaseScene::initCcsOnTouchCallbackInfo(const st
  * @brief クリックコールバックの初期化
  * @param[in] iCallBackName コールバック名
  */
-ui::Widget::ccWidgetClickCallback BaseScene::initCcsOnClickCallbackInfo(const std::string& iCallBackName)
+Widget::ccWidgetClickCallback BaseScene::initOnClickCallbackInfo(const std::string& iCallBackName)
 {
-    ui::Widget::ccWidgetClickCallback callback = CsbBase::initCcsOnClickCallbackInfo(iCallBackName);
+    Widget::ccWidgetClickCallback callback = LoadFileBase::initOnClickCallbackInfo(iCallBackName);
     if (callback)
     {
         return callback;
@@ -114,9 +114,9 @@ ui::Widget::ccWidgetClickCallback BaseScene::initCcsOnClickCallbackInfo(const st
  * @brief イベントコールバックの初期化
  * @param[in] iCallBackName コールバック名
  */
-cocos2d::ui::Widget::ccWidgetEventCallback BaseScene::initCcsOnEnentCallbackInfo(const std::string& iCallBackName)
+Widget::ccWidgetEventCallback BaseScene::initOnEnentCallbackInfo(const std::string& iCallBackName)
 {
-    ui::Widget::ccWidgetEventCallback callback = CsbBase::initCcsOnEnentCallbackInfo(iCallBackName);
+    Widget::ccWidgetEventCallback callback = LoadFileBase::initOnEnentCallbackInfo(iCallBackName);
     if (callback)
     {
         return callback;
@@ -125,9 +125,9 @@ cocos2d::ui::Widget::ccWidgetEventCallback BaseScene::initCcsOnEnentCallbackInfo
 }
 
 /**
- * @brief Csbファイルの情報を初期化する
+ * @brief ロードファイルの情報を初期化する
  */
-void BaseScene::initCsbFileInfo()
+void BaseScene::initLoadFileInfo()
 {
     // シーンの情報を初期化する
     this->initSceneInfo();
@@ -138,7 +138,7 @@ void BaseScene::initCsbFileInfo()
  */
 void BaseScene::initZOrderInfo()
 {
-    CsbBase::initZOrderInfo();
+    LoadFileBase::initZOrderInfo();
     
     if (this->UiBaseNode_)
     {

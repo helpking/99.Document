@@ -43,9 +43,9 @@ public:
     virtual void onEnter() override;
     
     /**
-     * @brief 変数一覧の初期化
+     * @brief ロードファイルで指定された、変数一覧を初期化にする
      */
-    virtual void initCcsMemberVariables() override;
+    virtual void initLoadFileMemberInfo() override;
     
     /**
      * @brief コンテンツサイズより、初期化を行う

@@ -19,7 +19,6 @@
 		4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
 		4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
 		467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */; };
-		467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52761BD21B2D00A080E0 /* CsbBase.cpp */; };
 		467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52791BD21B3400A080E0 /* LoadCsbFile.cpp */; };
 		467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C529B1BD243D700A080E0 /* SceneHistory.cpp */; };
 		467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C529B1BD243D700A080E0 /* SceneHistory.cpp */; };
@@ -79,6 +78,10 @@
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 		EF123DAE1BC1800D00ECAC61 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */; };
 		EF123DAF1BC1800D00ECAC61 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */; };
+		EF3C9AAA1BC95F230083CCB2 /* CocosStudioLab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF3C9AA91BC95F230083CCB2 /* CocosStudioLab.cpp */; };
+		EF3C9AAE1BC95F800083CCB2 /* CsbBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF3C9AAD1BC95F800083CCB2 /* CsbBase.cpp */; };
+		EF3C9ABC1BC98BA20083CCB2 /* CsbFileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF3C9ABB1BC98BA20083CCB2 /* CsbFileLoader.cpp */; };
+		EF3C9ABD1BC98BA20083CCB2 /* CsbFileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF3C9ABB1BC98BA20083CCB2 /* CsbFileLoader.cpp */; };
 		EFE3DE781BC571D500EB9C6F /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
 /* End PBXBuildFile section */
 
@@ -100,8 +103,6 @@
 		467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoordinateMesh.cpp; path = Parts/UI/CoordinateMesh/CoordinateMesh.cpp; sourceTree = "<group>"; };
 		467C52711BD21A5000A080E0 /* CoordinateMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateMesh.h; path = Parts/UI/CoordinateMesh/CoordinateMesh.h; sourceTree = "<group>"; };
 		467C52731BD21A8000A080E0 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UICommon.h; path = Parts/UI/UICommon.h; sourceTree = "<group>"; };
-		467C52761BD21B2D00A080E0 /* CsbBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CsbBase.cpp; path = Common/Csb/CsbBase/CsbBase.cpp; sourceTree = "<group>"; };
-		467C52771BD21B2D00A080E0 /* CsbBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CsbBase.h; path = Common/Csb/CsbBase/CsbBase.h; sourceTree = "<group>"; };
 		467C52791BD21B3400A080E0 /* LoadCsbFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadCsbFile.cpp; path = Common/Csb/LoadCsbFile/LoadCsbFile.cpp; sourceTree = "<group>"; };
 		467C527A1BD21B3400A080E0 /* LoadCsbFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadCsbFile.h; path = Common/Csb/LoadCsbFile/LoadCsbFile.h; sourceTree = "<group>"; };
 		467C52861BD2308B00A080E0 /* CsbMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CsbMacro.h; path = Common/Csb/CsbMacro.h; sourceTree = "<group>"; };
@@ -168,6 +169,12 @@
 		EF123DAC1BC1800D00ECAC61 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameManager.cpp; path = Manager/GameManager.cpp; sourceTree = "<group>"; };
 		EF123DAD1BC1800D00ECAC61 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameManager.h; path = Manager/GameManager.h; sourceTree = "<group>"; };
 		EF123DB01BC183ED00ECAC61 /* ManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerHeader.h; sourceTree = "<group>"; };
+		EF3C9AA71BC95F120083CCB2 /* InterfaceLab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = InterfaceLab.h; path = InterfaceLab/InterfaceLab.h; sourceTree = "<group>"; };
+		EF3C9AA81BC95F120083CCB2 /* LoadFileBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoadFileBase.h; path = InterfaceLab/LoadFileBase.h; sourceTree = "<group>"; };
+		EF3C9AA91BC95F230083CCB2 /* CocosStudioLab.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CocosStudioLab.cpp; path = InterfaceLab/CocosStudio/CocosStudioLab.cpp; sourceTree = "<group>"; };
+		EF3C9AAD1BC95F800083CCB2 /* CsbBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CsbBase.cpp; path = InterfaceLab/CocosStudio/CsbFile/CsbBase/CsbBase.cpp; sourceTree = "<group>"; };
+		EF3C9AB71BC988420083CCB2 /* FileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileLoader.h; path = InterfaceLab/FileLoader.h; sourceTree = "<group>"; };
+		EF3C9ABB1BC98BA20083CCB2 /* CsbFileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CsbFileLoader.cpp; path = InterfaceLab/CocosStudio/CsbFile/CsbFileLoader/CsbFileLoader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,15 +330,6 @@
 			name = TopScene;
 			sourceTree = "<group>";
 		};
-		4646DA0E1BA6B63A007F37FF /* CsbBase */ = {
-			isa = PBXGroup;
-			children = (
-				467C52761BD21B2D00A080E0 /* CsbBase.cpp */,
-				467C52771BD21B2D00A080E0 /* CsbBase.h */,
-			);
-			name = CsbBase;
-			sourceTree = "<group>";
-		};
 		467C52611BD1F22300A080E0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,7 +363,6 @@
 			children = (
 				467C52841BD22F6F00A080E0 /* Reader */,
 				467C526B1BD2174400A080E0 /* LoadCsbFile */,
-				4646DA0E1BA6B63A007F37FF /* CsbBase */,
 				467C52861BD2308B00A080E0 /* CsbMacro.h */,
 				46BDE1071BC5207000BB0B7B /* CsbMacro.cpp */,
 			);
@@ -446,6 +443,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EF3C9AA51BC95EA20083CCB2 /* InterfaceLab */,
 				467C52881BD2347C00A080E0 /* Manager */,
 				467C52611BD1F22300A080E0 /* Common */,
 				46C464B81BA7F363001D5DCA /* Parts */,
@@ -540,6 +538,51 @@
 				89AD4506B527F53C15871621 /* libcocos2d iOS.a */,
 			);
 			name = "ios-libs";
+			sourceTree = "<group>";
+		};
+		EF3C9AA51BC95EA20083CCB2 /* InterfaceLab */ = {
+			isa = PBXGroup;
+			children = (
+				EF3C9AA61BC95F060083CCB2 /* CocosStudio */,
+				EF3C9AA71BC95F120083CCB2 /* InterfaceLab.h */,
+				EF3C9AA81BC95F120083CCB2 /* LoadFileBase.h */,
+				EF3C9AB71BC988420083CCB2 /* FileLoader.h */,
+			);
+			name = InterfaceLab;
+			sourceTree = "<group>";
+		};
+		EF3C9AA61BC95F060083CCB2 /* CocosStudio */ = {
+			isa = PBXGroup;
+			children = (
+				EF3C9AAB1BC95F270083CCB2 /* CsbFile */,
+				EF3C9AA91BC95F230083CCB2 /* CocosStudioLab.cpp */,
+			);
+			name = CocosStudio;
+			sourceTree = "<group>";
+		};
+		EF3C9AAB1BC95F270083CCB2 /* CsbFile */ = {
+			isa = PBXGroup;
+			children = (
+				EF3C9AAF1BC977B60083CCB2 /* CsbFileLoader */,
+				EF3C9AAC1BC95F460083CCB2 /* CsbBase */,
+			);
+			name = CsbFile;
+			sourceTree = "<group>";
+		};
+		EF3C9AAC1BC95F460083CCB2 /* CsbBase */ = {
+			isa = PBXGroup;
+			children = (
+				EF3C9AAD1BC95F800083CCB2 /* CsbBase.cpp */,
+			);
+			name = CsbBase;
+			sourceTree = "<group>";
+		};
+		EF3C9AAF1BC977B60083CCB2 /* CsbFileLoader */ = {
+			isa = PBXGroup;
+			children = (
+				EF3C9ABB1BC98BA20083CCB2 /* CsbFileLoader.cpp */,
+			);
+			name = CsbFileLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -657,15 +700,17 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				EF3C9AAE1BC95F800083CCB2 /* CsbBase.cpp in Sources */,
 				46BDE1081BC5207000BB0B7B /* CsbMacro.cpp in Sources */,
+				EF3C9ABC1BC98BA20083CCB2 /* CsbFileLoader.cpp in Sources */,
 				EF123DAE1BC1800D00ECAC61 /* GameManager.cpp in Sources */,
 				467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
 				4608EE6C1BC4E22400E3304C /* BaseScene.cpp in Sources */,
 				4636EFF21BC3F1C300328A90 /* GameDraw.cpp in Sources */,
 				467C52A21BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
 				4608EE711BC4F54C00E3304C /* BaseParts.cpp in Sources */,
+				EF3C9AAA1BC95F230083CCB2 /* CocosStudioLab.cpp in Sources */,
 				467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */,
-				467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +727,7 @@
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				467C52A31BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
 				46BDE1091BC5207000BB0B7B /* CsbMacro.cpp in Sources */,
+				EF3C9ABD1BC98BA20083CCB2 /* CsbFileLoader.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */,
 				4608EE6D1BC4E22400E3304C /* BaseScene.cpp in Sources */,
 			);

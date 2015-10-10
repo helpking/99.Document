@@ -11,6 +11,7 @@
 
 #include "LibHeader.h"
 
+// MARK:NameSpace
 // パーツ
 #define USING_NS_UIPARTS                        using namespace UIParts
 #define NS_BEGIN_UIPARTS                        namespace UIParts {
@@ -20,5 +21,7 @@
 #define USING_NS_UISCENE                        using namespace UIScene
 #define NS_BEGIN_UISCENE                        namespace UIScene {
 #define NS_END_UISCENE                          }
+
+USING_NS_INTERFACE_LAB;
 
 #endif

@@ -9,19 +9,21 @@
 #ifndef ___21_FirstSample__BaseParts__
 #define ___21_FirstSample__BaseParts__
 
-#include "UICommon.h"
+// LoadFileBase
+#include "LoadFileBase.h"
 
-#include "CsbBase.h"
+// UI Header File
+#include "UICommon.h"
 
 // Csbファイルローダー
 #include "LoadCsbFile.h"
 
-USING_NS_COMMON_CSB;
+USING_NS_INTERFACE_LAB;
 
 NS_BEGIN_UIPARTS
 
 class BaseParts
-: public CsbBase
+: public LoadFileBase
 {
 public:
     
@@ -38,34 +40,34 @@ public:
     virtual void onEnter() override;
     
     /**
-     * @brief 変数一覧の初期化
+     * @brief ロードファイルで指定された、変数一覧を初期化にする
      */
-    virtual void initCcsMemberVariables() override;
+    virtual void initLoadFileMemberInfo() override;
     
     /**
      * @brief タッチコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual ui::Widget::ccWidgetTouchCallback initCcsOnTouchCallbackInfo(const std::string& iCallBackName) override;
+    virtual Widget::ccWidgetTouchCallback initOnTouchCallbackInfo(const std::string& iCallBackName) override;
     
     /**
      * @brief クリックコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual ui::Widget::ccWidgetClickCallback initCcsOnClickCallbackInfo(const std::string& iCallBackName) override;
+    virtual Widget::ccWidgetClickCallback initOnClickCallbackInfo(const std::string& iCallBackName) override;
     
     /**
      * @brief イベントコールバックの初期化
      * @param[in] iCallBackName コールバック名
      */
-    virtual ui::Widget::ccWidgetEventCallback initCcsOnEnentCallbackInfo(const std::string& iCallBackName) override;
+    virtual Widget::ccWidgetEventCallback initOnEnentCallbackInfo(const std::string& iCallBackName) override;
     
 protected:
     
     /**
-     * @brief Csbファイルの情報を初期化する
+     * @brief ロードファイルの情報を初期化する
      */
-    virtual void initCsbFileInfo() override;
+    virtual void initLoadFileInfo() override;
     
     /**
      * @brief パーツの情報を初期化する
@@ -78,7 +80,7 @@ protected:
      */
     inline Size getSceneSize()
     {
-        return this->getCsbBaseSize();
+        return this->getBaseSize();
     };
     
 private:

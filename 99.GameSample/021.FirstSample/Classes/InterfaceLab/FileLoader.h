@@ -1,37 +1,35 @@
 //
-//  LoadCsbFile.h
+//  FileLoader.h
 //  021.FirstSample
 //
-//  Created by 何 利強 on 2015/10/17.
+//  Created by 何利强 on 15-10-11.
 //
 //
 
-#ifndef ___21_FirstSample__LoadCsbFile__
-#define ___21_FirstSample__LoadCsbFile__
+#ifndef _21_FirstSample_FileLoader_h
+#define _21_FirstSample_FileLoader_h
 
-#include "CsbMacro.h"
+// MARK:Header File
+#include "InterfaceLab.h"
 
-USING_NS_CC;
-USING_NS_RESINFO;
-
-NS_BEGIN_COMMON_CSB
+NS_BEGIN_NS_INTERFACE_LAB
 
 /**
- * @brief Csbファイルをロードするクラス
+ * @brief ファイルローダー
  */
-class LoadCsbFile
+class FileLoader
 {
 public:
     
     /**
      * @brief コンストラクター
      */
-    LoadCsbFile();
+    FileLoader();
     
     /**
      * @brief デストラクター
      */
-    ~LoadCsbFile();
+    ~FileLoader();
     
     /**
      * @brief シーンをロードする
@@ -55,20 +53,16 @@ public:
     
 protected:
     
-private:
-    
     /**
-     * @brief Csbパーツノードのコンテンツサイズをセットする
-     * @param[in] iPartsNode Csbパーツノード
-     * @param[in] iContentSize コンテンツサイズ
-     * @param[in] iResId リソースID
+     * @brief クラス名で、ファイルローダーを登録する
+     * @param[in] iClassName クラス名
+     * @param[in] iInstance インスタンス
      */
-    void setContentSizeOfCsbParts(Node* iPartsNode,
-                                  const cocos2d::Size& iContentSize,
-                                  const ResInfoPool::E_RES_ID& iResId);
+    virtual void registFileLoaderObject(const std::string& iClassName,
+                                        ObjectFactory::Instance iInstance){};
     
 };
 
-NS_END_COMMON_CSB
+NS_END_NS_INTERFACE_LAB
 
-#endif /* defined(___21_FirstSample__LoadCsbFile__) */
+#endif
