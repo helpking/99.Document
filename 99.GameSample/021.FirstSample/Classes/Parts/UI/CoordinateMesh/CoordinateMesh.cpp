@@ -12,8 +12,8 @@
 USING_NS_UIPARTS;
 USING_NS_COMMON_GDRAW;
 
-// Csbファイルローダーを初期化する
-CSB_INIT_LOADER(CoordinateMesh);
+// ファイルローダーを初期化する
+FILE_LOADER_INIT(CoordinateMesh);
 
 CoordinateMesh::CoordinateMesh()
 {

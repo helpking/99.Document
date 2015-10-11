@@ -11,17 +11,15 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "Singleton.h"
+#include "UtilsFileLoader.h"
 
 USING_NS_CC;
-
-using namespace std;
-using namespace cocos2d::ui;
-
-
 USING_NS_UISCENE;
+USING_NS_INTERFACE_LAB;
+USING_NS_COMMON_UTILS;
 
-// Csbファイルローダーを初期化する
-CSB_INIT_LOADER(TopScene)
+// ファイルローダーを初期化する
+FILE_LOADER_INIT(TopScene)
 
 TopScene::TopScene()
 : demoPlayerAction_(nullptr)
@@ -42,23 +40,18 @@ void TopScene::onEnter()
     
     //加载动画：
     timeline::ActionTimeline *action = NULL;
-    action = Singleton<LoadCsbFile>::getInstance()->loadPartsAction(ResInfoPool::E_RES_ID::E_PARTS_ROLE);
+    action = Singleton<UtilsFileLoader>::getInstance()->loadActionFile(ResInfoPool::E_RES_ID::E_PARTS_ROLE);
     action->gotoFrameAndPlay(0, 25, true);
     this->runAction(action);
     
-    action = Singleton<LoadCsbFile>::getInstance()->loadPartsAction(ResInfoPool::E_RES_ID::E_PARTS_WINDMILL);
+    action = Singleton<UtilsFileLoader>::getInstance()->loadActionFile(ResInfoPool::E_RES_ID::E_PARTS_WINDMILL);
     action->gotoFrameAndPlay(0, 35, true);
     this->runAction(action);
     
-    this->demoPlayerAction_ = action = Singleton<LoadCsbFile>::getInstance()->loadPartsAction(ResInfoPool::E_RES_ID::E_PARTS_DEMO_PLAYER);
+    this->demoPlayerAction_ = Singleton<UtilsFileLoader>::getInstance()->loadActionFile(ResInfoPool::E_RES_ID::E_PARTS_DEMO_PLAYER);
     this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
     this->runAction(this->demoPlayerAction_);
     
-    if (this->walkBtn_)
-    {
-        this->walkBtn_->setEnabled(false);
-        this->walkBtn_->setTouchEnabled(false);
-    }
 }
 
 /**
@@ -67,8 +60,7 @@ void TopScene::onEnter()
 void TopScene::initSceneInfo()
 {
     BaseScene::initSceneInfo();
-    auto coordinateMeshNode = Singleton<LoadCsbFile>::getInstance()->loadPartsNormal(ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH,
-                                                                                     this->getSceneSize());
+    auto coordinateMeshNode = Singleton<UtilsFileLoader>::getInstance()->loadPartsFile(ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH, this->getSceneSize());
     this->getUiBaseNode()->addChild(coordinateMeshNode);
 }
 
@@ -82,7 +74,7 @@ bool TopScene::initUIMemberVariables(Node* iUIBaseNode)
     {
         return false;
     }
-    CSB_MEMBER_VARIABLE_ASSIGNER(iUIBaseNode, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);;
+    FILE_MEMBER_VARIABLE_ASSIGNER(iUIBaseNode, "walkBtn", Button*, this->walkBtn_);;
     
     return true;
 }

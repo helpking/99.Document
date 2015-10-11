@@ -8,9 +8,10 @@
 #include "Singleton.h"
 
 // Csbファイルローダー
-#include "LoadCsbFile.h"
+#include "UtilsFileLoader.h"
 
 USING_NS_CC;
+USING_NS_COMMON_UTILS;
 
 using namespace cocostudio::timeline;
 
@@ -40,7 +41,7 @@ bool MainScene::init()
     }
     
     // トップシーンでロードする
-    auto rootNode = Singleton<LoadCsbFile>::getInstance()->loadScene(ResInfoPool::E_RES_ID::E_SCENE_TOP);
+    auto rootNode = Singleton<UtilsFileLoader>::getInstance()->loadSceneFile(ResInfoPool::E_RES_ID::E_SCENE_TOP);
     addChild(rootNode);
     
     return true;

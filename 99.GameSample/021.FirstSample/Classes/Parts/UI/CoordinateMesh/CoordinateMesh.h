@@ -15,7 +15,6 @@
 NS_BEGIN_UIPARTS
 
 USING_NS_CC;
-USING_NS_COMMON_CSB;
 
 /**
  * @brief メッシュタイプ
@@ -63,8 +62,8 @@ private:
 
 };
 
-// CSBファイルのローダー
-CSB_CREATE_LOADER(CoordinateMesh);
+// ファイルのローダー
+FILE_LOADER_CREATE(CoordinateMesh);
 
 NS_END_UIPARTS
 

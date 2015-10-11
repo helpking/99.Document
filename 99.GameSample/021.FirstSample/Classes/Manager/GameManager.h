@@ -13,7 +13,6 @@
 #include "ResInfoPool.h"
 #include "Singleton.h"
 
-USING_NS_COMMON;
 USING_NS_RESINFO;
 
 NS_BEGIN_MANAGER

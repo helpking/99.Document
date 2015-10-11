@@ -51,7 +51,7 @@ void LoadFileBase::initLoadFileInfo()
  */
 void LoadFileBase::initLoadFileMemberInfo()
 {
-    CSB_MEMBER_VARIABLE_ASSIGNER(this, "BaseNode", Node*, this->BaseNode_);
+    FILE_MEMBER_VARIABLE_ASSIGNER(this, "BaseNode", Node*, this->BaseNode_);
 }
 
 Widget::ccWidgetTouchCallback LoadFileBase::onLocateTouchCallback(const std::string &callBackName)

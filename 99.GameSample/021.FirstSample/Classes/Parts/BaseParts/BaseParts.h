@@ -15,9 +15,6 @@
 // UI Header File
 #include "UICommon.h"
 
-// Csbファイルローダー
-#include "LoadCsbFile.h"
-
 USING_NS_INTERFACE_LAB;
 
 NS_BEGIN_UIPARTS

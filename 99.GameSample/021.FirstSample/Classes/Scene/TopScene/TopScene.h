@@ -14,9 +14,6 @@
 #include "BaseScene.h"
 #include "UIButton.h"
 
-USING_NS_COMMON;
-USING_NS_COMMON_CSB;
-
 NS_BEGIN_UISCENE
 
 class TopScene
@@ -65,8 +62,8 @@ private:
     
 };
 
-// CSBファイルのローダー
-CSB_CREATE_LOADER(TopScene);
+// ファイルのローダー
+FILE_LOADER_CREATE(TopScene);
 
 NS_END_UISCENE
 

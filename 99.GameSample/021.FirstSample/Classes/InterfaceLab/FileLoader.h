@@ -14,6 +14,10 @@
 
 NS_BEGIN_NS_INTERFACE_LAB
 
+// MARK:マクロ定義
+// Csbファイル読み込む用名
+#define FILE_READER_NAME(__CSB_NAME__)           CCString::createWithFormat("%sReader", __CSB_NAME__)->getCString()
+
 /**
  * @brief ファイルローダー
  */
@@ -32,34 +36,67 @@ public:
     ~FileLoader();
     
     /**
-     * @brief シーンをロードする
-     * @param[in] iSceneId シーンID
+     * @brief ファイルをロードする
+     * @param[in] iResInfo リソース情報
+     * @param[in] iContentSize コンテンツサイズ
      */
-    Node* loadScene(const ResInfoPool::E_RES_ID iSceneId);
+    Node* loadFile(const ResInfoPool::S_RES_INFO& iResInfo,
+                   const Size& iContentSize = Size::ZERO);
     
     /**
-     * @brief Csbファイル(普通)をロードする
+     * @brief アクションファイルをロードする
+     * @param[in] iResId リソースID
+     */
+    timeline::ActionTimeline* loadActionFile(const ResInfoPool::E_RES_ID iResId);
+    
+    /**
+     * @brief シーンをロードする
+     * @param[in] iSceneId シーンID
+     * @param[in] iContentSize コンテンツサイズ
+     */
+    Node* loadSceneFile(const ResInfoPool::E_RES_ID iSceneId,
+                        const Size& iContentSize = Size::ZERO);
+    
+    /**
+     * @brief パーツファイル(普通)をロードする
      * @param[in] iPartsId パーツID
      * @param[in] iContentSize コンテンツサイズ
      */
-    Node* loadPartsNormal(const ResInfoPool::E_RES_ID iPartsId,
-                          const cocos2d::Size& iContentSize = cocos2d::Size::ZERO);
-    
-    /**
-     * @brief Csbファイル(アクション)をロードする
-     * @param[in] iPartsActionId パーツアクションID
-     */
-    timeline::ActionTimeline* loadPartsAction(const ResInfoPool::E_RES_ID iPartsActionId);
+    Node* loadPartsFile(const ResInfoPool::E_RES_ID iPartsId,
+                        const Size& iContentSize = cocos2d::Size::ZERO);
     
 protected:
     
     /**
-     * @brief クラス名で、ファイルローダーを登録する
-     * @param[in] iClassName クラス名
-     * @param[in] iInstance インスタンス
+     * @brief ロードファイルノードを作成する
+     * @param[in] iFilePath ファイルパス
+     * @return ロードファイルノード
      */
-    virtual void registFileLoaderObject(const std::string& iClassName,
-                                        ObjectFactory::Instance iInstance){};
+    Node* createLoadFileNode(const std::string& iFilePath);
+    
+    /**
+     * @brief ロードファイルノードを作成する
+     * @param[in] iFilePath ファイルパス
+     * @return ロードファイルノード
+     */
+    timeline::ActionTimeline* createLoadActionTimeLine(const std::string& iFilePath);
+    
+    /**
+     * @brief リソースIDで、ファイルローダーを登録する
+     * @param[in] iResId リソースID
+     * @return 登録成功フラグ
+     */
+    virtual bool registFileLoaderObject(const ResInfoPool::E_RES_ID iResId) { return true; };
+    
+    /**
+     * @brief ロードされたファイルの情報をリセットする
+     * @param[in] iPartsNode ロードされたファイルノード
+     * @param[in] iContentSize コンテンツサイズ
+     * @param[in] iResId リソースID
+     */
+    virtual void resetLoadFileInfo(Node* iLoaderFileNode,
+                                   const Size& iContentSize,
+                                   const ResInfoPool::E_RES_ID& iResId) {};
     
 };
 

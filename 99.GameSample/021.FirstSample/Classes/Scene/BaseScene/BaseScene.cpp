@@ -48,11 +48,11 @@ void BaseScene::initLoadFileMemberInfo()
     }
     
     // UI系の初期化
-    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "UiBaseNode", Node*, this->UiBaseNode_);
+    FILE_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "UiBaseNode", Node*, this->UiBaseNode_);
     this->initUIMemberVariables(this->UiBaseNode_);
     
     // エンティティ系の初期化
-    CSB_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "EntityBaseNode", Node*, this->EntityBaseNode_);
+    FILE_MEMBER_VARIABLE_ASSIGNER(this->getBaseNode(), "EntityBaseNode", Node*, this->EntityBaseNode_);
     this->initEntityMemberVariables(this->EntityBaseNode_);
 }
 
