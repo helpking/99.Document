@@ -35,4 +35,18 @@ void GameManager::init()
 
 }
 
+/**
+ * @brief Plistファイルを読み込む
+ * @param[in] iFilePath ファイル
+ */
+void GameManager::loadPlistFile(const char* iFilePath)
+{
+    std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename(iFilePath);
+    CCDictionary* fileInfo = CCDictionary::createWithContentsOfFileThreadSafe(fullPath.c_str());
+    if (fileInfo)
+    {
+        
+    }
+}
+
 

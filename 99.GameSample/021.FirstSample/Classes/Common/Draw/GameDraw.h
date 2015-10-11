@@ -18,6 +18,16 @@ class GameDraw
 public:
     
     /**
+     * @brief コンストラクター
+     */
+    GameDraw();
+    
+    /**
+     * @brief デストラクタ
+     */
+    ~GameDraw();
+    
+    /**
      * @brief ラインを描画する
      * @param[in] iContentSize コンテンツサイズ
      * @param[in] iColor 色
@@ -27,16 +37,6 @@ public:
                                          const cocos2d::Color4B& iColor);
     
 protected:
-    
-    /**
-     * @brief コンストラクター
-     */
-    GameDraw();
-    
-    /**
-     * @brief デストラクタ
-     */
-    ~GameDraw();
     
 private:
 };

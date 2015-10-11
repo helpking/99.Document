@@ -75,7 +75,7 @@ protected:
      * @brief パーツサイズを取得する
      * @return パーツサイズ
      */
-    inline Size getSceneSize()
+    inline Size getPartsSize()
     {
         return this->getBaseSize();
     };

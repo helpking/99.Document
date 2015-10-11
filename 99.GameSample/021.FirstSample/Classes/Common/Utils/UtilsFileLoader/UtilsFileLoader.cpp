@@ -97,5 +97,20 @@ void UtilsFileLoader::resetLoadFileInfo(Node* iLoaderFileNode,
                                         const Size& iContentSize,
                                         const ResInfoPool::E_RES_ID& iResId)
 {
-    
+    switch (iResId)
+    {
+            // パーツ
+        case ResInfoPool::E_RES_ID::E_PARTS_COORDINATE_MESH:
+        {
+            CoordinateMesh* nodeTmp = dynamic_cast<CoordinateMesh*>(iLoaderFileNode);
+            if (nodeTmp)
+            {
+                nodeTmp->initWithContentSize(iContentSize);
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
 }

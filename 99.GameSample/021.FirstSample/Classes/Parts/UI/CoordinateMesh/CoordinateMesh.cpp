@@ -7,6 +7,7 @@
 //
 
 #include "CoordinateMesh.h"
+#include "Singleton.h"
 #include "GameDraw.h"
 
 USING_NS_UIPARTS;
@@ -28,6 +29,9 @@ CoordinateMesh::~CoordinateMesh()
 void CoordinateMesh::onEnter()
 {
     BaseParts::onEnter();
+    
+    // ライン情報を初期化する
+    this->initLineInfo(this->getPartsSize());
 }
 
 /**
@@ -49,9 +53,6 @@ void CoordinateMesh::initWithContentSize(const cocos2d::Size& iContentSize)
     
     // 背景色を設定する
     this->setColor(cocos2d::Color3B::GRAY);
-    
-    // ライン情報を初期化する
-    this->initLineInfo(iContentSize);
 }
 
 /**
@@ -60,5 +61,12 @@ void CoordinateMesh::initWithContentSize(const cocos2d::Size& iContentSize)
  */
 void CoordinateMesh::initLineInfo(const cocos2d::Size& iContentSize)
 {
+    Size sizeTmp = Size::ZERO;
+    sizeTmp.width = iContentSize.width;
+    sizeTmp.height = 2.0f;
     
+    Node* pLineTmp = Singleton<GameDraw>::getInstance()->drawLine(sizeTmp, Color4B::RED);
+    
+    pLineTmp->setPosition(Vec2(0.0f, 50.0f));
+    this->getBaseNode()->addChild(pLineTmp);
 }
