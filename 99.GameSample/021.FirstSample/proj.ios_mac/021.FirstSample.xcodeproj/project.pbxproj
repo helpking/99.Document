@@ -15,6 +15,10 @@
 		4608EE6D1BC4E22400E3304C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4608EE6A1BC4E22400E3304C /* BaseScene.cpp */; };
 		4608EE711BC4F54C00E3304C /* BaseParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4608EE6F1BC4F54C00E3304C /* BaseParts.cpp */; };
 		4608EE721BC4F54C00E3304C /* BaseParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4608EE6F1BC4F54C00E3304C /* BaseParts.cpp */; };
+		460A72D21BCC993000AEB23E /* UtilsLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 460A72D01BCC993000AEB23E /* UtilsLog.cpp */; };
+		460A72D31BCC993000AEB23E /* UtilsLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 460A72D01BCC993000AEB23E /* UtilsLog.cpp */; };
+		460A72D61BCC9DDE00AEB23E /* CommonLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 460A72D41BCC9DDE00AEB23E /* CommonLib.cpp */; };
+		460A72D71BCC9DDE00AEB23E /* CommonLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 460A72D41BCC9DDE00AEB23E /* CommonLib.cpp */; };
 		4636EFF21BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
 		4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
 		4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
@@ -99,6 +103,11 @@
 		4608EE6B1BC4E22400E3304C /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseScene.h; path = Scene/BaseScene/BaseScene.h; sourceTree = "<group>"; };
 		4608EE6F1BC4F54C00E3304C /* BaseParts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseParts.cpp; path = Parts/BaseParts/BaseParts.cpp; sourceTree = "<group>"; };
 		4608EE701BC4F54C00E3304C /* BaseParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseParts.h; path = Parts/BaseParts/BaseParts.h; sourceTree = "<group>"; };
+		460A72D01BCC993000AEB23E /* UtilsLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UtilsLog.cpp; path = Common/Utils/UtilsLog/UtilsLog.cpp; sourceTree = "<group>"; };
+		460A72D11BCC993000AEB23E /* UtilsLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsLog.h; path = Common/Utils/UtilsLog/UtilsLog.h; sourceTree = "<group>"; };
+		460A72D41BCC9DDE00AEB23E /* CommonLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommonLib.cpp; path = Common/CommonLib.cpp; sourceTree = "<group>"; };
+		460A72D51BCC9DDE00AEB23E /* CommonLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonLib.h; path = Common/CommonLib.h; sourceTree = "<group>"; };
+		460A72D81BCCC07500AEB23E /* MacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
 		4636EFF01BC3F1C300328A90 /* GameDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameDraw.cpp; path = Common/Draw/GameDraw.cpp; sourceTree = "<group>"; };
 		4636EFF11BC3F1C300328A90 /* GameDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDraw.h; path = Common/Draw/GameDraw.h; sourceTree = "<group>"; };
 		4646DA081BA6A5A7007F37FF /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopScene.cpp; path = Scene/TopScene/TopScene.cpp; sourceTree = "<group>"; };
@@ -306,6 +315,15 @@
 			name = BaseParts;
 			sourceTree = "<group>";
 		};
+		460A72CF1BCC990E00AEB23E /* UtilsLog */ = {
+			isa = PBXGroup;
+			children = (
+				460A72D01BCC993000AEB23E /* UtilsLog.cpp */,
+				460A72D11BCC993000AEB23E /* UtilsLog.h */,
+			);
+			name = UtilsLog;
+			sourceTree = "<group>";
+		};
 		4636EFEF1BC3F1A700328A90 /* Draw */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +357,8 @@
 				4636EFEF1BC3F1A700328A90 /* Draw */,
 				467C52741BD21B0B00A080E0 /* Utils */,
 				467C52981BD2390400A080E0 /* CommonHeader.h */,
+				460A72D41BCC9DDE00AEB23E /* CommonLib.cpp */,
+				460A72D51BCC9DDE00AEB23E /* CommonLib.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -354,6 +374,7 @@
 		467C52741BD21B0B00A080E0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				460A72CF1BCC990E00AEB23E /* UtilsLog */,
 				46D30CD41BCA4BB200E7087B /* UtilsFileLoader */,
 			);
 			name = Utils;
@@ -435,6 +456,7 @@
 				46880B8619C43A87006E1F66 /* MainScene.cpp */,
 				46880B8719C43A87006E1F66 /* MainScene.h */,
 				467C52871BD230D000A080E0 /* LibHeader.h */,
+				460A72D81BCCC07500AEB23E /* MacroHeader.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -702,7 +724,9 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */,
+				460A72D21BCC993000AEB23E /* UtilsLog.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				460A72D61BCC9DDE00AEB23E /* CommonLib.cpp in Sources */,
 				EF3C9AAE1BC95F800083CCB2 /* CsbBase.cpp in Sources */,
 				46D30CDB1BCA614200E7087B /* UtilsFileLoader.cpp in Sources */,
 				EF3C9ABC1BC98BA20083CCB2 /* FileLoader.cpp in Sources */,
@@ -729,6 +753,8 @@
 				4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				467C52A31BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
+				460A72D71BCC9DDE00AEB23E /* CommonLib.cpp in Sources */,
+				460A72D31BCC993000AEB23E /* UtilsLog.cpp in Sources */,
 				EF3C9ABD1BC98BA20083CCB2 /* FileLoader.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */,
 				46D30CD31BCA417E00E7087B /* InterfaceLab.cpp in Sources */,
