@@ -10,6 +10,7 @@
 #define ___21_FirstSample__UtilsFileLoader__
 
 #include "CommonHeader.h"
+#include "InterfaceLab.h"
 #include "FileLoader.h"
 
 USING_NS_INTERFACE_LAB;

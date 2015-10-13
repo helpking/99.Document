@@ -9,7 +9,7 @@
 #ifndef _21_FirstSample_CommonHeader_h
 #define _21_FirstSample_CommonHeader_h
 
-#include "LibHeader.h"
+#include "InterfaceLab.h"
 
 #define USING_NS_COMMON                         using namespace Common
 #define NS_BEGIN_NS_COMMON                      namespace Common {

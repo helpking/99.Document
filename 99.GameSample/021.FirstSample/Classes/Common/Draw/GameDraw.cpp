@@ -32,12 +32,12 @@ GameDraw::~GameDraw()
  * @param[in] iColor 色
  * @return 描画したライン
  */
-cocos2d::LayerColor* GameDraw::drawLine(const cocos2d::Size& iContentSize,
-                                       const cocos2d::Color4B& iColor)
+LayerColor* GameDraw::drawLine(const Size& iContentSize,
+                               const Color4B& iColor)
 {
-    cocos2d::LayerColor* retLayer = cocos2d::LayerColor::create(iColor,
-                                                                iContentSize.width,
-                                                                iContentSize.height);
+    LayerColor* retLayer = cocos2d::LayerColor::create(iColor,
+                                                       iContentSize.width,
+                                                       iContentSize.height);
     
     return retLayer;
 }

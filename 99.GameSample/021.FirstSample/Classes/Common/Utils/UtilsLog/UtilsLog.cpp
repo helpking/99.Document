@@ -49,7 +49,7 @@ void UtilsLog::OutputInfo(const char* iFormat, ...)
     
     const char* SystemDateTime = CommonLib::getSystemDateTime();
     
-    CCLOG("[%s][Info][%s][Debug:C I/A]", SystemDateTime, szBuf);
+    CCLOG("[%s][Info   ][Debug:C I/A][%s]", SystemDateTime, szBuf);
 #endif
 }
 
@@ -69,7 +69,7 @@ void UtilsLog::OutputWarning(const char* iFormat, ...)
     
     const char* SystemDateTime = CommonLib::getSystemDateTime();
     
-    CCLOG("[%s][Warning][%s][Debug:C I/A]", SystemDateTime, szBuf);
+    CCLOG("[%s][Warning][Debug:C I/A][%s]", SystemDateTime, szBuf);
 #endif
 }
 
@@ -89,7 +89,7 @@ void UtilsLog::OutputError(const char* iFormat, ...)
     
     const char* SystemDateTime = CommonLib::getSystemDateTime();
     
-    CCLOG("[%s][Error][%s][Debug:C I/A]", SystemDateTime, szBuf);
+    CCLOG("[%s][Error  ][Debug:C I/A][%s]", SystemDateTime, szBuf);
 #endif
 }
 

@@ -33,8 +33,8 @@ public:
      * @param[in] iColor 色
      * @return 描画したライン
      */
-    static cocos2d::LayerColor* drawLine(const cocos2d::Size& iContentSize,
-                                         const cocos2d::Color4B& iColor);
+    static LayerColor* drawLine(const Size& iContentSize,
+                                const Color4B& iColor);
     
 protected:
     

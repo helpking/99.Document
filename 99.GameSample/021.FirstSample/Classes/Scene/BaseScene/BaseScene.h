@@ -9,11 +9,13 @@
 #ifndef ___21_FirstSample__BaseScene__
 #define ___21_FirstSample__BaseScene__
 
+// Header File
+#include "AppPlatform.h"
+
 // LoadFileBase
 #include "LoadFileBase.h"
 
-// UI Header File
-#include "UICommon.h"
+USING_NS_INTERFACE_LAB;
 
 NS_BEGIN_UISCENE
 

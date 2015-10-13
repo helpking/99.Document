@@ -13,7 +13,7 @@
 #include "LoadFileBase.h"
 
 // UI Header File
-#include "UICommon.h"
+#include "AppPlatform.h"
 
 USING_NS_INTERFACE_LAB;
 

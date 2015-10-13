@@ -115,7 +115,7 @@
 		467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoordinateMesh.cpp; path = Parts/UI/CoordinateMesh/CoordinateMesh.cpp; sourceTree = "<group>"; };
 		467C52711BD21A5000A080E0 /* CoordinateMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateMesh.h; path = Parts/UI/CoordinateMesh/CoordinateMesh.h; sourceTree = "<group>"; };
 		467C52731BD21A8000A080E0 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UICommon.h; path = Parts/UI/UICommon.h; sourceTree = "<group>"; };
-		467C52871BD230D000A080E0 /* LibHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibHeader.h; sourceTree = "<group>"; };
+		467C52871BD230D000A080E0 /* AppPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPlatform.h; sourceTree = "<group>"; };
 		467C52981BD2390400A080E0 /* CommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonHeader.h; path = Common/CommonHeader.h; sourceTree = "<group>"; };
 		467C529B1BD243D700A080E0 /* SceneHistory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneHistory.cpp; path = Manager/History/SceneHistory/SceneHistory.cpp; sourceTree = "<group>"; };
 		467C529C1BD243D700A080E0 /* SceneHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneHistory.h; path = Manager/History/SceneHistory/SceneHistory.h; sourceTree = "<group>"; };
@@ -455,7 +455,7 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* MainScene.cpp */,
 				46880B8719C43A87006E1F66 /* MainScene.h */,
-				467C52871BD230D000A080E0 /* LibHeader.h */,
+				467C52871BD230D000A080E0 /* AppPlatform.h */,
 				460A72D81BCCC07500AEB23E /* MacroHeader.h */,
 			);
 			name = Classes;

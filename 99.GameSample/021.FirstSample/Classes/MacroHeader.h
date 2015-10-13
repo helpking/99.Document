@@ -10,9 +10,10 @@
 #define _21_FirstSample_MacroHeader_h
 
 #include "UtilsLog.h"
-//#include "Singleton.h"
 
 //! ログ
-#define LOGINFO(format, ...)      InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputInfo(format, ##__VA_ARGS__)
+#define NOR_LOG(format, ...)        InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputInfo(format, ##__VA_ARGS__)
+#define WARNING_LOG(format, ...)    InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputWarning(format, ##__VA_ARGS__)
+#define ERR_LOG(format, ...)        InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputError(format, ##__VA_ARGS__)
 
 #endif
