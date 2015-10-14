@@ -11,9 +11,9 @@
 USING_NS_INTERFACE_LAB;
 
 /**
- * @brief コンストラクター
+ * @brief コンストラクタ
  */
-Interface::Interface()
+EngineInterface::EngineInterface()
 {
     
 }
@@ -21,8 +21,7 @@ Interface::Interface()
 /**
  * @brief デストラクタ
  */
-Interface::~Interface()
+EngineInterface::~EngineInterface()
 {
     
 }
-

@@ -1,12 +1,12 @@
 //
-//  InterfaceLab.cpp
+//  InterfaceMacro.cpp
 //  021.FirstSample
 //
-//  Created by 何 利強 on 2015/10/11.
+//  Created by 何 利強 on 2015/10/14.
 //
 //
 
-#include "InterfaceLab.h"
+#include "InterfaceMacro.h"
 
 /**
  * @brief 指定されたノード名で、ルートロードから、ノードを探す
@@ -16,7 +16,7 @@
  */
 Node* IRTNodeSearch(Node* iSearchRootNode, const char* iNodeName)
 {
-    cocos2d::Node* pRet = iSearchRootNode->getChildByName(iNodeName);
+    Node* pRet = iSearchRootNode->getChildByName(iNodeName);
     if (pRet == nullptr)
     {
         for (auto loopNode : iSearchRootNode->getChildren())

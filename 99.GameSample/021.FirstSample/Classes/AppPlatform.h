@@ -11,17 +11,15 @@
 
 #pragma mark -
 #pragma mark MARK:HeaderFile
-#include "InterfaceLab.h"
-#include "ManagerHeader.h"
+
+#include "ManagerMacro.h"
+#include "InterfaceMacro.h"
+#include "CommonMacro.h"
 #include "CommonLib.h"
 #include "UICommon.h"
-
-#include "MacroHeader.h"
 
 #pragma mark -
 #pragma mark NameSpace
 
-USING_NS_CC;
-USING_NS_CC_UI;
 
 #endif
