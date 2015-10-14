@@ -35,10 +35,6 @@ TopScene::~TopScene()
 // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 void TopScene::onEnter()
 {
-    
-    LOGINFO("TopScene::onEnter");
-    WARNINGINFO("TopScene::onEnter");
-    ERRORINFO("TopScene::onEnter");
     BaseScene::onEnter();
     
     //加载动画：

@@ -22,6 +22,18 @@ class UtilsLog
 public:
     
     /**
+     * @brief ログタイプ
+     */
+    enum class E_LOG_TYPE
+    {
+        E_INVALID,
+        E_INFO,
+        E_WARNING,
+        E_ERROR,
+        E_MAX
+    };
+    
+    /**
      * @brief コンストラクタ
      */
     UtilsLog();
@@ -56,6 +68,22 @@ private:
      * @return ログファイル名
      */
     const std::string getLogFileName();
+    
+    /**
+     * @brief ライン毎に、ログ(エラー)の出力関数
+     * @param[in] iLogMsg ログメッセージ
+     * @param[in] iLogType ログタイプ
+     */
+    void outputInline(const char* iLogMsg,
+                      const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
+    
+    /**
+     * @brief ログの出力関数
+     * @param[in] iLogMsg ログメッセージ
+     * @param[in] iLogType ログタイプ
+     */
+    void output(const char* iLogMsg,
+                const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
     
 };
 

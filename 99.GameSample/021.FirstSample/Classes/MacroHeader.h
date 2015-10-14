@@ -12,7 +12,7 @@
 #include "UtilsLog.h"
 
 //! ログ
-#define NOR_LOG(format, ...)        InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputInfo(format, ##__VA_ARGS__)
+#define INFO_LOG(format, ...)       InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputInfo(format, ##__VA_ARGS__)
 #define WARNING_LOG(format, ...)    InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputWarning(format, ##__VA_ARGS__)
 #define ERR_LOG(format, ...)        InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputError(format, ##__VA_ARGS__)
 
