@@ -183,11 +183,11 @@ const char* CommonLib::getDumpSpaceByTabCnt(const char* iTotalMsg,
     __String* retStrTmp = nullptr;
     if (iTotalMsg)
     {
-        retStrTmp = __String::createWithFormat("%s%s%s(S):%s\n", iTotalMsg, spaceBuf, iLoopKey, iLoopDetail);
+        retStrTmp = __String::createWithFormat("%s%s%s:%s\n", iTotalMsg, spaceBuf, iLoopKey, iLoopDetail);
     }
     else
     {
-        retStrTmp = __String::createWithFormat("%s%s(S):%s\n", spaceBuf, iLoopKey, iLoopDetail);
+        retStrTmp = __String::createWithFormat("%s%s:%s\n", spaceBuf, iLoopKey, iLoopDetail);
     }
     
     

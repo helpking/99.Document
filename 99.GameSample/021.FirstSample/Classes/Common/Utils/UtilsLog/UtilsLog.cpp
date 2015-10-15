@@ -235,6 +235,11 @@ void UtilsLog::outputInline(const char* iFuncName,
                             const char* iLogMsg,
                             const E_LOG_TYPE iLogType)
 {
+    if (iLogMsg == nullptr)
+    {
+        return;
+    }
+    
     // ソース情報を出力する
     this->outputSourceInfo(iFuncName, iSourceRowNo, iLogType);
     

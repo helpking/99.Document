@@ -55,6 +55,7 @@ void TopScene::onEnter()
     this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
     this->runAction(this->demoPlayerAction_);
 
+    DUMP_DICT_INFO(Singleton<AppConfig>::getInstance()->getConfigInfo());
 }
 
 /**
