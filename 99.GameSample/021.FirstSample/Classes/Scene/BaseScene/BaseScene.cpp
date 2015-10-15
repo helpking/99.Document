@@ -33,7 +33,14 @@ void BaseScene::onEnter()
 {
     LoadFileBase::onEnter();
     
-    INFO_LOG("-> Scene:%s", this->getName().c_str());
+    if (this->getName().empty())
+    {
+        WARNING_LOG("-> Scene : name null!!!");
+    }
+    else
+    {
+        INFO_LOG("-> Scene : %s", this->getName().c_str());
+    }
 }
 
 

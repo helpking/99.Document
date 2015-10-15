@@ -8,7 +8,7 @@
 
 #include "ResInfoPool.h"
 
-USING_NS_RESINFO
+USING_NS_RESINFO;
 
 /**
  * @brief コンストラクター

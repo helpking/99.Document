@@ -9,7 +9,7 @@
 #include "GameManager.h"
 #include "ManagerHeader.h"
 
-USING_NS_MANAGER
+USING_NS_MANAGER;
 
 /**
  * @brief コンストラクター
@@ -33,20 +33,6 @@ GameManager::~GameManager()
 void GameManager::init()
 {
 
-}
-
-/**
- * @brief Plistファイルを読み込む
- * @param[in] iFilePath ファイル
- */
-void GameManager::loadPlistFile(const char* iFilePath)
-{
-    std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename(iFilePath);
-    CCDictionary* fileInfo = CCDictionary::createWithContentsOfFileThreadSafe(fullPath.c_str());
-    if (fileInfo)
-    {
-        
-    }
 }
 
 

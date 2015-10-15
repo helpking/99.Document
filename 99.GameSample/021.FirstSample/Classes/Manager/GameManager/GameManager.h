@@ -40,12 +40,6 @@ private:
      * @brief 初期化する
      */
     void init();
-    
-    /**
-     * @brief Plistファイルを読み込む
-     * @param[in] iFilePath ファイル
-     */
-    void loadPlistFile(const char* iFilePath);
 };
 
 NS_END_MANAGER

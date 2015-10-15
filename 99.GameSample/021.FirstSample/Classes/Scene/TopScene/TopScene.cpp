@@ -13,9 +13,13 @@
 #include "Singleton.h"
 #include "UtilsFileLoader.h"
 
+#include "AppConfig.h"
+
 USING_NS_UISCENE;
 USING_NS_INTERFACE_LAB;
 USING_NS_COMMON_UTILS;
+USING_NS_CONFIG;
+USING_NS_COMMON;
 
 // ファイルローダーを初期化する
 FILE_LOADER_INIT(TopScene)
@@ -50,7 +54,7 @@ void TopScene::onEnter()
     this->demoPlayerAction_ = Singleton<UtilsFileLoader>::getInstance()->loadActionFile(ResInfoPool::E_RES_ID::E_PARTS_DEMO_PLAYER);
     this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
     this->runAction(this->demoPlayerAction_);
-    
+
 }
 
 /**

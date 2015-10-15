@@ -25,6 +25,53 @@ public:
      * @return システム日付
      */
     static const char* getSystemDateTime();
+    
+    /**
+     * @brief データ（__Dictionary）をダンプする
+     * @return iDictInfo データ
+     * @return iTabCnt タブカウント
+     * @param[in] iKey キー
+     * @param[in] iTotalMsg メッセージ
+     */
+    static const char* DumpDictionary(__Dictionary* iDictInfo,
+                                      const int iTabCnt = 0,
+                                      const char* iKey = nullptr,
+                                      const char* iTotalMsg = nullptr);
+    
+private:
+    
+    /**
+     * @brief ダンプ開始マック文字列を取得する
+     * @param[in] iTotalMsg メッセージ
+     * @param[in] iTabCnt タブカウント
+     * @param[in] iKey キー
+     * @return　ダンプ開始マック文字列
+     */
+    static const char* AppendDumpStartMark(const char* iTotalMsg,
+                                           const int iTabCnt,
+                                           const char* iKey = nullptr);
+    
+    /**
+     * @brief ダンプ終了マック文字列を取得する
+     * @param[in] iTotalMsg メッセージ
+     * @param[in] iTabCnt タブカウント
+     * @return　ダンプ終了マック文字列
+     */
+    static const char* AppendDumpEndMark(const char* iTotalMsg,
+                                         const int iTabCnt);
+    
+    /**
+     * @brief タブカウントより、ダンプ用スペースを取得する
+     * @param[in] iTotalMsg メッセージ
+     * @param[in] iTabCnt タブカウント
+     * @param[in] iLoopKey キー
+     * @param[in] iLoopDetail 詳細メッセージ
+     * @return　詳細メッセージ（スペース付き）
+     */
+    static const char* getDumpSpaceByTabCnt(const char* iTotalMsg,
+                                            const int iTabCnt,
+                                            const char* iLoopKey,
+                                            const char* iLoopDetail);
 };
 
 NS_END_NS_COMMON

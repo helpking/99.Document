@@ -1,5 +1,5 @@
 //
-//  MacroHeader.h
+//  AppMacroHeader.h
 //  021.FirstSample
 //
 //  Created by 何 利強 on 2015/10/13.
@@ -11,10 +11,14 @@
 
 #include "Singleton.h"
 #include "UtilsLog.h"
+#include "CommonLib.h"
 
 //! ログ
-#define INFO_LOG(format, ...)       InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputInfo(__PRETTY_FUNCTION__, __LINE__, format, ##__VA_ARGS__)
-#define WARNING_LOG(format, ...)    InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputWarning(__PRETTY_FUNCTION__, __LINE__, format, ##__VA_ARGS__)
-#define ERR_LOG(format, ...)        InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputError(__PRETTY_FUNCTION__, __LINE__, format, ##__VA_ARGS__)
+#define INFO_LOG(format, ...)       InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputInfo(__PRETTY_FUNCTION__, __LINE__, format, ##__VA_ARGS__);
+#define WARNING_LOG(format, ...)    InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputWarning(__PRETTY_FUNCTION__, __LINE__, format, ##__VA_ARGS__);
+#define ERR_LOG(format, ...)        InterfaceLab::Singleton<Common::Utils::UtilsLog>::getInstance()->OutputError(__PRETTY_FUNCTION__, __LINE__, format, ##__VA_ARGS__);
+
+//! データのダンプ
+#define DUMP_DICT_INFO(dict)        INFO_LOG("DUMP_DICT_INFO\n%s", CommonLib::DumpDictionary(dict));
 
 #endif

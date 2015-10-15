@@ -29,7 +29,14 @@ void BaseParts::onEnter()
 {
     LoadFileBase::onEnter();
     
-    INFO_LOG("-> Parts:%s", this->getName().c_str());
+    if (this->getName().empty())
+    {
+        WARNING_LOG("-> Parts : name null!!!");
+    }
+    else
+    {
+        INFO_LOG("-> Parts : %s", this->getName().c_str());
+    }
 }
 
 

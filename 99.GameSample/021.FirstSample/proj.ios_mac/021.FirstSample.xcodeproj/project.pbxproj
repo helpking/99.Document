@@ -20,6 +20,8 @@
 		4636EFF21BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
 		4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4636EFF01BC3F1C300328A90 /* GameDraw.cpp */; };
 		4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
+		46777C571BCF723B0047388C /* AppConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46777C551BCF723B0047388C /* AppConfig.cpp */; };
+		46777C581BCF723B0047388C /* AppConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46777C551BCF723B0047388C /* AppConfig.cpp */; };
 		467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */; };
 		467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C529B1BD243D700A080E0 /* SceneHistory.cpp */; };
 		467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C529B1BD243D700A080E0 /* SceneHistory.cpp */; };
@@ -37,8 +39,6 @@
 		46B5A9411BCE2E79002BAB36 /* CommonLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46B5A93E1BCE2E79002BAB36 /* CommonLib.cpp */; };
 		46D30CDB1BCA614200E7087B /* UtilsFileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46D30CD91BCA614200E7087B /* UtilsFileLoader.cpp */; };
 		46D30CDC1BCA614200E7087B /* UtilsFileLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46D30CD91BCA614200E7087B /* UtilsFileLoader.cpp */; };
-		46D30CDF1BCA692400E7087B /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46D30CDE1BCA692400E7087B /* Config.plist */; };
-		46D30CE01BCA692400E7087B /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46D30CDE1BCA692400E7087B /* Config.plist */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -110,6 +110,8 @@
 		4636EFF11BC3F1C300328A90 /* GameDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDraw.h; path = Common/Draw/GameDraw.h; sourceTree = "<group>"; };
 		4646DA081BA6A5A7007F37FF /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopScene.cpp; path = Scene/TopScene/TopScene.cpp; sourceTree = "<group>"; };
 		4646DA091BA6A5A7007F37FF /* TopScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopScene.h; path = Scene/TopScene/TopScene.h; sourceTree = "<group>"; };
+		46777C551BCF723B0047388C /* AppConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppConfig.cpp; path = Manager/Config/AppConfig.cpp; sourceTree = "<group>"; };
+		46777C561BCF723B0047388C /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConfig.h; path = Manager/Config/AppConfig.h; sourceTree = "<group>"; };
 		467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoordinateMesh.cpp; path = Parts/UI/CoordinateMesh/CoordinateMesh.cpp; sourceTree = "<group>"; };
 		467C52711BD21A5000A080E0 /* CoordinateMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateMesh.h; path = Parts/UI/CoordinateMesh/CoordinateMesh.h; sourceTree = "<group>"; };
 		467C52731BD21A8000A080E0 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UICommon.h; path = Parts/UI/UICommon.h; sourceTree = "<group>"; };
@@ -136,7 +138,6 @@
 		46D30CD01BCA323A00E7087B /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = InterfaceLab/Singleton.h; sourceTree = "<group>"; };
 		46D30CD91BCA614200E7087B /* UtilsFileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UtilsFileLoader.cpp; path = Common/Utils/UtilsFileLoader/UtilsFileLoader.cpp; sourceTree = "<group>"; };
 		46D30CDA1BCA614200E7087B /* UtilsFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsFileLoader.h; path = Common/Utils/UtilsFileLoader/UtilsFileLoader.h; sourceTree = "<group>"; };
-		46D30CDE1BCA692400E7087B /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../Config/Config.plist; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -262,7 +263,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				46D30CDD1BCA68FE00E7087B /* Config */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -355,6 +355,15 @@
 			name = TopScene;
 			sourceTree = "<group>";
 		};
+		46777C541BCF721F0047388C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				46777C551BCF723B0047388C /* AppConfig.cpp */,
+				46777C561BCF723B0047388C /* AppConfig.h */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		467C52611BD1F22300A080E0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +396,7 @@
 		467C52881BD2347C00A080E0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				46777C541BCF721F0047388C /* Config */,
 				46B5A92F1BCE26B4002BAB36 /* GameManager */,
 				467C529F1BD24B7000A080E0 /* ResInfoPool */,
 				467C528B1BD2351300A080E0 /* UserData */,
@@ -510,14 +520,6 @@
 				46D30CDA1BCA614200E7087B /* UtilsFileLoader.h */,
 			);
 			name = UtilsFileLoader;
-			sourceTree = "<group>";
-		};
-		46D30CDD1BCA68FE00E7087B /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				46D30CDE1BCA692400E7087B /* Config.plist */,
-			);
-			name = Config;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -710,7 +712,6 @@
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
-				46D30CDF1BCA692400E7087B /* Config.plist in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
@@ -730,7 +731,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
-				46D30CE01BCA692400E7087B /* Config.plist in Resources */,
 				ECCA4FDDA67B1D94F5543B74 /* res in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,6 +762,7 @@
 				467C52A21BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
 				4608EE711BC4F54C00E3304C /* BaseParts.cpp in Sources */,
 				EF3C9AAA1BC95F230083CCB2 /* LabCocosStudio.cpp in Sources */,
+				46777C571BCF723B0047388C /* AppConfig.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +775,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
 				EFE3DE781BC571D500EB9C6F /* TopScene.cpp in Sources */,
+				46777C581BCF723B0047388C /* AppConfig.cpp in Sources */,
 				4636EFF31BC3F1C300328A90 /* GameDraw.cpp in Sources */,
 				46B5A93C1BCE2C30002BAB36 /* InterfaceMacro.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,

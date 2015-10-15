@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TestStr</key>
+	<string>2345677</string>
+	<key>VerInfo</key>
+	<dict>
+		<key>LVer</key>
+		<integer>0</integer>
+		<key>MVer</key>
+		<integer>0</integer>
+		<key>SVer</key>
+		<integer>0</integer>
+	</dict>
+	<key>DebugInfo</key>
+	<dict>
+		<key>Level</key>
+		<integer>0</integer>
+	</dict>
+</dict>
+</plist>

@@ -10,12 +10,12 @@
 #define _21_FirstSample_ManagerMacro_h
 
 // マネジャー
-#define USING_NS_MANAGER                                using namespace Manager;
+#define USING_NS_MANAGER                                using namespace Manager
 #define NS_BEGIN_MANAGER                                namespace Manager {
 #define NS_END_MANAGER                                  }
 
 // シーン遷移履歴
-#define USING_NS_SCENE_HISTORY                          using namespace Manager::History::Scene;
+#define USING_NS_SCENE_HISTORY                          using namespace Manager::History::Scene
 #define NS_BEGIN_SCENE_HISTORY                          namespace Manager { \
                                                             namespace History { \
                                                                 namespace Scene {
@@ -23,8 +23,15 @@
                                                             } \
                                                         }
 
+// Config
+#define USING_NS_CONFIG                                 using namespace Manager::Config
+#define NS_BEGIN_CONFIG                                 namespace Manager { \
+                                                            namespace Config {
+#define NS_END_CONFIG                                       } \
+                                                        }
+
 // リスース
-#define USING_NS_RESINFO                                using namespace Manager::ResInfo;
+#define USING_NS_RESINFO                                using namespace Manager::ResInfo
 #define NS_BEGIN_RESINFO                                namespace Manager { \
                                                             namespace ResInfo {
 #define NS_END_RESINFO                                      } \
