@@ -105,7 +105,7 @@
 		4608EE701BC4F54C00E3304C /* BaseParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseParts.h; path = Parts/BaseParts/BaseParts.h; sourceTree = "<group>"; };
 		460A72D01BCC993000AEB23E /* UtilsLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UtilsLog.cpp; path = Common/Utils/UtilsLog/UtilsLog.cpp; sourceTree = "<group>"; };
 		460A72D11BCC993000AEB23E /* UtilsLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsLog.h; path = Common/Utils/UtilsLog/UtilsLog.h; sourceTree = "<group>"; };
-		460A72D81BCCC07500AEB23E /* MacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroHeader.h; sourceTree = "<group>"; };
+		460A72D81BCCC07500AEB23E /* AppMacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacroHeader.h; sourceTree = "<group>"; };
 		4636EFF01BC3F1C300328A90 /* GameDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameDraw.cpp; path = Common/Draw/GameDraw.cpp; sourceTree = "<group>"; };
 		4636EFF11BC3F1C300328A90 /* GameDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDraw.h; path = Common/Draw/GameDraw.h; sourceTree = "<group>"; };
 		4646DA081BA6A5A7007F37FF /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopScene.cpp; path = Scene/TopScene/TopScene.cpp; sourceTree = "<group>"; };
@@ -460,7 +460,7 @@
 				46880B8619C43A87006E1F66 /* MainScene.cpp */,
 				46880B8719C43A87006E1F66 /* MainScene.h */,
 				467C52871BD230D000A080E0 /* AppPlatform.h */,
-				460A72D81BCCC07500AEB23E /* MacroHeader.h */,
+				460A72D81BCCC07500AEB23E /* AppMacroHeader.h */,
 			);
 			name = Classes;
 			path = ../Classes;

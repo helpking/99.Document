@@ -45,23 +45,58 @@ public:
     
     /**
      * @brief ログ(普通)の出力関数
+     * @param[in] iFormat ログフォーマット
      */
     void OutputInfo(const char* iFormat, ...);
     
     /**
+     * @brief ログ(普通)の出力関数
+     * @param[in] iFuncName メソッド名
+     * @param[in] iSourceRowNo ソース行番号
+     * @param[in] iFormat ログフォーマット
+     */
+    void OutputInfo(const char* iFuncName,
+                    const int iSourceRowNo,
+                    const char* iFormat, ...);
+    
+    /**
      * @brief ログ(警告)の出力関数
+     * @param[in] iFormat ログフォーマット
      */
     void OutputWarning(const char* iFormat, ...);
     
     /**
+     * @brief ログ(警告)の出力関数
+     * @param[in] iFuncName メソッド名
+     * @param[in] iSourceRowNo ソース行番号
+     * @param[in] iFormat ログフォーマット
+     */
+    void OutputWarning(const char* iFuncName,
+                       const int iSourceRowNo,
+                       const char* iFormat, ...);
+    
+    /**
      * @brief ログ(エラー)の出力関数
+     * @param[in] iFormat ログフォーマット
      */
     void OutputError(const char* iFormat, ...);
+    
+    /**
+     * @brief ログ(エラー)の出力関数
+     * @param[in] iFuncName メソッド名
+     * @param[in] iSourceRowNo ソース行番号
+     * @param[in] iFormat ログフォーマット
+     */
+    void OutputError(const char* iFuncName,
+                     const int iSourceRowNo,
+                     const char* iFormat, ...);
     
 private:
     
     // ログファイル
-    std::fstream logFile;
+    std::fstream logFile_;
+    //ログカウント
+    unsigned long logCnt_;
     
     /**
      * @brief ログファイル名を取得する
@@ -78,12 +113,34 @@ private:
                       const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
     
     /**
+     * @brief ライン毎に、ログ(エラー)の出力関数
+     * @param[in] iFuncName メソッド名
+     * @param[in] iSourceRowNo ソース行番号
+     * @param[in] iLogMsg ログメッセージ
+     * @param[in] iLogType ログタイプ
+     */
+    void outputInline(const char* iFuncName,
+                      const int iSourceRowNo,
+                      const char* iLogMsg,
+                      const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
+    
+    /**
      * @brief ログの出力関数
      * @param[in] iLogMsg ログメッセージ
      * @param[in] iLogType ログタイプ
      */
     void output(const char* iLogMsg,
                 const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
+    
+    /**
+     * @brief ログの出力関数
+     * @param[in] iFuncName メソッド名
+     * @param[in] iSourceRowNo ソース行番号
+     * @param[in] iLogType ログタイプ
+     */
+    void outputSourceInfo(const char* iFuncName,
+                          const int iSourceRowNo,
+                          const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
     
 };
 

@@ -18,6 +18,8 @@
 #include "CommonLib.h"
 #include "UICommon.h"
 
+#include "AppMacroHeader.h"
+
 #pragma mark -
 #pragma mark NameSpace
 
