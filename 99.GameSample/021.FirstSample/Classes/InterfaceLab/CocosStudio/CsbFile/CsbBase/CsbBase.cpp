@@ -38,6 +38,11 @@ void LoadFileBase::onEnter()
     this->initZOrderInfo();
 }
 
+void LoadFileBase::onExit()
+{
+    CCNode::onExit();
+}
+
 /**
  * @brief ロードファイルの情報を初期化する
  */

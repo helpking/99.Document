@@ -15,7 +15,6 @@ USING_NS_UIPARTS;
  */
 BaseParts::BaseParts()
 {
-    
 }
 
 /**
@@ -29,6 +28,14 @@ BaseParts::~BaseParts()
 void BaseParts::onEnter()
 {
     LoadFileBase::onEnter();
+    
+    INFO_LOG("-> Parts:%s", this->getName().c_str());
+}
+
+
+void BaseParts::onExit()
+{
+    INFO_LOG("<- Parts:%s", this->getName().c_str());
 }
 
 /**

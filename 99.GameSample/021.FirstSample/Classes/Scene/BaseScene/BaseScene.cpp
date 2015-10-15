@@ -18,7 +18,6 @@ BaseScene::BaseScene()
 , EntityBaseNode_(nullptr)
 , sceneSize_(Size::ZERO)
 {
-    
 }
 
 /**
@@ -33,6 +32,14 @@ BaseScene::~BaseScene()
 void BaseScene::onEnter()
 {
     LoadFileBase::onEnter();
+    
+    INFO_LOG("-> Scene:%s", this->getName().c_str());
+}
+
+
+void BaseScene::onExit()
+{
+    INFO_LOG("<- Scene:%s", this->getName().c_str());
 }
 
 /**

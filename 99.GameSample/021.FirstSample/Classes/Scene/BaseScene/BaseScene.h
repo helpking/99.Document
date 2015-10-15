@@ -61,6 +61,7 @@ public:
     ~BaseScene();
     
     virtual void onEnter() override;
+    virtual void onExit() override;
     
     /**
      * @brief ロードファイルで指定された、変数一覧を初期化にする

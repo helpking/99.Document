@@ -9,6 +9,7 @@
 #ifndef _21_FirstSample_MacroHeader_h
 #define _21_FirstSample_MacroHeader_h
 
+#include "Singleton.h"
 #include "UtilsLog.h"
 
 //! ログ
