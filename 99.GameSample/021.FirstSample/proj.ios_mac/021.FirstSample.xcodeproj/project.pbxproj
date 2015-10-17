@@ -15,6 +15,8 @@
 		467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */; };
 		467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52761BD21B2D00A080E0 /* CsbBase.cpp */; };
 		467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52791BD21B3400A080E0 /* LoadCsbFile.cpp */; };
+		467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C529B1BD243D700A080E0 /* SceneHistory.cpp */; };
+		467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C529B1BD243D700A080E0 /* SceneHistory.cpp */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
@@ -79,11 +81,18 @@
 		467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoordinateMesh.cpp; path = Parts/UI/CoordinateMesh/CoordinateMesh.cpp; sourceTree = "<group>"; };
 		467C52711BD21A5000A080E0 /* CoordinateMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateMesh.h; path = Parts/UI/CoordinateMesh/CoordinateMesh.h; sourceTree = "<group>"; };
 		467C52731BD21A8000A080E0 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UICommon.h; path = Parts/UI/UICommon.h; sourceTree = "<group>"; };
-		467C52751BD21B2400A080E0 /* CsbMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CsbMacro.h; path = Common/Csb/CsbMacro.h; sourceTree = "<group>"; };
 		467C52761BD21B2D00A080E0 /* CsbBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CsbBase.cpp; path = Common/Csb/CsbBase/CsbBase.cpp; sourceTree = "<group>"; };
 		467C52771BD21B2D00A080E0 /* CsbBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CsbBase.h; path = Common/Csb/CsbBase/CsbBase.h; sourceTree = "<group>"; };
 		467C52791BD21B3400A080E0 /* LoadCsbFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadCsbFile.cpp; path = Common/Csb/LoadCsbFile/LoadCsbFile.cpp; sourceTree = "<group>"; };
 		467C527A1BD21B3400A080E0 /* LoadCsbFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadCsbFile.h; path = Common/Csb/LoadCsbFile/LoadCsbFile.h; sourceTree = "<group>"; };
+		467C52861BD2308B00A080E0 /* CsbMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CsbMacro.h; path = Common/Csb/CsbMacro.h; sourceTree = "<group>"; };
+		467C52871BD230D000A080E0 /* LibHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibHeader.h; sourceTree = "<group>"; };
+		467C52951BD238EC00A080E0 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = Common/Singleton.h; sourceTree = "<group>"; };
+		467C52981BD2390400A080E0 /* CommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonHeader.h; path = Common/CommonHeader.h; sourceTree = "<group>"; };
+		467C52991BD2436E00A080E0 /* CsbLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CsbLoader.h; path = Common/Csb/Reader/CsbLoader.h; sourceTree = "<group>"; };
+		467C529A1BD2438B00A080E0 /* ManagerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ManagerHeader.h; path = Manager/ManagerHeader.h; sourceTree = "<group>"; };
+		467C529B1BD243D700A080E0 /* SceneHistory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneHistory.cpp; path = Manager/History/SceneHistory/SceneHistory.cpp; sourceTree = "<group>"; };
+		467C529C1BD243D700A080E0 /* SceneHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneHistory.h; path = Manager/History/SceneHistory/SceneHistory.h; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
@@ -275,6 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				467C52741BD21B0B00A080E0 /* Csb */,
+				467C52951BD238EC00A080E0 /* Singleton.h */,
+				467C52981BD2390400A080E0 /* CommonHeader.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -299,10 +310,62 @@
 		467C52741BD21B0B00A080E0 /* Csb */ = {
 			isa = PBXGroup;
 			children = (
+				467C52841BD22F6F00A080E0 /* Reader */,
 				467C526B1BD2174400A080E0 /* LoadCsbFile */,
 				4646DA0E1BA6B63A007F37FF /* CsbBase */,
+				467C52861BD2308B00A080E0 /* CsbMacro.h */,
 			);
 			name = Csb;
+			sourceTree = "<group>";
+		};
+		467C52841BD22F6F00A080E0 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				467C52991BD2436E00A080E0 /* CsbLoader.h */,
+			);
+			name = Reader;
+			sourceTree = "<group>";
+		};
+		467C52881BD2347C00A080E0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				467C528B1BD2351300A080E0 /* UserData */,
+				467C528A1BD2350000A080E0 /* History */,
+				467C52891BD234F300A080E0 /* BattleData */,
+				467C529A1BD2438B00A080E0 /* ManagerHeader.h */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		467C52891BD234F300A080E0 /* BattleData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BattleData;
+			sourceTree = "<group>";
+		};
+		467C528A1BD2350000A080E0 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				467C528C1BD2354400A080E0 /* SceneHistory */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		467C528B1BD2351300A080E0 /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UserData;
+			sourceTree = "<group>";
+		};
+		467C528C1BD2354400A080E0 /* SceneHistory */ = {
+			isa = PBXGroup;
+			children = (
+				467C529B1BD243D700A080E0 /* SceneHistory.cpp */,
+				467C529C1BD243D700A080E0 /* SceneHistory.h */,
+			);
+			name = SceneHistory;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
@@ -317,14 +380,15 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				467C52881BD2347C00A080E0 /* Manager */,
 				467C52611BD1F22300A080E0 /* Common */,
-				467C52751BD21B2400A080E0 /* CsbMacro.h */,
 				46C464B81BA7F363001D5DCA /* Parts */,
 				4646DA031BA69E40007F37FF /* Scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* MainScene.cpp */,
 				46880B8719C43A87006E1F66 /* MainScene.h */,
+				467C52871BD230D000A080E0 /* LibHeader.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -526,6 +590,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
 				467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */,
 				467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */,
 			);
@@ -536,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */,
 			);

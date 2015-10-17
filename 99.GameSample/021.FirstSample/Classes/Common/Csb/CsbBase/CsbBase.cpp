@@ -10,7 +10,7 @@
 #include "UIButton.h"
 
 USING_NS_CC;
-USING_COMMON_CSB;
+USING_NS_COMMON_CSB;
 
 CsbBase::CsbBase()
 : uiLayerNode_(nullptr)

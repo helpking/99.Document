@@ -9,13 +9,9 @@
 #ifndef ___21_FirstSample__GMacro__
 #define ___21_FirstSample__GMacro__
 
-#include "UICommon.h"
+#include "CommonHeader.h"
 
-#define USING_COMMON                         using namespace Common;
-#define NS_BEGIN_COMMON                      namespace Common {
-#define NS_END_COMMON                        }
-
-#define USING_COMMON_CSB                     using namespace Common::Csb;
+#define USING_NS_COMMON_CSB                  using namespace Common::Csb;
 #define NS_BEGIN_COMMON_CSB                  namespace Common {                     \
                                                  namespace Csb {
 #define NS_END_COMMON_CSB                        }                                  \
@@ -28,7 +24,8 @@ if ( TARGET && (strcmp(MEMBERNAME, "") != 0) )                                  
 MEMBER = static_cast<MEMBERTYPE>(TARGET->getChildByName(MEMBERNAME));               \
 }
 //! CCSファイルローダーを作成する
-#define CSB_CREATE_LOADER(__CLASS_NAME__)           class __CLASS_NAME__##Reader : public cocostudio::NodeReader                                \
+#define CSB_CREATE_LOADER(__CLASS_NAME__)           class __CLASS_NAME__;                                                                       \
+                                                    class __CLASS_NAME__##Reader : public cocostudio::NodeReader                                \
                                                     {                                                                                           \
                                                     public:                                                                                     \
                                                         __CLASS_NAME__##Reader() {};                                                            \

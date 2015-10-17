@@ -14,7 +14,7 @@
 #include "CsbBase.h"
 #include "UIButton.h"
 
-USING_COMMON_CSB;
+USING_NS_COMMON_CSB;
 
 NS_BEGIN_UISCENE
 

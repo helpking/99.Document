@@ -9,11 +9,7 @@
 #ifndef _21_FirstSample_UICommon_h
 #define _21_FirstSample_UICommon_h
 
-#include "cocos2d.h"
-#include "cocostudio/CocoStudio.h"
-#include "cocostudio/WidgetCallBackHandlerProtocol.h"
-#include "cocostudio/CocosStudioExport.h"
-#include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
+#include "LibHeader.h"
 
 // パーツ
 #define USING_UIPARTS                        using namespace UIParts;

@@ -11,6 +11,8 @@
 
 #include "CsbMacro.h"
 
+USING_NS_CC;
+
 NS_BEGIN_COMMON_CSB
 
 /**
@@ -33,6 +35,12 @@ public:
         
         return _gInstance;
     };
+    
+    /**
+     * @brief Csbファイルをロードする
+     * @param[in] iCsbFilePath Csbファイル
+     */
+    Node* loadFile(const char* iCsbFilePath);
     
 protected:
     

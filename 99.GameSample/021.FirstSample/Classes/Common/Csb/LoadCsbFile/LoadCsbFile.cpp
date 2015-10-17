@@ -8,7 +8,9 @@
 
 #include "LoadCsbFile.h"
 
-USING_COMMON_CSB;
+#include "TopScene.h"
+
+USING_NS_COMMON_CSB;
 
 LoadCsbFile* LoadCsbFile::_gInstance = nullptr;
 
@@ -26,4 +28,17 @@ LoadCsbFile::LoadCsbFile()
 LoadCsbFile::~LoadCsbFile()
 {
     
+}
+
+/**
+ * @brief Csbファイルをロードする
+ * @param[in] iCsbFilePath Csbファイル
+ */
+Node* LoadCsbFile::loadFile(const char* iCsbFilePath)
+{
+    CSLoader* instance = CSLoader::getInstance();
+    instance->registReaderObject("TopSceneReader",(ObjectFactory::Instance)UIScene::TopSceneReader::getInstance);
+    
+    auto fileNode = CSLoader::createNode("Scene/TopScene.csb");
+    return fileNode;
 }
