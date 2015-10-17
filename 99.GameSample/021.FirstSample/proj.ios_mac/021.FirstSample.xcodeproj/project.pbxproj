@@ -17,6 +17,8 @@
 		467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52791BD21B3400A080E0 /* LoadCsbFile.cpp */; };
 		467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C529B1BD243D700A080E0 /* SceneHistory.cpp */; };
 		467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C529B1BD243D700A080E0 /* SceneHistory.cpp */; };
+		467C52A21BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52A01BD24BEC00A080E0 /* ResInfoPool.cpp */; };
+		467C52A31BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52A01BD24BEC00A080E0 /* ResInfoPool.cpp */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
@@ -93,6 +95,8 @@
 		467C529A1BD2438B00A080E0 /* ManagerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ManagerHeader.h; path = Manager/ManagerHeader.h; sourceTree = "<group>"; };
 		467C529B1BD243D700A080E0 /* SceneHistory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneHistory.cpp; path = Manager/History/SceneHistory/SceneHistory.cpp; sourceTree = "<group>"; };
 		467C529C1BD243D700A080E0 /* SceneHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneHistory.h; path = Manager/History/SceneHistory/SceneHistory.h; sourceTree = "<group>"; };
+		467C52A01BD24BEC00A080E0 /* ResInfoPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ResInfoPool.cpp; path = Manager/ResInfoPool/ResInfoPool.cpp; sourceTree = "<group>"; };
+		467C52A11BD24BEC00A080E0 /* ResInfoPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResInfoPool.h; path = Manager/ResInfoPool/ResInfoPool.h; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 		467C52881BD2347C00A080E0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				467C529F1BD24B7000A080E0 /* ResInfoPool */,
 				467C528B1BD2351300A080E0 /* UserData */,
 				467C528A1BD2350000A080E0 /* History */,
 				467C52891BD234F300A080E0 /* BattleData */,
@@ -366,6 +371,15 @@
 				467C529C1BD243D700A080E0 /* SceneHistory.h */,
 			);
 			name = SceneHistory;
+			sourceTree = "<group>";
+		};
+		467C529F1BD24B7000A080E0 /* ResInfoPool */ = {
+			isa = PBXGroup;
+			children = (
+				467C52A01BD24BEC00A080E0 /* ResInfoPool.cpp */,
+				467C52A11BD24BEC00A080E0 /* ResInfoPool.h */,
+			);
+			name = ResInfoPool;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
@@ -591,6 +605,7 @@
 				467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				467C529D1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
+				467C52A21BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
 				467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */,
 				467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */,
 			);
@@ -603,6 +618,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				467C529E1BD243D700A080E0 /* SceneHistory.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				467C52A31BD24BEC00A080E0 /* ResInfoPool.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

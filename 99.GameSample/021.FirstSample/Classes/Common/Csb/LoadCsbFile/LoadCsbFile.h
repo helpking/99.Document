@@ -15,6 +15,16 @@ USING_NS_CC;
 
 NS_BEGIN_COMMON_CSB
 
+enum class E_SCENE_ID
+{
+    E_INVALID = -1,
+    
+    /**
+     * @brief トップシーン
+     */
+    E_TOP,
+    E_MAX
+};
 /**
  * @brief Csbファイルをロードするクラス
  */
@@ -36,12 +46,6 @@ public:
         return _gInstance;
     };
     
-    /**
-     * @brief Csbファイルをロードする
-     * @param[in] iCsbFilePath Csbファイル
-     */
-    Node* loadFile(const char* iCsbFilePath);
-    
 protected:
     
     /**
@@ -54,8 +58,20 @@ protected:
      */
     ~LoadCsbFile();
     
+    /**
+     * @brief シーンをロードする
+     * @param[in] iSceneId シーンID
+     */
+    Node* loadScene(const E_SCENE_ID iSceneId);
+    
 private:
     static LoadCsbFile* _gInstance;
+    
+    /**
+     * @brief Csbファイルをロードする
+     * @param[in] iCsbFilePath Csbファイル
+     */
+    Node* loadFile(const char* iCsbFilePath);
 };
 
 NS_END_COMMON_CSB

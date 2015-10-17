@@ -9,6 +9,7 @@
 #include "LoadCsbFile.h"
 
 #include "TopScene.h"
+#include "Singleton.h"
 
 USING_NS_COMMON_CSB;
 
@@ -28,6 +29,31 @@ LoadCsbFile::LoadCsbFile()
 LoadCsbFile::~LoadCsbFile()
 {
     
+}
+
+/**
+ * @brief シーンをロードする
+ * @param[in] iSceneId シーンID
+ */
+Node* LoadCsbFile::loadScene(const E_SCENE_ID iSceneId)
+{
+    CSLoader* instance = CSLoader::getInstance();
+    Node* sceneRet = nullptr;
+    
+    switch (iSceneId)
+    {
+        case E_SCENE_ID::E_TOP:
+        {
+            instance->registReaderObject("TopSceneReader",(ObjectFactory::Instance)UIScene::TopSceneReader::getInstance);
+            sceneRet = CSLoader::createNode("Scene/TopScene.csb");
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    return sceneRet;
 }
 
 /**

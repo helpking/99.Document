@@ -45,7 +45,7 @@ private:
 };
 
 // 初期化
-template <class T> std::auto_ptr<T> Singleton<T>::m_pInstance = nullptr;
+template <class T> std::auto_ptr<T> Singleton<T>::m_pInstance;
 
 NS_END_NS_COMMON
 

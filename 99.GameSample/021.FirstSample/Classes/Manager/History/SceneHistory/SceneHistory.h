@@ -21,10 +21,6 @@ class SceneHistory
 {
 public:
     
-    
-    
-protected:
-    
     /**
      * @brief コンストラクター
      */

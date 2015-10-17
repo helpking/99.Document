@@ -18,4 +18,11 @@
                                                         }                                            \
                                                     }
 
+// リスースプール
+#define USING_NS_RESINFO_POOL                       using namespace Manager::ResInfoPool;
+#define NS_BEGIN_RESINFO_POOL                       namespace Manager {                              \
+                                                        namespace ResInfoPool {
+#define NS_END_RESINFO_POOL                             }                                            \
+                                                    }
+
 #endif
