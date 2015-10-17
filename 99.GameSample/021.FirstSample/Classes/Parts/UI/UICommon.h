@@ -1,0 +1,28 @@
+//
+//  UCommon.h
+//  021.FirstSample
+//
+//  Created by 何 利強 on 2015/09/15.
+//
+//
+
+#ifndef _21_FirstSample_UICommon_h
+#define _21_FirstSample_UICommon_h
+
+#include "cocos2d.h"
+#include "cocostudio/CocoStudio.h"
+#include "cocostudio/WidgetCallBackHandlerProtocol.h"
+#include "cocostudio/CocosStudioExport.h"
+#include "cocostudio/WidgetReader/NodeReader/NodeReader.h"
+
+// パーツ
+#define USING_UIPARTS                        using namespace UIParts;
+#define NS_BEGIN_UIPARTS                     namespace UIParts {
+#define NS_END_UIPARTS                       }
+
+// シーン
+#define USING_UISCENE                        using namespace UIScene;
+#define NS_BEGIN_UISCENE                     namespace UIScene {
+#define NS_END_UISCENE                       }
+
+#endif

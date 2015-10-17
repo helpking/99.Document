@@ -12,12 +12,13 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
-		4646DA0D1BA6B631007F37FF /* CsbBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA0B1BA6B631007F37FF /* CsbBase.cpp */; };
+		467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */; };
+		467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52761BD21B2D00A080E0 /* CsbBase.cpp */; };
+		467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 467C52791BD21B3400A080E0 /* LoadCsbFile.cpp */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
 		46880B8B19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
-		46C464BC1BA7F854001D5DCA /* DebugMeshLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46C464BA1BA7F854001D5DCA /* DebugMeshLayer.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -75,15 +76,18 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4646DA081BA6A5A7007F37FF /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopScene.cpp; path = Scene/TopScene/TopScene.cpp; sourceTree = "<group>"; };
 		4646DA091BA6A5A7007F37FF /* TopScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopScene.h; path = Scene/TopScene/TopScene.h; sourceTree = "<group>"; };
-		4646DA0B1BA6B631007F37FF /* CsbBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CsbBase.cpp; path = Scene/SceneBase/CsbBase.cpp; sourceTree = "<group>"; };
-		4646DA0C1BA6B631007F37FF /* CsbBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CsbBase.h; path = Scene/SceneBase/CsbBase.h; sourceTree = "<group>"; };
+		467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoordinateMesh.cpp; path = Parts/UI/CoordinateMesh/CoordinateMesh.cpp; sourceTree = "<group>"; };
+		467C52711BD21A5000A080E0 /* CoordinateMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoordinateMesh.h; path = Parts/UI/CoordinateMesh/CoordinateMesh.h; sourceTree = "<group>"; };
+		467C52731BD21A8000A080E0 /* UICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UICommon.h; path = Parts/UI/UICommon.h; sourceTree = "<group>"; };
+		467C52751BD21B2400A080E0 /* CsbMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CsbMacro.h; path = Common/Csb/CsbMacro.h; sourceTree = "<group>"; };
+		467C52761BD21B2D00A080E0 /* CsbBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CsbBase.cpp; path = Common/Csb/CsbBase/CsbBase.cpp; sourceTree = "<group>"; };
+		467C52771BD21B2D00A080E0 /* CsbBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CsbBase.h; path = Common/Csb/CsbBase/CsbBase.h; sourceTree = "<group>"; };
+		467C52791BD21B3400A080E0 /* LoadCsbFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadCsbFile.cpp; path = Common/Csb/LoadCsbFile/LoadCsbFile.cpp; sourceTree = "<group>"; };
+		467C527A1BD21B3400A080E0 /* LoadCsbFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadCsbFile.h; path = Common/Csb/LoadCsbFile/LoadCsbFile.h; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		46880B8719C43A87006E1F66 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
-		46C464BA1BA7F854001D5DCA /* DebugMeshLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DebugMeshLayer.cpp; path = Parts/DebugMeshLayer/DebugMeshLayer.cpp; sourceTree = "<group>"; };
-		46C464BB1BA7F854001D5DCA /* DebugMeshLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugMeshLayer.h; path = Parts/DebugMeshLayer/DebugMeshLayer.h; sourceTree = "<group>"; };
-		46C464BD1BA7F91F001D5DCA /* UCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCommon.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -261,8 +265,8 @@
 		4646DA0E1BA6B63A007F37FF /* CsbBase */ = {
 			isa = PBXGroup;
 			children = (
-				4646DA0B1BA6B631007F37FF /* CsbBase.cpp */,
-				4646DA0C1BA6B631007F37FF /* CsbBase.h */,
+				467C52761BD21B2D00A080E0 /* CsbBase.cpp */,
+				467C52771BD21B2D00A080E0 /* CsbBase.h */,
 			);
 			name = CsbBase;
 			sourceTree = "<group>";
@@ -270,9 +274,35 @@
 		467C52611BD1F22300A080E0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				4646DA0E1BA6B63A007F37FF /* CsbBase */,
+				467C52741BD21B0B00A080E0 /* Csb */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		467C526B1BD2174400A080E0 /* LoadCsbFile */ = {
+			isa = PBXGroup;
+			children = (
+				467C52791BD21B3400A080E0 /* LoadCsbFile.cpp */,
+				467C527A1BD21B3400A080E0 /* LoadCsbFile.h */,
+			);
+			name = LoadCsbFile;
+			sourceTree = "<group>";
+		};
+		467C526F1BD21A3D00A080E0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				46C464B91BA7F370001D5DCA /* CoordinateMesh */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		467C52741BD21B0B00A080E0 /* Csb */ = {
+			isa = PBXGroup;
+			children = (
+				467C526B1BD2174400A080E0 /* LoadCsbFile */,
+				4646DA0E1BA6B63A007F37FF /* CsbBase */,
+			);
+			name = Csb;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
@@ -288,13 +318,13 @@
 			isa = PBXGroup;
 			children = (
 				467C52611BD1F22300A080E0 /* Common */,
+				467C52751BD21B2400A080E0 /* CsbMacro.h */,
 				46C464B81BA7F363001D5DCA /* Parts */,
 				4646DA031BA69E40007F37FF /* Scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* MainScene.cpp */,
 				46880B8719C43A87006E1F66 /* MainScene.h */,
-				46C464BD1BA7F91F001D5DCA /* UCommon.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -303,18 +333,19 @@
 		46C464B81BA7F363001D5DCA /* Parts */ = {
 			isa = PBXGroup;
 			children = (
-				46C464B91BA7F370001D5DCA /* DebugMeshLayer */,
+				467C526F1BD21A3D00A080E0 /* UI */,
+				467C52731BD21A8000A080E0 /* UICommon.h */,
 			);
 			name = Parts;
 			sourceTree = "<group>";
 		};
-		46C464B91BA7F370001D5DCA /* DebugMeshLayer */ = {
+		46C464B91BA7F370001D5DCA /* CoordinateMesh */ = {
 			isa = PBXGroup;
 			children = (
-				46C464BA1BA7F854001D5DCA /* DebugMeshLayer.cpp */,
-				46C464BB1BA7F854001D5DCA /* DebugMeshLayer.h */,
+				467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */,
+				467C52711BD21A5000A080E0 /* CoordinateMesh.h */,
 			);
-			name = DebugMeshLayer;
+			name = CoordinateMesh;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -492,10 +523,11 @@
 				46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */,
 				4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				46C464BC1BA7F854001D5DCA /* DebugMeshLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				4646DA0D1BA6B631007F37FF /* CsbBase.cpp in Sources */,
+				467C52721BD21A5000A080E0 /* CoordinateMesh.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				467C527B1BD21B3400A080E0 /* LoadCsbFile.cpp in Sources */,
+				467C52781BD21B2D00A080E0 /* CsbBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
