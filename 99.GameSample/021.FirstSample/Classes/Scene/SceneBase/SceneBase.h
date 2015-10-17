@@ -15,7 +15,7 @@ namespace UScene
 {
     
     // 変数の自動設定マクロ
-#define CCS_MEMBER_VARIABLE_ASSIGNER(TARGET, MEMBERNAME, MEMBERTYPE, MEMBER)    \
+#define CSB_MEMBER_VARIABLE_ASSIGNER(TARGET, MEMBERNAME, MEMBERTYPE, MEMBER)    \
     if ( TARGET && (strcmp(MEMBERNAME, "") != 0) )                                          \
     {                                                                           \
         MEMBER = static_cast<MEMBERTYPE>(TARGET->getChildByName(MEMBERNAME));   \

@@ -63,7 +63,7 @@ namespace UScene
     {
         SceneBase::initCcsMemberVariables();
         
-        CCS_MEMBER_VARIABLE_ASSIGNER(this, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);
+        CSB_MEMBER_VARIABLE_ASSIGNER(this, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);
     }
     
     /**
@@ -91,7 +91,7 @@ namespace UScene
             this->stopAction(this->demoPlayerAction_);
         }
         
-        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_ = CSLoader::createTimeline("Parts/DemoPlayer.csb");
         this->demoPlayerAction_->gotoFrameAndPlay(115, 160, true);
         this->runAction(this->demoPlayerAction_);
     }
@@ -103,7 +103,7 @@ namespace UScene
             this->stopAction(this->demoPlayerAction_);
         }
         
-        this->demoPlayerAction_ = CSLoader::createTimeline("DemoPlayer.csb");
+        this->demoPlayerAction_ = CSLoader::createTimeline("Parts/DemoPlayer.csb");
         this->demoPlayerAction_->gotoFrameAndPlay(131, 250, false);
         this->runAction(this->demoPlayerAction_);
     }

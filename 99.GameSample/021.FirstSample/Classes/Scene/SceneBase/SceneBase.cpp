@@ -49,7 +49,7 @@ namespace UScene
      */
     void SceneBase::initCcsMemberVariables()
     {
-        CCS_MEMBER_VARIABLE_ASSIGNER(this, "uiLayerNode", cocos2d::Node*, this->uiLayerNode_);
+        CSB_MEMBER_VARIABLE_ASSIGNER(this, "uiLayerNode", cocos2d::Node*, this->uiLayerNode_);
     }
     
     cocos2d::ui::Widget::ccWidgetTouchCallback SceneBase::onLocateTouchCallback(const std::string &callBackName)

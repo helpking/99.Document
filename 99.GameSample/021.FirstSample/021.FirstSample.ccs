@@ -10,7 +10,7 @@
           <Project Name="DemoPlayer.csd" Type="Skeleton" />
           <Project Name="Role.csd" Type="Node" />
           <Project Name="WindMill.csd" Type="Node" />
-          <Project Name="DebugMesh.csd" Type="Layer" />
+          <Project Name="CoordinateMesh.csd" Type="Layer" />
         </Folder>
         <Folder Name="GUIRes">
           <Folder Name="Role">

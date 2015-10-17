@@ -37,7 +37,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="Parts/DebugMesh.csd" Plist="" />
+                <FileData Type="Normal" Path="Parts/CoordinateMesh.csd" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="buttonListNode" ActionTag="-1254322717" Tag="100" IconVisible="True" LeftMargin="850.0000" RightMargin="-850.0000" TopMargin="-550.0000" BottomMargin="550.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
