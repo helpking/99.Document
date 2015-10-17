@@ -33,7 +33,7 @@ namespace UScene
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     void TopScene::onEnter()
     {
-        SceneBase::onEnter();
+        CsbBase::onEnter();
         
         //加载动画：
         cocostudio::timeline::ActionTimeline *action = NULL;
@@ -61,7 +61,7 @@ namespace UScene
      */
     void TopScene::initCcsMemberVariables()
     {
-        SceneBase::initCcsMemberVariables();
+        CsbBase::initCcsMemberVariables();
         
         CSB_MEMBER_VARIABLE_ASSIGNER(this, "walkBtn", cocos2d::ui::Button*, this->walkBtn_);
     }

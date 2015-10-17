@@ -11,14 +11,14 @@
 
 #include "UCommon.h"
 
-#include "SceneBase.h"
+#include "CsbBase.h"
 #include "UIButton.h"
 
 namespace UScene
 {
     
     class TopScene
-    : public SceneBase
+    : public CsbBase
     {
     public:
         CREATE_FUNC(TopScene)

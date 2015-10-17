@@ -1,13 +1,13 @@
 //
-//  SceneBase.h
+//  CsbBase.h
 //  021.FirstSample
 //
 //  Created by 何 利強 on 2015/09/14.
 //
 //
 
-#ifndef ___21_FirstSample__SceneBase__
-#define ___21_FirstSample__SceneBase__
+#ifndef ___21_FirstSample__CsbBase__
+#define ___21_FirstSample__CsbBase__
 
 #include "UCommon.h"
 
@@ -21,14 +21,14 @@ namespace UScene
         MEMBER = static_cast<MEMBERTYPE>(TARGET->getChildByName(MEMBERNAME));   \
     }
     
-    class SceneBase
+    class CsbBase
     : public cocos2d::Node
     , public cocostudio::WidgetCallBackHandlerProtocol
     {
     public:
-        CREATE_FUNC(SceneBase)
-        SceneBase();
-        ~SceneBase();
+        CREATE_FUNC(CsbBase)
+        CsbBase();
+        ~CsbBase();
         
         // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
         virtual void onEnter() override;
@@ -79,4 +79,4 @@ namespace UScene
     };
 }
 
-#endif /* defined(___21_FirstSample__SceneBase__) */
+#endif /* defined(___21_FirstSample__CsbBase__) */

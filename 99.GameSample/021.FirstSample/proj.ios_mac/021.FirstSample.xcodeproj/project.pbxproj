@@ -12,7 +12,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		4646DA0A1BA6A5A7007F37FF /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA081BA6A5A7007F37FF /* TopScene.cpp */; };
-		4646DA0D1BA6B631007F37FF /* SceneBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA0B1BA6B631007F37FF /* SceneBase.cpp */; };
+		4646DA0D1BA6B631007F37FF /* CsbBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4646DA0B1BA6B631007F37FF /* CsbBase.cpp */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8A19C43A87006E1F66 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* MainScene.cpp */; };
@@ -75,8 +75,8 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4646DA081BA6A5A7007F37FF /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopScene.cpp; path = Scene/TopScene/TopScene.cpp; sourceTree = "<group>"; };
 		4646DA091BA6A5A7007F37FF /* TopScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopScene.h; path = Scene/TopScene/TopScene.h; sourceTree = "<group>"; };
-		4646DA0B1BA6B631007F37FF /* SceneBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneBase.cpp; path = Scene/SceneBase/SceneBase.cpp; sourceTree = "<group>"; };
-		4646DA0C1BA6B631007F37FF /* SceneBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneBase.h; path = Scene/SceneBase/SceneBase.h; sourceTree = "<group>"; };
+		4646DA0B1BA6B631007F37FF /* CsbBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CsbBase.cpp; path = Scene/SceneBase/CsbBase.cpp; sourceTree = "<group>"; };
+		4646DA0C1BA6B631007F37FF /* CsbBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CsbBase.h; path = Scene/SceneBase/CsbBase.h; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46880B8619C43A87006E1F66 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
@@ -244,7 +244,6 @@
 		4646DA031BA69E40007F37FF /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				4646DA0E1BA6B63A007F37FF /* SceneBase */,
 				4646DA041BA69E4A007F37FF /* TopScene */,
 			);
 			name = Scene;
@@ -259,13 +258,21 @@
 			name = TopScene;
 			sourceTree = "<group>";
 		};
-		4646DA0E1BA6B63A007F37FF /* SceneBase */ = {
+		4646DA0E1BA6B63A007F37FF /* CsbBase */ = {
 			isa = PBXGroup;
 			children = (
-				4646DA0B1BA6B631007F37FF /* SceneBase.cpp */,
-				4646DA0C1BA6B631007F37FF /* SceneBase.h */,
+				4646DA0B1BA6B631007F37FF /* CsbBase.cpp */,
+				4646DA0C1BA6B631007F37FF /* CsbBase.h */,
 			);
-			name = SceneBase;
+			name = CsbBase;
+			sourceTree = "<group>";
+		};
+		467C52611BD1F22300A080E0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4646DA0E1BA6B63A007F37FF /* CsbBase */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
@@ -280,6 +287,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				467C52611BD1F22300A080E0 /* Common */,
 				46C464B81BA7F363001D5DCA /* Parts */,
 				4646DA031BA69E40007F37FF /* Scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
@@ -486,7 +494,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				46C464BC1BA7F854001D5DCA /* DebugMeshLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				4646DA0D1BA6B631007F37FF /* SceneBase.cpp in Sources */,
+				4646DA0D1BA6B631007F37FF /* CsbBase.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
