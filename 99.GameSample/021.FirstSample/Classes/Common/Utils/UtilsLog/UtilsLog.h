@@ -45,50 +45,74 @@ public:
     
     /**
      * @brief ログ(普通)の出力関数
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iFormat ログフォーマット
      */
-    void OutputInfo(const char* iFormat, ...);
+    void OutputInfo(const bool isTimerCountFlg,
+                    long& iMSec,
+                    const char* iFormat, ...);
     
     /**
      * @brief ログ(普通)の出力関数
      * @param[in] iFuncName メソッド名
      * @param[in] iSourceRowNo ソース行番号
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iFormat ログフォーマット
      */
     void OutputInfo(const char* iFuncName,
                     const int iSourceRowNo,
+                    const bool isTimerCountFlg,
+                    long& iMSec,
                     const char* iFormat, ...);
     
     /**
      * @brief ログ(警告)の出力関数
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iFormat ログフォーマット
      */
-    void OutputWarning(const char* iFormat, ...);
+    void OutputWarning(const bool isTimerCountFlg,
+                       long& iMSec,
+                       const char* iFormat, ...);
     
     /**
      * @brief ログ(警告)の出力関数
      * @param[in] iFuncName メソッド名
      * @param[in] iSourceRowNo ソース行番号
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iFormat ログフォーマット
      */
     void OutputWarning(const char* iFuncName,
                        const int iSourceRowNo,
+                       const bool isTimerCountFlg,
+                       long& iMSec,
                        const char* iFormat, ...);
     
     /**
      * @brief ログ(エラー)の出力関数
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iFormat ログフォーマット
      */
-    void OutputError(const char* iFormat, ...);
+    void OutputError(const bool isTimerCountFlg,
+                     long& iMSec,
+                     const char* iFormat, ...);
     
     /**
      * @brief ログ(エラー)の出力関数
      * @param[in] iFuncName メソッド名
      * @param[in] iSourceRowNo ソース行番号
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iFormat ログフォーマット
      */
     void OutputError(const char* iFuncName,
                      const int iSourceRowNo,
+                     const bool isTimerCountFlg,
+                     long& iMSec,
                      const char* iFormat, ...);
     
 private:
@@ -107,9 +131,13 @@ private:
     /**
      * @brief ライン毎に、ログ(エラー)の出力関数
      * @param[in] iLogMsg ログメッセージ
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iLogType ログタイプ
      */
     void outputInline(const char* iLogMsg,
+                      const bool isTimerCountFlg,
+                      long& iMSec,
                       const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
     
     /**
@@ -117,29 +145,41 @@ private:
      * @param[in] iFuncName メソッド名
      * @param[in] iSourceRowNo ソース行番号
      * @param[in] iLogMsg ログメッセージ
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iLogType ログタイプ
      */
     void outputInline(const char* iFuncName,
                       const int iSourceRowNo,
                       const char* iLogMsg,
+                      const bool isTimerCountFlg,
+                      long& iMSec,
                       const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
     
     /**
      * @brief ログの出力関数
      * @param[in] iLogMsg ログメッセージ
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iLogType ログタイプ
      */
     void output(const char* iLogMsg,
+                const bool isTimerCountFlg,
+                long& iMSec,
                 const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
     
     /**
      * @brief ログの出力関数
      * @param[in] iFuncName メソッド名
      * @param[in] iSourceRowNo ソース行番号
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @param[in] iLogType ログタイプ
      */
     void outputSourceInfo(const char* iFuncName,
                           const int iSourceRowNo,
+                          const bool isTimerCountFlg,
+                          long& iMSec,
                           const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
     
 };

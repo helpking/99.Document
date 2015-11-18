@@ -21,15 +21,17 @@ class CommonLib
 public:
     
     /**
-     * @brief システム日付(YYYY/MM/DD HH:MM:SS)を取得する
+     * @brief システム日付を取得する(タイムカウンター付き)
+     * @param[in] isTimerCountFlg 日付フォーマット
+     * @param[in] iMSec ミリ秒
      * @return システム日付
      */
-    static const char* getSystemDateTime();
+    static const std::string getSystemDateTime(const bool isTimerCountFlg, long& iMSec);
     
     /**
      * @brief データ（__Dictionary）をダンプする
-     * @return iDictInfo データ
-     * @return iTabCnt タブカウント
+     * @param[in] iDictInfo データ
+     * @param[in] iTabCnt タブカウント
      * @param[in] iKey キー
      * @param[in] iTotalMsg メッセージ
      */

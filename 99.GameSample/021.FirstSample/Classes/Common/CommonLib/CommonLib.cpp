@@ -12,27 +12,63 @@
 USING_NS_CC;
 USING_NS_COMMON;
 
+
 /**
- * @brief システム日付(YYYY/MM/DD HH:MM:SS)を取得する
+ * @brief システム日付を取得する(タイムカウンター付き)
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @return システム日付
  */
-const char* CommonLib::getSystemDateTime()
+const std::string CommonLib::getSystemDateTime(const bool isTimerCountFlg, long& iMSec)
 {
     time_t now = time(NULL);
     tm* tm = localtime( &now );
     
-    const float msec = double( clock() ) / CLOCKS_PER_SEC;
     char buf[32];
-    sprintf( buf, "%04d/%02d/%02d %02d:%02d:%02d.%03d",
-            tm->tm_year+1900,
-            tm->tm_mon+1,
-            tm->tm_mday,
-            tm->tm_hour,
-            tm->tm_min,
-            tm->tm_sec,
-            int( ( msec - int(msec) ) * 1000 ));
+    if (isTimerCountFlg == false)
+    {
+        sprintf( buf, "%04d/%02d/%02d %02d:%02d:%02d",
+                tm->tm_year+1900,
+                tm->tm_mon+1,
+                tm->tm_mday,
+                tm->tm_hour,
+                tm->tm_min,
+                tm->tm_sec);
+    }
+    else
+    {
+        struct timeval tv;
+        gettimeofday(&tv,NULL);
+        
+        if (-1 == iMSec)
+        {
+            sprintf( buf, "%04d/%02d/%02d %02d:%02d:%02d.S%03d",
+                    tm->tm_year+1900,
+                    tm->tm_mon+1,
+                    tm->tm_mday,
+                    tm->tm_hour,
+                    tm->tm_min,
+                    tm->tm_sec, 0);
+            iMSec = (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
+        }
+        else
+        {
+            long MSecNow = (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
+            int deltaMSecTmp = (int)(MSecNow - iMSec);
+            deltaMSecTmp = MAX(0, deltaMSecTmp);
+            sprintf( buf, "%04d/%02d/%02d %02d:%02d:%02d.E%03d",
+                    tm->tm_year+1900,
+                    tm->tm_mon+1,
+                    tm->tm_mday,
+                    tm->tm_hour,
+                    tm->tm_min,
+                    tm->tm_sec,
+                    deltaMSecTmp);
+            iMSec = 0;
+        }
+    }
     
-    return std::string(buf).c_str();
+    return std::string(buf);
 }
 
 /**

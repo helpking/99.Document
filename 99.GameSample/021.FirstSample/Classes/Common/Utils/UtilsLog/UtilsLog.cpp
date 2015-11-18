@@ -21,10 +21,11 @@ USING_NS_COMMON;
 UtilsLog::UtilsLog()
 : logCnt_(0)
 {
-    const std::string outPutFilePath = CCFileUtils::getInstance()->getWritablePath() + this->getLogFileName();
+    const std::string outPutFilePath = FileUtils::getInstance()->getWritablePath() + this->getLogFileName();
     logFile_.open( outPutFilePath.c_str(),
                  std::ios::out );
-    OutputInfo("LogFile:%s", outPutFilePath.c_str());
+    long mSec = -1;
+    OutputInfo(false, mSec, "LogFile:%s", outPutFilePath.c_str());
 }
 
 /**
@@ -38,35 +39,12 @@ UtilsLog::~UtilsLog()
 
 /**
  * @brief ログ(普通)の出力関数
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
-void UtilsLog::OutputInfo(const char* iFormat, ...)
-{
-#ifdef COCOS2D_DEBUG
-    
-    // ログカウント
-    ++logCnt_;
-    
-    const int kMaxLogLen = MAX_CHAR_BUFF_LEN;
-    char szBuf[kMaxLogLen];
-    
-    va_list ap;
-    va_start(ap, iFormat);
-    vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
-    va_end(ap);
-    
-    outputInline(szBuf);
-#endif
-}
-
-/**
- * @brief ログの出力関数
- * @param[in] iFuncName メソッド名
- * @param[in] iSourceRowNo ソース行番号
- * @param[in] iFormat ログフォーマット
- */
-void UtilsLog::OutputInfo(const char* iFuncName,
-                          const int iSourceRowNo,
+void UtilsLog::OutputInfo(const bool isTimerCountFlg,
+                          long& iMSec,
                           const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
@@ -82,15 +60,23 @@ void UtilsLog::OutputInfo(const char* iFuncName,
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(iFuncName, iSourceRowNo, szBuf);
+    outputInline(szBuf, isTimerCountFlg, iMSec);
 #endif
 }
 
 /**
- * @brief ログ(警告)の出力関数
+ * @brief ログの出力関数
+ * @param[in] iFuncName メソッド名
+ * @param[in] iSourceRowNo ソース行番号
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
-void UtilsLog::OutputWarning(const char* iFormat, ...)
+void UtilsLog::OutputInfo(const char* iFuncName,
+                          const int iSourceRowNo,
+                          const bool isTimerCountFlg,
+                          long& iMSec,
+                          const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
     
@@ -105,18 +91,18 @@ void UtilsLog::OutputWarning(const char* iFormat, ...)
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(szBuf, E_LOG_TYPE::E_WARNING);
+    outputInline(iFuncName, iSourceRowNo, szBuf, isTimerCountFlg, iMSec);
 #endif
 }
 
 /**
  * @brief ログ(警告)の出力関数
- * @param[in] iFuncName メソッド名
- * @param[in] iSourceRowNo ソース行番号
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
-void UtilsLog::OutputWarning(const char* iFuncName,
-                             const int iSourceRowNo,
+void UtilsLog::OutputWarning(const bool isTimerCountFlg,
+                             long& iMSec,
                              const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
@@ -132,15 +118,23 @@ void UtilsLog::OutputWarning(const char* iFuncName,
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(iFuncName, iSourceRowNo, szBuf, E_LOG_TYPE::E_WARNING);
+    outputInline(szBuf, isTimerCountFlg, iMSec, E_LOG_TYPE::E_WARNING);
 #endif
 }
 
 /**
- * @brief ログ(エラー)の出力関数
+ * @brief ログ(警告)の出力関数
+ * @param[in] iFuncName メソッド名
+ * @param[in] iSourceRowNo ソース行番号
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
-void UtilsLog::OutputError(const char* iFormat, ...)
+void UtilsLog::OutputWarning(const char* iFuncName,
+                             const int iSourceRowNo,
+                             const bool isTimerCountFlg,
+                             long& iMSec,
+                             const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
     
@@ -155,18 +149,18 @@ void UtilsLog::OutputError(const char* iFormat, ...)
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(szBuf, E_LOG_TYPE::E_ERROR);
+    outputInline(iFuncName, iSourceRowNo, szBuf, isTimerCountFlg, iMSec, E_LOG_TYPE::E_WARNING);
 #endif
 }
 
 /**
  * @brief ログ(エラー)の出力関数
- * @param[in] iFuncName メソッド名
- * @param[in] iSourceRowNo ソース行番号
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
-void UtilsLog::OutputError(const char* iFuncName,
-                           const int iSourceRowNo,
+void UtilsLog::OutputError(const bool isTimerCountFlg,
+                           long& iMSec,
                            const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
@@ -182,16 +176,51 @@ void UtilsLog::OutputError(const char* iFuncName,
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(iFuncName, iSourceRowNo, szBuf, E_LOG_TYPE::E_ERROR);
+    outputInline(szBuf, isTimerCountFlg, iMSec, E_LOG_TYPE::E_ERROR);
+#endif
+}
+
+/**
+ * @brief ログ(エラー)の出力関数
+ * @param[in] iFuncName メソッド名
+ * @param[in] iSourceRowNo ソース行番号
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
+ * @param[in] iFormat ログフォーマット
+ */
+void UtilsLog::OutputError(const char* iFuncName,
+                           const int iSourceRowNo,
+                           const bool isTimerCountFlg,
+                           long& iMSec,
+                           const char* iFormat, ...)
+{
+#ifdef COCOS2D_DEBUG
+    
+    // ログカウント
+    ++logCnt_;
+    
+    const int kMaxLogLen = MAX_CHAR_BUFF_LEN;
+    char szBuf[kMaxLogLen];
+    
+    va_list ap;
+    va_start(ap, iFormat);
+    vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
+    va_end(ap);
+    
+    outputInline(iFuncName, iSourceRowNo, szBuf, isTimerCountFlg, iMSec, E_LOG_TYPE::E_ERROR);
 #endif
 }
 
 /**
  * @brief ライン毎に、ログ(エラー)の出力関数
  * @param[in] iLogMsg ログメッセージ
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iLogType ログタイプ
  */
 void UtilsLog::outputInline(const char* iLogMsg,
+                            const bool isTimerCountFlg,
+                            long& iMSec,
                             const E_LOG_TYPE iLogType)
 {
     std::string logTmp = iLogMsg;
@@ -209,7 +238,7 @@ void UtilsLog::outputInline(const char* iLogMsg,
     {
         LineTmp = logTmp.substr(0, findPosTmp);
         
-        this->output(LineTmp.c_str(), iLogType);
+        this->output(LineTmp.c_str(), isTimerCountFlg, iMSec, iLogType);
         
         startPos = findPosTmp + strlen("¥n");
         logTmp = logTmp.substr(startPos);
@@ -218,7 +247,7 @@ void UtilsLog::outputInline(const char* iLogMsg,
     
     if (logTmp.empty() == false)
     {
-        this->output(logTmp.c_str(), iLogType);
+        this->output(logTmp.c_str(), isTimerCountFlg, iMSec, iLogType);
     }
     
 }
@@ -228,11 +257,15 @@ void UtilsLog::outputInline(const char* iLogMsg,
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
  * @param[in] iLogMsg ログメッセージ
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iLogType ログタイプ
  */
 void UtilsLog::outputInline(const char* iFuncName,
                             const int iSourceRowNo,
                             const char* iLogMsg,
+                            const bool isTimerCountFlg,
+                            long& iMSec,
                             const E_LOG_TYPE iLogType)
 {
     if (iLogMsg == nullptr)
@@ -241,7 +274,7 @@ void UtilsLog::outputInline(const char* iFuncName,
     }
     
     // ソース情報を出力する
-    this->outputSourceInfo(iFuncName, iSourceRowNo, iLogType);
+    this->outputSourceInfo(iFuncName, iSourceRowNo, isTimerCountFlg, iMSec, iLogType);
     
     std::string logTmp = iLogMsg;
     size_t findPosTmp = logTmp.find("\n");
@@ -258,7 +291,7 @@ void UtilsLog::outputInline(const char* iFuncName,
     {
         LineTmp = logTmp.substr(0, findPosTmp);
         
-        this->output(LineTmp.c_str(), iLogType);
+        this->output(LineTmp.c_str(), isTimerCountFlg, iMSec, iLogType);
         
         startPos = findPosTmp + strlen("¥n");
         logTmp = logTmp.substr(startPos);
@@ -267,19 +300,23 @@ void UtilsLog::outputInline(const char* iFuncName,
     
     if (logTmp.empty() == false)
     {
-        this->output(logTmp.c_str(), iLogType);
+        this->output(logTmp.c_str(), isTimerCountFlg, iMSec, iLogType);
     }
 }
 
 /**
  * @brief ログの出力関数
  * @param[in] iLogMsg ログメッセージ
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iLogType ログタイプ
  */
 void UtilsLog::output(const char* iLogMsg,
+                      const bool isTimerCountFlg,
+                      long& iMSec,
                       const E_LOG_TYPE iLogType)
 {
-    const char* SystemDateTime = CommonLib::getSystemDateTime();
+    const char* SystemDateTime = CommonLib::getSystemDateTime(isTimerCountFlg, iMSec).c_str();
     
     char BuffTmp[MAX_CHAR_BUFF_LEN];
     memset(BuffTmp, 0x00000000, sizeof(BuffTmp));
@@ -311,13 +348,17 @@ void UtilsLog::output(const char* iLogMsg,
  * @brief ログの出力関数
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
+ * @param[in] isTimerCountFlg 日付フォーマット
+ * @param[in] iMSec ミリ秒
  * @param[in] iLogType ログタイプ
  */
 void UtilsLog::outputSourceInfo(const char* iFuncName,
                                 const int iSourceRowNo,
+                                const bool isTimerCountFlg,
+                                long& iMSec,
                                 const E_LOG_TYPE iLogType)
 {
-    const char* SystemDateTime = CommonLib::getSystemDateTime();
+    const char* SystemDateTime = CommonLib::getSystemDateTime(isTimerCountFlg, iMSec).c_str();
     
     char BuffTmp[MAX_CHAR_BUFF_LEN];
     memset(BuffTmp, 0x00000000, sizeof(BuffTmp));
