@@ -13,19 +13,21 @@ USING_NS_COMMON_UTILS;
 
 USING_NS_COMMON;
 
-#define MAX_CHAR_BUFF_LEN                            16 * 1024
+#define MAX_CHAR_BUFF_LEN                            16*1024
 
 /**
  * @brief コンストラクタ
  */
 UtilsLog::UtilsLog()
 : logCnt_(0)
+, logLastTime(-1)
+, logNowTime(-1)
+, logMSecCntStatus(E_LOG_MSEC_CNT_STS::E_INVALID)
 {
     const std::string outPutFilePath = FileUtils::getInstance()->getWritablePath() + this->getLogFileName();
     logFile_.open( outPutFilePath.c_str(),
                  std::ios::out );
-    long mSec = -1;
-    OutputInfo(false, mSec, "LogFile:%s", outPutFilePath.c_str());
+    OutputInfo("LogFile:%s", outPutFilePath.c_str());
 }
 
 /**
@@ -38,14 +40,65 @@ UtilsLog::~UtilsLog()
 }
 
 /**
+ * @brief ログ出力開始関数（ミリ秒カウント開始）
+ * @param[in] iFuncName メソッド名
+ * @param[in] iSourceRowNo ソース行番号
+ * @param[in] iLogType ログタイプ
+ */
+void UtilsLog::OutputMSecCntStart(const char* iFuncName,
+                                  const int iSourceRowNo,
+                                  const E_LOG_TYPE iLogType)
+{
+#ifdef COCOS2D_DEBUG
+    
+    // ログカウント
+    ++this->logCnt_;
+    // ミリ秒カウンター開始フラグ
+    this->logMSecCntStatus = E_LOG_MSEC_CNT_STS::E_START;
+    // 対比された時間を初期化する
+    this->logLastTime = -1;
+    this->logNowTime = -1;
+    
+    // 開始ログを出力する
+    outputInline(iFuncName, iSourceRowNo, nullptr, this->logMSecCntStatus, iLogType);
+    
+#endif
+}
+
+/**
+ * @brief ログ出力開始関数（ミリ秒カウント終了）
+ * @param[in] iFuncName メソッド名
+ * @param[in] iSourceRowNo ソース行番号
+ * @param[in] iLogType ログタイプ
+ */
+void UtilsLog::OutputMSecCntEnd(const char* iFuncName,
+                                const int iSourceRowNo,
+                                const E_LOG_TYPE iLogType)
+{
+#ifdef COCOS2D_DEBUG
+    
+    // ログカウント
+    ++this->logCnt_;
+    // ミリ秒カウンター開始フラグ
+    this->logMSecCntStatus = E_LOG_MSEC_CNT_STS::E_END;
+    
+    // 開始ログを出力する
+    outputInline(iFuncName, iSourceRowNo, nullptr, this->logMSecCntStatus, iLogType);
+    
+    // ミリ秒カウンター開始フラグ
+    this->logMSecCntStatus = E_LOG_MSEC_CNT_STS::E_INVALID;
+    // 対比された時間を初期化する
+    this->logLastTime = -1;
+    this->logNowTime = -1;
+    
+#endif
+}
+
+/**
  * @brief ログ(普通)の出力関数
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
-void UtilsLog::OutputInfo(const bool isTimerCountFlg,
-                          long& iMSec,
-                          const char* iFormat, ...)
+void UtilsLog::OutputInfo(const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
     
@@ -60,7 +113,8 @@ void UtilsLog::OutputInfo(const bool isTimerCountFlg,
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(szBuf, isTimerCountFlg, iMSec);
+    outputInline(szBuf, E_LOG_MSEC_CNT_STS::E_INVALID);
+    
 #endif
 }
 
@@ -68,14 +122,10 @@ void UtilsLog::OutputInfo(const bool isTimerCountFlg,
  * @brief ログの出力関数
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
 void UtilsLog::OutputInfo(const char* iFuncName,
                           const int iSourceRowNo,
-                          const bool isTimerCountFlg,
-                          long& iMSec,
                           const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
@@ -91,19 +141,19 @@ void UtilsLog::OutputInfo(const char* iFuncName,
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(iFuncName, iSourceRowNo, szBuf, isTimerCountFlg, iMSec);
+    if (E_LOG_MSEC_CNT_STS::E_START == this->logMSecCntStatus)
+    {
+        this->logMSecCntStatus = E_LOG_MSEC_CNT_STS::E_COUNTING;
+    }
+    outputInline(iFuncName, iSourceRowNo, szBuf, this->logMSecCntStatus);
 #endif
 }
 
 /**
  * @brief ログ(警告)の出力関数
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
-void UtilsLog::OutputWarning(const bool isTimerCountFlg,
-                             long& iMSec,
-                             const char* iFormat, ...)
+void UtilsLog::OutputWarning(const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
     
@@ -117,8 +167,8 @@ void UtilsLog::OutputWarning(const bool isTimerCountFlg,
     va_start(ap, iFormat);
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
-    
-    outputInline(szBuf, isTimerCountFlg, iMSec, E_LOG_TYPE::E_WARNING);
+
+    outputInline(szBuf, E_LOG_MSEC_CNT_STS::E_INVALID, E_LOG_TYPE::E_WARNING);
 #endif
 }
 
@@ -126,14 +176,10 @@ void UtilsLog::OutputWarning(const bool isTimerCountFlg,
  * @brief ログ(警告)の出力関数
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
 void UtilsLog::OutputWarning(const char* iFuncName,
                              const int iSourceRowNo,
-                             const bool isTimerCountFlg,
-                             long& iMSec,
                              const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
@@ -149,19 +195,19 @@ void UtilsLog::OutputWarning(const char* iFuncName,
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(iFuncName, iSourceRowNo, szBuf, isTimerCountFlg, iMSec, E_LOG_TYPE::E_WARNING);
+    if (E_LOG_MSEC_CNT_STS::E_START == this->logMSecCntStatus)
+    {
+        this->logMSecCntStatus = E_LOG_MSEC_CNT_STS::E_COUNTING;
+    }
+    outputInline(iFuncName, iSourceRowNo, szBuf,  this->logMSecCntStatus, E_LOG_TYPE::E_WARNING);
 #endif
 }
 
 /**
  * @brief ログ(エラー)の出力関数
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
-void UtilsLog::OutputError(const bool isTimerCountFlg,
-                           long& iMSec,
-                           const char* iFormat, ...)
+void UtilsLog::OutputError(const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
     
@@ -176,7 +222,7 @@ void UtilsLog::OutputError(const bool isTimerCountFlg,
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(szBuf, isTimerCountFlg, iMSec, E_LOG_TYPE::E_ERROR);
+    outputInline(szBuf, E_LOG_MSEC_CNT_STS::E_INVALID, E_LOG_TYPE::E_ERROR);
 #endif
 }
 
@@ -184,14 +230,10 @@ void UtilsLog::OutputError(const bool isTimerCountFlg,
  * @brief ログ(エラー)の出力関数
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
  * @param[in] iFormat ログフォーマット
  */
 void UtilsLog::OutputError(const char* iFuncName,
                            const int iSourceRowNo,
-                           const bool isTimerCountFlg,
-                           long& iMSec,
                            const char* iFormat, ...)
 {
 #ifdef COCOS2D_DEBUG
@@ -207,22 +249,30 @@ void UtilsLog::OutputError(const char* iFuncName,
     vsnprintf(szBuf, kMaxLogLen, iFormat, ap);
     va_end(ap);
     
-    outputInline(iFuncName, iSourceRowNo, szBuf, isTimerCountFlg, iMSec, E_LOG_TYPE::E_ERROR);
+    if (E_LOG_MSEC_CNT_STS::E_START == this->logMSecCntStatus)
+    {
+        this->logMSecCntStatus = E_LOG_MSEC_CNT_STS::E_COUNTING;
+    }
+    outputInline(iFuncName, iSourceRowNo, szBuf, this->logMSecCntStatus, E_LOG_TYPE::E_ERROR);
 #endif
 }
 
 /**
  * @brief ライン毎に、ログ(エラー)の出力関数
  * @param[in] iLogMsg ログメッセージ
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
+ * @param[in] iMSecCntStatus ミリ秒カウンターステタース
  * @param[in] iLogType ログタイプ
  */
 void UtilsLog::outputInline(const char* iLogMsg,
-                            const bool isTimerCountFlg,
-                            long& iMSec,
+                            const E_LOG_MSEC_CNT_STS& iMSecCntStatus,
                             const E_LOG_TYPE iLogType)
 {
+    
+    if (nullptr == iLogMsg)
+    {
+        return;
+    }
+    
     std::string logTmp = iLogMsg;
     size_t findPosTmp = logTmp.find("\n");
     while (findPosTmp != std::string::npos )
@@ -238,7 +288,7 @@ void UtilsLog::outputInline(const char* iLogMsg,
     {
         LineTmp = logTmp.substr(0, findPosTmp);
         
-        this->output(LineTmp.c_str(), isTimerCountFlg, iMSec, iLogType);
+        this->output(LineTmp.c_str(), iMSecCntStatus, iLogType);
         
         startPos = findPosTmp + strlen("¥n");
         logTmp = logTmp.substr(startPos);
@@ -247,7 +297,7 @@ void UtilsLog::outputInline(const char* iLogMsg,
     
     if (logTmp.empty() == false)
     {
-        this->output(logTmp.c_str(), isTimerCountFlg, iMSec, iLogType);
+        this->output(logTmp.c_str(), iMSecCntStatus, iLogType);
     }
     
 }
@@ -257,80 +307,137 @@ void UtilsLog::outputInline(const char* iLogMsg,
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
  * @param[in] iLogMsg ログメッセージ
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
+ * @param[in] iMSecCntStatus ミリ秒カウンターステタース
  * @param[in] iLogType ログタイプ
  */
 void UtilsLog::outputInline(const char* iFuncName,
                             const int iSourceRowNo,
                             const char* iLogMsg,
-                            const bool isTimerCountFlg,
-                            long& iMSec,
+                            const E_LOG_MSEC_CNT_STS& iMSecCntStatus,
                             const E_LOG_TYPE iLogType)
 {
-    if (iLogMsg == nullptr)
-    {
-        return;
-    }
     
     // ソース情報を出力する
-    this->outputSourceInfo(iFuncName, iSourceRowNo, isTimerCountFlg, iMSec, iLogType);
-    
-    std::string logTmp = iLogMsg;
-    size_t findPosTmp = logTmp.find("\n");
-    while (findPosTmp != std::string::npos )
+    this->outputSourceInfo(iFuncName, iSourceRowNo, iMSecCntStatus, iLogType);
+ 
+    if (nullptr != iLogMsg)
     {
-        logTmp.replace(findPosTmp, strlen("\n"), "¥n");
-        findPosTmp = logTmp.find("\n");
-    }
-    
-    std::string LineTmp = logTmp;
-    size_t startPos = 0;
-    findPosTmp = logTmp.find("¥n");
-    while (findPosTmp != std::string::npos )
-    {
-        LineTmp = logTmp.substr(0, findPosTmp);
+        std::string logTmp = iLogMsg;
+        size_t findPosTmp = logTmp.find("\n");
+        while (findPosTmp != std::string::npos )
+        {
+            logTmp.replace(findPosTmp, strlen("\n"), "¥n");
+            findPosTmp = logTmp.find("\n");
+        }
         
-        this->output(LineTmp.c_str(), isTimerCountFlg, iMSec, iLogType);
-        
-        startPos = findPosTmp + strlen("¥n");
-        logTmp = logTmp.substr(startPos);
+        std::string LineTmp = logTmp;
+        size_t startPos = 0;
         findPosTmp = logTmp.find("¥n");
-    }
-    
-    if (logTmp.empty() == false)
-    {
-        this->output(logTmp.c_str(), isTimerCountFlg, iMSec, iLogType);
+        while (findPosTmp != std::string::npos )
+        {
+            LineTmp = logTmp.substr(0, findPosTmp);
+            
+            this->output(LineTmp.c_str(), iMSecCntStatus, iLogType);
+            
+            startPos = findPosTmp + strlen("¥n");
+            logTmp = logTmp.substr(startPos);
+            findPosTmp = logTmp.find("¥n");
+        }
+        
+        if (logTmp.empty() == false)
+        {
+            this->output(logTmp.c_str(), iMSecCntStatus, iLogType);
+        }
     }
 }
 
 /**
  * @brief ログの出力関数
  * @param[in] iLogMsg ログメッセージ
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
+ * @param[in] iMSecCntStatus ミリ秒カウンターステタース
  * @param[in] iLogType ログタイプ
  */
 void UtilsLog::output(const char* iLogMsg,
-                      const bool isTimerCountFlg,
-                      long& iMSec,
+                      const E_LOG_MSEC_CNT_STS& iMSecCntStatus,
                       const E_LOG_TYPE iLogType)
 {
-    const char* SystemDateTime = CommonLib::getSystemDateTime(isTimerCountFlg, iMSec).c_str();
+    if (nullptr == iLogMsg)
+    {
+        return;
+    }
+    
+    const bool isMSecCntFlg = this->isMSecCountUp(iMSecCntStatus);
+    const char* SystemDateTime = nullptr;
+    if (-1 == this->logLastTime )
+    {
+        SystemDateTime = CommonLib::getSystemDateTime(isMSecCntFlg, this->logLastTime).c_str();
+    }
+    else
+    {
+        SystemDateTime = CommonLib::getSystemDateTime(isMSecCntFlg, this->logNowTime).c_str();
+    }
     
     char BuffTmp[MAX_CHAR_BUFF_LEN];
     memset(BuffTmp, 0x00000000, sizeof(BuffTmp));
     
+    int deltaTime = (int)(this->logNowTime - this->logLastTime);
+    deltaTime = MAX(0, deltaTime);
+    
     switch (iLogType)
     {
         case E_LOG_TYPE::E_INFO:
-            sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A]%s", SystemDateTime, this->logCnt_, iLogMsg);
+        {
+            switch (iMSecCntStatus) {
+                case E_LOG_MSEC_CNT_STS::E_START:
+                    sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A][S+%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_COUNTING:
+                    sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A][ +%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_END:
+                    sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A][E+%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                default:
+                    sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A]%s", SystemDateTime, this->logCnt_, iLogMsg);
+                    break;
+            }
+        }
             break;
         case E_LOG_TYPE::E_WARNING:
-            sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A]%s", SystemDateTime, this->logCnt_, iLogMsg);
+        {
+            switch (iMSecCntStatus) {
+                case E_LOG_MSEC_CNT_STS::E_START:
+                    sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A][S+%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_COUNTING:
+                    sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A][ +%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_END:
+                    sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A][E+%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                default:
+                    sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A]%s", SystemDateTime, this->logCnt_, iLogMsg);
+                    break;
+            }
+        }
             break;
         case E_LOG_TYPE::E_ERROR:
-            sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A]%s", SystemDateTime, this->logCnt_, iLogMsg);
+        {
+            switch (iMSecCntStatus) {
+                case E_LOG_MSEC_CNT_STS::E_START:
+                    sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][S+%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_COUNTING:
+                    sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][ +%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_END:
+                    sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][E+%03d ms]%s", SystemDateTime, this->logCnt_, deltaTime, iLogMsg);
+                    break;
+                default:
+                    sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A]%s", SystemDateTime, this->logCnt_, iLogMsg);
+                    break;
+            }
+        }
             break;
         default:
             break;
@@ -348,31 +455,88 @@ void UtilsLog::output(const char* iLogMsg,
  * @brief ログの出力関数
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
- * @param[in] isTimerCountFlg 日付フォーマット
- * @param[in] iMSec ミリ秒
+ * @param[in] iMSecCntStatus ミリ秒カウンターステタース
  * @param[in] iLogType ログタイプ
  */
 void UtilsLog::outputSourceInfo(const char* iFuncName,
                                 const int iSourceRowNo,
-                                const bool isTimerCountFlg,
-                                long& iMSec,
+                                const E_LOG_MSEC_CNT_STS& iMSecCntStatus,
                                 const E_LOG_TYPE iLogType)
 {
-    const char* SystemDateTime = CommonLib::getSystemDateTime(isTimerCountFlg, iMSec).c_str();
+    
+    const bool isMSecCntFlg = this->isMSecCountUp(iMSecCntStatus);
+    
+    const char* SystemDateTime = nullptr;
+    if (-1 == this->logLastTime )
+    {
+        SystemDateTime = CommonLib::getSystemDateTime(isMSecCntFlg, this->logLastTime).c_str();
+    }
+    else
+    {
+        SystemDateTime = CommonLib::getSystemDateTime(isMSecCntFlg, this->logNowTime).c_str();
+    }
     
     char BuffTmp[MAX_CHAR_BUFF_LEN];
     memset(BuffTmp, 0x00000000, sizeof(BuffTmp));
     
+    int deltaTime = (int)(this->logNowTime - this->logLastTime);
+    deltaTime = MAX(0, deltaTime);
+    
     switch (iLogType)
     {
         case E_LOG_TYPE::E_INFO:
-            sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A][Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
+        {
+            switch (iMSecCntStatus) {
+                case E_LOG_MSEC_CNT_STS::E_START:
+                    sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A][S+%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_COUNTING:
+                    sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A][ +%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_END:
+                    sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A][E+%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                default:
+                    sprintf(BuffTmp, "[%s][%08lu][Info   ][Debug:C I/A][Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
+                    break;
+            }
+        }
             break;
         case E_LOG_TYPE::E_WARNING:
-            sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A][Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
+        {
+            switch (iMSecCntStatus) {
+                case E_LOG_MSEC_CNT_STS::E_START:
+                    sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A][S+%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_COUNTING:
+                    sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A][ +%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_END:
+                    sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A][E+%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                default:
+                    sprintf(BuffTmp, "[%s][%08lu][Warning][Debug:C I/A][Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
+                    break;
+            }
+        }
             break;
         case E_LOG_TYPE::E_ERROR:
-            sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
+        {
+            switch (iMSecCntStatus) {
+                case E_LOG_MSEC_CNT_STS::E_START:
+                    sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][S+%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_COUNTING:
+                    sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][ +%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                case E_LOG_MSEC_CNT_STS::E_END:
+                    sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][E+%03d ms][Source:%s(R%d)]", SystemDateTime, this->logCnt_, deltaTime, iFuncName, iSourceRowNo);
+                    break;
+                default:
+                    sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
+                    break;
+            }
+        }
             break;
         default:
             break;

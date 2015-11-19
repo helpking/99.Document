@@ -21,12 +21,12 @@ class CommonLib
 public:
     
     /**
-     * @brief システム日付を取得する(タイムカウンター付き)
-     * @param[in] isTimerCountFlg 日付フォーマット
+     * @brief システム日付を取得する(ミリ秒カウンター付き)
+     * @param[in] isMSecCntFlg ミリ秒カウンターフラグ
      * @param[in] iMSec ミリ秒
      * @return システム日付
      */
-    static const std::string getSystemDateTime(const bool isTimerCountFlg, long& iMSec);
+    static const std::string getSystemDateTime(const bool isMSecCntFlg, long& iMSec);
     
     /**
      * @brief データ（__Dictionary）をダンプする
