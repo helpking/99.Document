@@ -35,21 +35,17 @@ public:
      * @brief ログ出力開始関数（ミリ秒カウント開始）
      * @param[in] iFuncName メソッド名
      * @param[in] iSourceRowNo ソース行番号
-     * @param[in] iLogType ログタイプ
      */
     void OutputMSecCntStart(const char* iFuncName,
-                            const int iSourceRowNo,
-                            const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
+                            const int iSourceRowNo);
     
     /**
      * @brief ログ出力開始関数（ミリ秒カウント終了）
      * @param[in] iFuncName メソッド名
      * @param[in] iSourceRowNo ソース行番号
-     * @param[in] iLogType ログタイプ
      */
     void OutputMSecCntEnd(const char* iFuncName,
-                          const int iSourceRowNo,
-                          const E_LOG_TYPE iLogType = E_LOG_TYPE::E_INFO);
+                          const int iSourceRowNo);
     
     /**
      * @brief ログ(普通)の出力関数

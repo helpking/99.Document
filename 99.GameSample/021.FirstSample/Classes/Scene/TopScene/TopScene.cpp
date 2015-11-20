@@ -39,6 +39,8 @@ TopScene::~TopScene()
 // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 void TopScene::onEnter()
 {
+    LOG_TIMER_START()
+    
     BaseScene::onEnter();
     
     //加载动画：
@@ -54,8 +56,13 @@ void TopScene::onEnter()
     this->demoPlayerAction_ = Singleton<UtilsFileLoader>::getInstance()->loadActionFile(ResInfoPool::E_RES_ID::E_PARTS_DEMO_PLAYER);
     this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
     this->runAction(this->demoPlayerAction_);
+    
+    ERR_LOG("Test Error")
+    WARNING_LOG("Test Warning")
 
     DUMP_DICT_INFO(Singleton<AppConfig>::getInstance()->getConfigInfo());
+    
+    LOG_TIMER_END()
 }
 
 /**

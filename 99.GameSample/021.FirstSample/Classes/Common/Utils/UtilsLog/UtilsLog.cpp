@@ -43,11 +43,9 @@ UtilsLog::~UtilsLog()
  * @brief ログ出力開始関数（ミリ秒カウント開始）
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
- * @param[in] iLogType ログタイプ
  */
 void UtilsLog::OutputMSecCntStart(const char* iFuncName,
-                                  const int iSourceRowNo,
-                                  const E_LOG_TYPE iLogType)
+                                  const int iSourceRowNo)
 {
 #ifdef COCOS2D_DEBUG
     
@@ -60,7 +58,7 @@ void UtilsLog::OutputMSecCntStart(const char* iFuncName,
     this->logNowTime = -1;
     
     // 開始ログを出力する
-    outputInline(iFuncName, iSourceRowNo, nullptr, this->logMSecCntStatus, iLogType);
+    outputInline(iFuncName, iSourceRowNo, nullptr, this->logMSecCntStatus, E_LOG_TYPE::E_TIMER_COUNT_S);
     
 #endif
 }
@@ -69,11 +67,9 @@ void UtilsLog::OutputMSecCntStart(const char* iFuncName,
  * @brief ログ出力開始関数（ミリ秒カウント終了）
  * @param[in] iFuncName メソッド名
  * @param[in] iSourceRowNo ソース行番号
- * @param[in] iLogType ログタイプ
  */
 void UtilsLog::OutputMSecCntEnd(const char* iFuncName,
-                                const int iSourceRowNo,
-                                const E_LOG_TYPE iLogType)
+                                const int iSourceRowNo)
 {
 #ifdef COCOS2D_DEBUG
     
@@ -83,7 +79,7 @@ void UtilsLog::OutputMSecCntEnd(const char* iFuncName,
     this->logMSecCntStatus = E_LOG_MSEC_CNT_STS::E_END;
     
     // 開始ログを出力する
-    outputInline(iFuncName, iSourceRowNo, nullptr, this->logMSecCntStatus, iLogType);
+    outputInline(iFuncName, iSourceRowNo, nullptr, this->logMSecCntStatus, E_LOG_TYPE::E_TIMER_COUNT_E);
     
     // ミリ秒カウンター開始フラグ
     this->logMSecCntStatus = E_LOG_MSEC_CNT_STS::E_INVALID;
@@ -536,6 +532,16 @@ void UtilsLog::outputSourceInfo(const char* iFuncName,
                     sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A][Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
                     break;
             }
+        }
+            break;
+        case E_LOG_TYPE::E_TIMER_COUNT_S:
+        {
+            sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A] Timer Count Start -> [Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
+        }
+            break;
+        case E_LOG_TYPE::E_TIMER_COUNT_E:
+        {
+            sprintf(BuffTmp, "[%s][%08lu][Error  ][Debug:C I/A] Timer Count End <- [Source:%s(R%d)]", SystemDateTime, this->logCnt_, iFuncName, iSourceRowNo);
         }
             break;
         default:

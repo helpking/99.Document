@@ -31,8 +31,6 @@ BaseScene::~BaseScene()
 
 void BaseScene::onEnter()
 {
-    INFO_LOG_TIMER_START()
-    
     LoadFileBase::onEnter();
     
     if (this->getName().empty())
@@ -41,10 +39,8 @@ void BaseScene::onEnter()
     }
     else
     {
-        INFO_TIMER_LOG("-> Scene : %s", this->getName().c_str());
+        INFO_LOG("-> Scene : %s", this->getName().c_str());
     }
-    
-    INFO_LOG_TIMER_END()
 }
 
 

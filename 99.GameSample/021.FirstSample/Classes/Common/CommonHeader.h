@@ -22,6 +22,8 @@ enum class E_LOG_TYPE
     E_INFO,
     E_WARNING,
     E_ERROR,
+    E_TIMER_COUNT_S,
+    E_TIMER_COUNT_E,
     E_MAX
 };
 
