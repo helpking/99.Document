@@ -7,11 +7,10 @@
 //
 
 #include "CoordinateMesh.h"
-#include "Singleton.h"
 #include "GameDraw.h"
 
 USING_NS_UIPARTS;
-USING_NS_COMMON_GDRAW;
+USING_NS_COMMON;
 
 // ファイルローダーを初期化する
 FILE_LOADER_INIT(CoordinateMesh);

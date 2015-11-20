@@ -110,6 +110,7 @@
 		4636EFF11BC3F1C300328A90 /* GameDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDraw.h; path = Common/Draw/GameDraw.h; sourceTree = "<group>"; };
 		4646DA081BA6A5A7007F37FF /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopScene.cpp; path = Scene/TopScene/TopScene.cpp; sourceTree = "<group>"; };
 		4646DA091BA6A5A7007F37FF /* TopScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopScene.h; path = Scene/TopScene/TopScene.h; sourceTree = "<group>"; };
+		466B97211BFEF7720027C1EC /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = Common/Singleton.h; sourceTree = "<group>"; };
 		46777C551BCF723B0047388C /* AppConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppConfig.cpp; path = Manager/Config/AppConfig.cpp; sourceTree = "<group>"; };
 		46777C561BCF723B0047388C /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConfig.h; path = Manager/Config/AppConfig.h; sourceTree = "<group>"; };
 		467C52701BD21A5000A080E0 /* CoordinateMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CoordinateMesh.cpp; path = Parts/UI/CoordinateMesh/CoordinateMesh.cpp; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		46B5A93E1BCE2E79002BAB36 /* CommonLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommonLib.cpp; path = Common/CommonLib/CommonLib.cpp; sourceTree = "<group>"; };
 		46B5A93F1BCE2E79002BAB36 /* CommonLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonLib.h; path = Common/CommonLib/CommonLib.h; sourceTree = "<group>"; };
 		46B5A9421BCE2EA5002BAB36 /* CommonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonMacro.h; path = Common/CommonMacro.h; sourceTree = "<group>"; };
-		46D30CD01BCA323A00E7087B /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = InterfaceLab/Singleton.h; sourceTree = "<group>"; };
 		46D30CD91BCA614200E7087B /* UtilsFileLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UtilsFileLoader.cpp; path = Common/Utils/UtilsFileLoader/UtilsFileLoader.cpp; sourceTree = "<group>"; };
 		46D30CDA1BCA614200E7087B /* UtilsFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsFileLoader.h; path = Common/Utils/UtilsFileLoader/UtilsFileLoader.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -355,6 +355,13 @@
 			name = TopScene;
 			sourceTree = "<group>";
 		};
+		466B97201BFEF19A0027C1EC /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Platform;
+			sourceTree = "<group>";
+		};
 		46777C541BCF721F0047388C /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,10 +374,12 @@
 		467C52611BD1F22300A080E0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				466B97201BFEF19A0027C1EC /* Platform */,
 				4636EFEF1BC3F1A700328A90 /* Draw */,
 				467C52741BD21B0B00A080E0 /* Utils */,
 				467C52981BD2390400A080E0 /* CommonHeader.h */,
 				46B5A9421BCE2EA5002BAB36 /* CommonMacro.h */,
+				466B97211BFEF7720027C1EC /* Singleton.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -592,7 +601,6 @@
 				EF3C9AA71BC95F120083CCB2 /* InterfaceLab.h */,
 				EF3C9AA81BC95F120083CCB2 /* LoadFileBase.h */,
 				EF3C9AB71BC988420083CCB2 /* FileLoader.h */,
-				46D30CD01BCA323A00E7087B /* Singleton.h */,
 				46B5A9351BCE289B002BAB36 /* InterfaceHeader.h */,
 				46B5A9361BCE28BA002BAB36 /* InterfaceMacro.h */,
 				46B5A93A1BCE2C30002BAB36 /* InterfaceMacro.cpp */,

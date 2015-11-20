@@ -9,8 +9,6 @@
 #include "LoadFileBase.h"
 #include "UIButton.h"
 
-#include "Singleton.h"
-
 USING_NS_INTERFACE_LAB;
 
 LoadFileBase::LoadFileBase()
@@ -26,7 +24,7 @@ LoadFileBase::~LoadFileBase()
 // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 void LoadFileBase::onEnter()
 {
-    CCNode::onEnter();
+    Node::onEnter();
     
     // ロードファイルで指定された、変数一覧を初期化にする
     this->initLoadFileMemberInfo();
@@ -40,7 +38,7 @@ void LoadFileBase::onEnter()
 
 void LoadFileBase::onExit()
 {
-    CCNode::onExit();
+    Node::onExit();
 }
 
 /**

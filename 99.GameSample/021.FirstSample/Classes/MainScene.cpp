@@ -11,6 +11,7 @@
 #include "UtilsFileLoader.h"
 
 USING_NS_CC;
+USING_NS_COMMON;
 USING_NS_COMMON_UTILS;
 
 using namespace cocostudio::timeline;

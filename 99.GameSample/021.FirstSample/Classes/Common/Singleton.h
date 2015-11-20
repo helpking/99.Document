@@ -9,9 +9,9 @@
 #ifndef ___21_FirstSample__Singleton__
 #define ___21_FirstSample__Singleton__
 
-#include "InterfaceLab.h"
+#include "CommonMacro.h"
 
-NS_BEGIN_NS_INTERFACE_LAB
+NS_BEGIN_NS_COMMON
 
 /**
  * @brief シングルクラス
@@ -47,6 +47,6 @@ private:
 // 初期化
 template <class T> std::auto_ptr<T> Singleton<T>::m_pInstance;
 
-NS_END_NS_INTERFACE_LAB
+NS_END_NS_COMMON
 
 #endif /* defined(___21_FirstSample__Singleton__) */

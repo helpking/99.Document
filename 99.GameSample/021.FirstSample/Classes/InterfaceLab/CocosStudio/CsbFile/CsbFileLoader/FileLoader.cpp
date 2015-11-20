@@ -13,6 +13,7 @@
 
 // MARK:Namespace
 USING_NS_INTERFACE_LAB;
+USING_NS_COMMON;
 
 // MARK:Class define
 /**

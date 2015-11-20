@@ -11,7 +11,7 @@
 
 #include "CommonHeader.h"
 
-NS_BEGIN_NS_COMMON_GDRAW
+NS_BEGIN_NS_COMMON
 
 class GameDraw
 {
@@ -41,6 +41,6 @@ protected:
 private:
 };
 
-NS_END_NS_COMMON_GDRAW
+NS_END_NS_COMMON
 
 #endif /* defined(___21_FirstSample__GameDraw__) */

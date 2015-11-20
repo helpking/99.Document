@@ -8,7 +8,7 @@
 
 #include "GameDraw.h"
 
-USING_NS_COMMON_GDRAW;
+USING_NS_COMMON;
 
 /**
  * @brief コンストラクター
