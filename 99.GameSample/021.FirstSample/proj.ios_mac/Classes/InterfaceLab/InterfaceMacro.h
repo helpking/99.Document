@@ -10,16 +10,16 @@
 #define _21_FirstSample_InterfaceMacro_h
 
 #include "cocos2d.h"
-#include "PlatformType.h"
 
 #pragma mark -
 #pragma mark ゲームツールライブ区分
-
 #define GAME_TOOL_LAB_COCOSSTUDIO                   1
 #define GAME_TOOL_LAB_KBN                           1
 
 #pragma mark -
 #pragma mark ヘッダーファイル及びNameSpace(共通)
+#include "PlatformTypes.h"
+//typedef char TChar;
 
 #define USING_NS_CC_UI                              using namespace cocos2d::ui
 
@@ -39,9 +39,6 @@ USING_NS_CC_MATH;
 // cocostudio
 #define USING_NS_COCOS_STUDIO                       using namespace cocostudio
 
-// namespace
-USING_NS_COCOS_STUDIO;
-
 /**
  * @brief 指定されたノード名で、ルートロードから、ノードを探す
  * @param[in] iSearchRootNode 1
@@ -49,6 +46,9 @@ USING_NS_COCOS_STUDIO;
  * @return 探したいノード
  */
 Node* IRTNodeSearch(Node* iSearchRootNode, const char* iNodeName);
+
+// namespace
+USING_NS_COCOS_STUDIO;
 
 // 変数の自動設定マクロ
 #define FILE_MEMBER_VARIABLE_ASSIGNER(TARGET, MEMBERNAME, MEMBERTYPE, MEMBER) \

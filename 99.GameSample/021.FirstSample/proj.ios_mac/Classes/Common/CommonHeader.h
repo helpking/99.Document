@@ -9,7 +9,7 @@
 #ifndef _21_FirstSample_CommonHeader_h
 #define _21_FirstSample_CommonHeader_h
 
-#include "Platform/PlatformType.h"
+#include "PlatformTypes.h"
 #include "CommonMacro.h"
 #include "Singleton.h"
 

@@ -9,7 +9,7 @@
 #ifndef _21_FirstSample_ManagerMacro_h
 #define _21_FirstSample_ManagerMacro_h
 
-#include "PlatformType.h"
+#include "PlatformTypes.h"
 
 // マネジャー
 #define USING_NS_MANAGER                                using namespace Manager
