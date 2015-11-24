@@ -48,6 +48,7 @@
 		466B97971BFF1BA30027C1EC /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 466B97711BFF1BA30027C1EC /* BaseScene.cpp */; };
 		466B97981BFF1BA30027C1EC /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 466B97741BFF1BA30027C1EC /* TopScene.cpp */; };
 		466B97991BFF1BA30027C1EC /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 466B97741BFF1BA30027C1EC /* TopScene.cpp */; };
+		469D450D1C0481EB0099155A /* ResDownloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 469D450B1C0481EB0099155A /* ResDownloader.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -150,6 +151,8 @@
 		466B97721BFF1BA30027C1EC /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
 		466B97741BFF1BA30027C1EC /* TopScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopScene.cpp; sourceTree = "<group>"; };
 		466B97751BFF1BA30027C1EC /* TopScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopScene.h; sourceTree = "<group>"; };
+		469D450B1C0481EB0099155A /* ResDownloader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResDownloader.cpp; sourceTree = "<group>"; };
+		469D450C1C0481EB0099155A /* ResDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResDownloader.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -435,12 +438,13 @@
 		466B97521BFF1BA30027C1EC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				466B975F1BFF1BA30027C1EC /* ManagerMacro.h */,
+				466B975E1BFF1BA30027C1EC /* ManagerHeader.h */,
+				469D450A1C0481B10099155A /* ResDownLoader */,
 				466B97531BFF1BA30027C1EC /* BattleData */,
 				466B97541BFF1BA30027C1EC /* Config */,
 				466B97571BFF1BA30027C1EC /* GameManager */,
 				466B975A1BFF1BA30027C1EC /* History */,
-				466B975E1BFF1BA30027C1EC /* ManagerHeader.h */,
-				466B975F1BFF1BA30027C1EC /* ManagerMacro.h */,
 				466B97601BFF1BA30027C1EC /* ResInfoPool */,
 				466B97631BFF1BA30027C1EC /* UserData */,
 			);
@@ -583,6 +587,16 @@
 			);
 			name = Resources;
 			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		469D450A1C0481B10099155A /* ResDownLoader */ = {
+			isa = PBXGroup;
+			children = (
+				469D450B1C0481EB0099155A /* ResDownloader.cpp */,
+				469D450C1C0481EB0099155A /* ResDownloader.h */,
+			);
+			name = ResDownLoader;
+			path = DownLoad;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -762,6 +776,7 @@
 				466B978C1BFF1BA30027C1EC /* GameManager.cpp in Sources */,
 				466B97781BFF1BA30027C1EC /* CommonLib.cpp in Sources */,
 				466B97861BFF1BA30027C1EC /* InterfaceMacro.cpp in Sources */,
+				469D450D1C0481EB0099155A /* ResDownloader.cpp in Sources */,
 				466B977A1BFF1BA30027C1EC /* GameDraw.cpp in Sources */,
 				466B97761BFF1BA30027C1EC /* AppDelegate.cpp in Sources */,
 				466B97961BFF1BA30027C1EC /* BaseScene.cpp in Sources */,

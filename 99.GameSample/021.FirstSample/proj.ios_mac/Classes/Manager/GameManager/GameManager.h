@@ -9,7 +9,7 @@
 #ifndef _21_FirstSample_GameManager_h
 #define _21_FirstSample_GameManager_h
 
-#include "ManagerHeader.h"
+#include "ManagerMacro.h"
 #include "ResInfoPool.h"
 #include "Singleton.h"
 

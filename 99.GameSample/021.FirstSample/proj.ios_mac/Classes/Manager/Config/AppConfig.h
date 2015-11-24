@@ -9,7 +9,7 @@
 #ifndef ___21_FirstSample__AppConfig__
 #define ___21_FirstSample__AppConfig__
 
-#include "ManagerHeader.h"
+#include "ManagerMacro.h"
 
 USING_NS_CC;
 NS_BEGIN_CONFIG

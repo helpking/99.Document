@@ -9,7 +9,7 @@
 #ifndef ___21_FirstSample__SceneHistory__
 #define ___21_FirstSample__SceneHistory__
 
-#include "ManagerHeader.h"
+#include "ManagerMacro.h"
 
 NS_BEGIN_SCENE_HISTORY
 

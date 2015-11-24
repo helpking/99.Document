@@ -9,7 +9,7 @@
 #ifndef ___21_FirstSample__ResInfoPool__
 #define ___21_FirstSample__ResInfoPool__
 
-#include "ManagerHeader.h"
+#include "ManagerMacro.h"
 
 NS_BEGIN_RESINFO
 

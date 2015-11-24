@@ -56,9 +56,6 @@ void TopScene::onEnter()
     this->demoPlayerAction_ = Singleton<UtilsFileLoader>::getInstance()->loadActionFile(ResInfoPool::E_RES_ID::E_PARTS_DEMO_PLAYER);
     this->demoPlayerAction_->gotoFrameAndPlay(0, 316, true);
     this->runAction(this->demoPlayerAction_);
-    
-    ERR_LOG("Test Error")
-    WARNING_LOG("Test Warning")
 
     DUMP_DICT_INFO(Singleton<AppConfig>::getInstance()->getConfigInfo());
     

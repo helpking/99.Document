@@ -7,7 +7,6 @@
 //
 
 #include "GameManager.h"
-#include "ManagerHeader.h"
 
 USING_NS_MANAGER;
 
