@@ -19,6 +19,9 @@ Server 配置手順メモ
   バージョンチェックのコマンド
 　node --version
 
+  勉強資料
+  -> Node.js教程 : http://www.yiibai.com/nodejs/
+
 2) python(2.5 < version < 3.0)
 
 　バージョンチェックのコマンド
