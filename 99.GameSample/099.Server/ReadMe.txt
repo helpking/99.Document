@@ -22,6 +22,29 @@ Server 配置手順メモ
   勉強資料
   -> Node.js教程 : http://www.yiibai.com/nodejs/
 
+  ①  NodeJsのライブ、または、ツールのインストール
+     --> express
+         npm install -g express / npm uninstall express
+     --> express-generator 
+         npm install -g express-generator / npm uninstall express-generator 
+
+         expressで、新規プロジェクトを作成する
+         express -e  プロジェクト名(-e : ejs デフォルト：jade)
+
+         作成してから、上記プロジェクトのデレクトリで、初期化として、以下のコマンドを実行してください。
+         sudo npm install
+
+         作成成功するかどうかのチェック
+         以下のコマンドを実行してください。
+         DEBUG=app ./bin/www
+
+         ブラザで、以下のURLを入力してください。
+         http://127.0.0.1:3000
+
+     --> jade
+         npm install -g jade / npm uninstall jade
+     
+
 2) python(2.5 < version < 3.0)
 
 　バージョンチェックのコマンド
