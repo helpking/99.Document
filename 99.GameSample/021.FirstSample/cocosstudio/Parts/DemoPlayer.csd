@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Skeleton" Name="DemoPlayer" ID="bbb20e2a-adf0-489c-ba65-71a529e1ca41" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="DemoPlayer" Type="Skeleton" ID="bbb20e2a-adf0-489c-ba65-71a529e1ca41" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="316" Speed="1.0000">
@@ -1378,4 +1378,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

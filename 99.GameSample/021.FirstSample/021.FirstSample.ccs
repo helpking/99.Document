@@ -1,10 +1,11 @@
 <Solution>
-  <PropertyGroup Name="021.FirstSample" Version="2.3.2.3" Type="CocosStudio" />
+  <PropertyGroup Name="021.FirstSample" Version="2.3.3.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="Scene">
           <Project Name="TopScene.csd" Type="Scene" />
+          <Project Name="TitleScene.csd" Type="Scene" />
         </Folder>
         <Folder Name="Parts">
           <Project Name="DemoPlayer.csd" Type="Skeleton" />

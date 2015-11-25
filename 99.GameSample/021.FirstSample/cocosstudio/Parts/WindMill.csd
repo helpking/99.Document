@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Node" Name="WindMill" ID="a8030532-15c1-4f9d-9f98-1bb2c74c7f97" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="WindMill" Type="Node" ID="a8030532-15c1-4f9d-9f98-1bb2c74c7f97" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="35" Speed="1.0000">
@@ -94,4 +94,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

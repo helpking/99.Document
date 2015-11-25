@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Node" Name="Role" ID="a6cd7b71-66a8-4ac1-a4bc-5f85289b8595" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="Role" Type="Node" ID="a6cd7b71-66a8-4ac1-a4bc-5f85289b8595" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="30" Speed="1.0000">
@@ -41,7 +41,7 @@
             <FileData Type="Normal" Path="GUIRes/Role/run5.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="WindMill" ActionTag="-1952818250" Tag="20" IconVisible="True" TopMargin="100.0000" BottomMargin="-100.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="WindMill" ActionTag="-1952818250" Tag="20" IconVisible="True" TopMargin="100.0000" BottomMargin="-100.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position Y="-100.0000" />
@@ -55,4 +55,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

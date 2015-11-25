@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Scene" Name="TopScene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="2.3.2.3" />
+<GameFile>
+  <PropertyGroup Name="TopScene" Type="Scene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="2.3.3.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -108,7 +108,7 @@
               <AbstractNodeData Name="EntityBaseNode" ActionTag="-1805147318" Tag="167" IconVisible="True" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="ProjectNode_1" ActionTag="1611714003" Tag="7" IconVisible="True" LeftMargin="90.0000" RightMargin="-90.0000" TopMargin="-580.0000" BottomMargin="580.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
+                  <AbstractNodeData Name="ProjectNode_1" ActionTag="1611714003" Tag="7" IconVisible="True" LeftMargin="90.0000" RightMargin="-90.0000" TopMargin="-580.0000" BottomMargin="580.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
                     <Position X="90.0000" Y="580.0000" />
@@ -118,8 +118,8 @@
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="Parts/Role.csd" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="RoleNode" ActionTag="2137179535" Tag="82" IconVisible="True" LeftMargin="700.0000" RightMargin="-701.0000" TopMargin="-319.0000" BottomMargin="318.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="1.0000" Y="1.0000" />
+                  <AbstractNodeData Name="RoleNode" ActionTag="2137179535" Tag="82" IconVisible="True" LeftMargin="700.0000" RightMargin="-701.0000" TopMargin="-319.0000" BottomMargin="318.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+                    <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
                     <Position X="700.0000" Y="318.0000" />
                     <Scale ScaleX="0.2000" ScaleY="0.2000" />
@@ -148,4 +148,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>

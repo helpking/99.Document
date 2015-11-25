@@ -49,6 +49,8 @@
 		466B97981BFF1BA30027C1EC /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 466B97741BFF1BA30027C1EC /* TopScene.cpp */; };
 		466B97991BFF1BA30027C1EC /* TopScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 466B97741BFF1BA30027C1EC /* TopScene.cpp */; };
 		469D450D1C0481EB0099155A /* ResDownloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 469D450B1C0481EB0099155A /* ResDownloader.cpp */; };
+		469D45111C0485C00099155A /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 469D450F1C0485C00099155A /* TitleScene.cpp */; };
+		469D45121C0485C00099155A /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 469D450F1C0485C00099155A /* TitleScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -153,6 +155,8 @@
 		466B97751BFF1BA30027C1EC /* TopScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopScene.h; sourceTree = "<group>"; };
 		469D450B1C0481EB0099155A /* ResDownloader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResDownloader.cpp; sourceTree = "<group>"; };
 		469D450C1C0481EB0099155A /* ResDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResDownloader.h; sourceTree = "<group>"; };
+		469D450F1C0485C00099155A /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScene.cpp; sourceTree = "<group>"; };
+		469D45101C0485C00099155A /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -558,6 +562,7 @@
 			children = (
 				466B97701BFF1BA30027C1EC /* BaseScene */,
 				466B97731BFF1BA30027C1EC /* TopScene */,
+				469D450E1C04859C0099155A /* TitleScene */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -597,6 +602,15 @@
 			);
 			name = ResDownLoader;
 			path = DownLoad;
+			sourceTree = "<group>";
+		};
+		469D450E1C04859C0099155A /* TitleScene */ = {
+			isa = PBXGroup;
+			children = (
+				469D450F1C0485C00099155A /* TitleScene.cpp */,
+				469D45101C0485C00099155A /* TitleScene.h */,
+			);
+			path = TitleScene;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -787,6 +801,7 @@
 				466B97941BFF1BA30027C1EC /* CoordinateMesh.cpp in Sources */,
 				466B977C1BFF1BA30027C1EC /* UtilsFileLoader.cpp in Sources */,
 				466B97901BFF1BA30027C1EC /* ResInfoPool.cpp in Sources */,
+				469D45111C0485C00099155A /* TitleScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				466B97801BFF1BA30027C1EC /* CsbBase.cpp in Sources */,
 				466B97981BFF1BA30027C1EC /* TopScene.cpp in Sources */,
@@ -803,6 +818,7 @@
 				466B97891BFF1BA30027C1EC /* MainScene.cpp in Sources */,
 				466B97811BFF1BA30027C1EC /* CsbBase.cpp in Sources */,
 				466B97991BFF1BA30027C1EC /* TopScene.cpp in Sources */,
+				469D45121C0485C00099155A /* TitleScene.cpp in Sources */,
 				466B97771BFF1BA30027C1EC /* AppDelegate.cpp in Sources */,
 				466B97931BFF1BA30027C1EC /* BaseParts.cpp in Sources */,
 				466B978F1BFF1BA30027C1EC /* SceneHistory.cpp in Sources */,
