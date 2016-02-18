@@ -23,6 +23,7 @@ public:
     enum class E_RES_ID
     {
         E_INVALID = -1,
+        E_SCENE_TITLE,
         E_SCENE_TOP,
         E_PARTS_COORDINATE_MESH,
         E_PARTS_DEMO_PLAYER,
