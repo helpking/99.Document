@@ -36,18 +36,17 @@ cc.Class({
         // 将新增的节点添加到 Canvas 节点下面
         this.node.addChild(newStar);
         // 为星星设置一个随机位置
-        newStar.setPosition(cc.p(0, 0));
+        newStar.setPosition(this.getNewStarPosition());
     },
 
     getNewStarPosition: function () {
         var randX = 0;
         // 根据地平面位置和主角跳跃高度，随机得到一个星星的 y 坐标
-        //var randY = this.groundY + cc.random0To1() * this.player.getComponent('Player').jumpHeight + 50;
+        var randY = this.groundY + cc.random0To1() * this.player.getComponent('Player').jumpHeight + 50;
         var randY = this.groundY + 50;
         // 根据屏幕宽度，随机得到一个星星 x 坐标
-        // var maxX = this.node.width/2;
-        // randX = cc.randomMinus1To1() * maxX;
-        // randX = 0;
+        var maxX = this.node.width/2;
+        randX = cc.randomMinus1To1() * maxX;
         // 返回星星坐标
         return cc.p(randX, randY);
     }

@@ -350,7 +350,9 @@
       "__id__": 2
     },
     "_enabled": true,
-    "starPrefab": null,
+    "starPrefab": {
+      "__uuid__": "55f67e17-a038-4cab-95c4-de6d0e91b018"
+    },
     "maxStarDuration": 3,
     "minStarDuration": 5,
     "ground": {
