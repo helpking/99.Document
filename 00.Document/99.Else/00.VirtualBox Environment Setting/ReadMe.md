@@ -9,39 +9,42 @@ http://pc-karuma.net/mac-virtualbox-install/
 ２）CentOSのインストール
 　ダウンロードURL
 　https://www.centos.org/download/
-　（推奨：64bit）
-  MacでVirtualBoxにCentOS7をインストールしてSSH接続をするまでの方法
-  http://www.task-notes.com/entry/20150524/1432436400
-  
+　（推奨：64bit） 
+
+　開発するには、最小限度をお勧めですが、自分に好きなUIインタフェースもインストールしてもいいかも
+ 
 　①rootのパスワード
 　　admin
 
+  疑問：以下のSSHを設定しなくても、インタネットへもしくは、ホスト->ゲストへ ゲスト->ホストへのアクセスが自動でできてしまいました。
+  MacでVirtualBoxにCentOS7をインストールしてSSH接続をするまでの方法
+  http://koejima.com/archives/303/
+
+  簡単メモ：
+  virtualBox -> 環境設定 -> ネットワーク -> ホストオンリーネットワークで新しいホストオンリーを追加する（デフォルト名：vboxnet0）アドレス設定は以下です。
+　　アドレス：192.168.56.1
+　　ネットマスク：255.255.255.0
+  仮マシンのIP設定
+   アドレス：192.168.56.10
+   ネットマスク：255.255.255.0
+   ゲートウェイ：192.168.56.1
+
+   検証には、CentOSを起動して、ブラウザで、インタネットをアクセスしてみてください。
+
 ３）VirtualBox を全画面（フルスクリーン）で表示する方法
-　http://www.yocchi01.mydns.jp/webnote/centos6/bangai
- ①FAQ
-  以下のような失敗の場合
-　Could not mount the media/drive '/Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso' (VERR_PDM_MEDIA_LOCKED).
+　http://twakabay.blogspot.jp/2011/12/virtualboxcentos6.html
+ 
+  1. Virtualboxのメニューから
+  「デバイス」-「Guest Additions のインストール」を選択。
+  2. デスクトップ上にGuest AditionsのCDイメージが表示されマウントされる
+     PS:CentOSで、UIインタフェースをインストールされた場合、直接にインストールする用のダイアログが出てきます。以下のステープ3をやる必要がなくなります。
+  3. 「アプリケーション」-「アクセサリ」-「端末」でターミナルウィンドウを開き、root権限で以下のコマンドを実行
+    # cd /media/VBOXADDITIONS_4.1.8_75467
+    # sh ./VBoxLinuxAdditions.run
+  4. CentOSを再起動
+   最大化しても、フルスクリーン表示にしても自動で画面が最適表示されるようになる
 
-　以下のコマンドで「virtualbox-guest-utils」をインストールしてください。
-　sudo apt-get install virtualbox-guest-utils
+４）共有フォルダーの設定
+  http://pc-karuma.net/virtualbox-folder-share/
 
-　apt-getができない場合、finkをインストールしてください。
-　http://qiita.com/yu-sa/items/351969b281f3aea5e03d
-　
-  finkインストールの成功チェック
-  fink -v
-  例：
-　　Fink 0.41.0
-
-　以下の場合、
-　　command not found: fink
-　　インストールしたfinkのフォルダー直下のbinフォルダーで、Finkファイルがあるかどうか
-　　ある場合、システムのパスが正しく設定されていないです。
-　　リンクを使って、好きな自分のbinへ指定してください。
-　　例：
-　　　$# ln -s ./fink /Users/b06685/bin 
-
-　　リンク成功チェック
-　　　$# ls -l /Users/b06685/bin 
-     lrwxr-xr-x  1 b06685  CATK\Domain Users       6 10  9 19:33 fink -> ./fink
 
