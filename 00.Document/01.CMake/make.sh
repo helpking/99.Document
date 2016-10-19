@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-CMD=$0
+CUR_DIR=`pwd`
 DIR=""
 
 if [[ $# -lt 1 ]];then
@@ -36,4 +36,4 @@ rm -rf ./CMakeFiles/
 rm -f ./Makefile
 rm -f ./cmake_install.cmake
 
-cd $CMD
+cd $CUR_DIR
