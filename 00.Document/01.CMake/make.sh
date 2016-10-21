@@ -1,10 +1,11 @@
 #!/bin/bash 
 
 CUR_DIR=`pwd`
-DIR=""
+WORK_DIR=""
 CMAKE_PREFIX_PATH=""
 CLEANUP=0
 IS_TEST=0
+BIN_DIR="./bin"
 
 if [[ $# -lt 1 ]];then
     echo "Command Format:`basename $0` -d dir [-m cmake prefix path] [-c cleanup] [-t test flag]"
@@ -14,7 +15,7 @@ fi
 while getopts d:m:ct opt; do  
 case $opt in   
 	d)  
-		DIR=$OPTARG
+		WORK_DIR=$OPTARG
 		;; 
     m)
         CMAKE_PREFIX_PATH=$OPTARG
@@ -30,12 +31,13 @@ case $opt in
 esac  
 done  
 
-if [ ! -d "$DIR" ]; then 
-	echo "the direct is not exist!![Dir=$DIR]"
+if [ ! -d "$WORK_DIR" ]; then 
+	echo "the direct is not exist!![Dir=$WORK_DIR]"
 	exit 2
 fi
 
-cd $DIR
+cd ${WORK_DIR}
+mkdir ${BIN_DIR}
 
 if [ -f "./make.sh" ]; then
   sh ./make.sh
@@ -52,7 +54,7 @@ make
 
 # Clean
 if [ "${IS_TEST}" == "1" ]; then
-  rm -rf ./bin/
+  rm -rf ${BIN_DIR}
   rm -f ./CMakeCache.txt
   rm -rf ./CMakeFiles/
   rm -f ./Makefile
