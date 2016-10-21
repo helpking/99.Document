@@ -52,7 +52,11 @@ make
 
 # Clean
 if [ "${IS_TEST}" == "1" ]; then
-#else
+  rm -f ./CMakeCache.txt
+  rm -rf ./CMakeFiles/
+  rm -f ./Makefile
+  rm -f ./cmake_install.cmake
+else
   if [ "${CLEANUP}" == "1" ]; then
     rm -f ./CMakeCache.txt
     rm -rf ./CMakeFiles/
