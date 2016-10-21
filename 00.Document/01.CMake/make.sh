@@ -52,6 +52,7 @@ make
 
 # Clean
 if [ "${IS_TEST}" == "1" ]; then
+  rm -rf ./bin/
   rm -f ./CMakeCache.txt
   rm -rf ./CMakeFiles/
   rm -f ./Makefile
