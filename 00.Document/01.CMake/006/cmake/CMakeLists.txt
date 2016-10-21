@@ -2,11 +2,16 @@ cmake_minimum_required (VERSION 2.6)
 
 project(prog7)
 
-find_package(Qt4 REQUIRED)
+find_package(Qt5 REQUIRED)
 
-QT4_WRAP_CPP(prog7_h_moc ${prog7.h})
-QT4_WRAP_UI(prog7_ui_h prog1.ui)
-QT4_ADD_RESOURCES(prog7_rcc prog7.qrc)
+# QT4_WRAP_CPP(prog7_h_moc ${prog7.h})
+QT5_WRAP_CPP(prog7_h_moc ${prog7.h})
+
+# QT4_WRAP_UI(prog7_ui_h prog1.ui)
+QT5_WRAP_UI(prog7_ui_h prog1.ui)
+
+# QT4_ADD_RESOURCES(prog7_rcc prog7.qrc)
+QT5_ADD_RESOURCES(prog7_rcc prog7.qrc)
 
 include(${QT_USE_FILE})
 
