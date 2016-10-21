@@ -14,6 +14,6 @@ set(EXE_TARGET "${BIN_DIR}/target")
 # src
 set(SRC_DIR "./src")
 
-add_executable(${EXE_TARGET} prog6.cc)
+add_executable(${EXE_TARGET} ${SRC_DIR}/prog6.cc)
 target_link_libraries(${EXE_TARGET} ${GLUT_LIBRARY} ${OPENGL_LIBRARY} m)
 
