@@ -67,6 +67,7 @@ cd ${WORK_DIR}
 if [ ! -d "${TARGET_BIN_DIR}" ]; then 
   mkdir ${TARGET_BIN_DIR}
 fi
+rm -rf ${TARGET_BIN_DIR}/*
 
 if [ -f "./make.sh" ]; then
   sh ./make.sh
