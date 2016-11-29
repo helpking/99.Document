@@ -3,9 +3,15 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    QApplication app(argc, argv);
 
-    return a.exec();
+    // 设定 Application名
+    app.setApplicationName("MyQtApp");
+    app.setOrganizationName("MyOrganizetion");
+
+    // 主窗口生成
+    MainWindow mainWin;
+    mainWin.show();
+
+    return app.exec();
 }
