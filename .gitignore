@@ -2,6 +2,11 @@
 # デフォルト設定
 *.DS_Store
 
+# CMake
+*CPack/
+*.txt.user
+*automoc.cpp
+
 # ビルドディレクトリ
 *bin/
 *Debug/
