@@ -5,22 +5,25 @@
 #include <QAction>
 #include <QIcon>
 #include <QMenu>
+#include <QMenuBar>
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     mainUi(new Ui::MainWindow)
 {
+
     // 读取设定
     this->readSettings();
+
+    // 主UI设定
+    this->mainUi->setupUi(this);
 
     // 创建Actions
     this->createActions();
 
     // 创建Menus
     this->createMenus();
-
-    mainUi->setupUi(this);
 }
 
 MainWindow::~MainWindow()
@@ -91,9 +94,31 @@ void MainWindow::createActions() {
  * \brief 创建Menus
  */
 void MainWindow::createMenus() {
-    // 文件菜单
-    QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
-    fileMenu->addAction(this->newFileAct);
+
+    /* 初始化File菜单 */
+    fileMenu = new QMenu(tr("File"), this);
+
+    QAction* fileOpenAction = new QAction("&Open...", this);
+
+    QAction* fileSaveAction = new QAction("&Save...", this);
+
+    fileMenu->addAction(fileOpenAction);
+
+    fileMenu->addAction(fileSaveAction);
+
+    /* 初始化Edit菜单 */
+    editMenu = new QMenu("&Edit");
+
+    QAction* editCopyAction = editMenu->addAction("&Copy");
+
+    QAction* editCutAction = editMenu->addAction("&Cut");
+
+    /* 将菜单添加到菜单栏上 */
+    QMenuBar *menuBar = this->menuBar();
+
+    menuBar->addMenu(fileMenu);
+
+    menuBar->addMenu(editMenu);
 }
 
 #pragma mark-
