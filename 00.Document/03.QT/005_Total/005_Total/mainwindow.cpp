@@ -105,6 +105,7 @@ void MainWindow::createMenus() {
     fileMenu->addAction(fileOpenAction);
 
     fileMenu->addAction(fileSaveAction);
+    fileMenu->setLayoutDirection(Qt::LeftToRight);
 
     /* 初始化Edit菜单 */
     editMenu = new QMenu("&Edit");
@@ -113,12 +114,17 @@ void MainWindow::createMenus() {
 
     QAction* editCutAction = editMenu->addAction("&Cut");
 
+    editMenu->addAction(editCopyAction);
+    editMenu->addAction(editCutAction);
+
     /* 将菜单添加到菜单栏上 */
     QMenuBar *menuBar = this->menuBar();
 
     menuBar->addMenu(fileMenu);
 
     menuBar->addMenu(editMenu);
+    // 下拉菜单为向下
+    menuBar->setDefaultUp(false);
 }
 
 #pragma mark-
