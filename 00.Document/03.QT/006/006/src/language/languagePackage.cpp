@@ -1,8 +1,11 @@
 #include "include/language/languagePackage.h"
+#include "include/ui/ui_types.h"
 
 namespace Language {
 
 languagePackage* languagePackage::instance_ = nullptr;
+
+
 
 languagePackage* languagePackage::getInstance() {
     if(instance_ == nullptr) {
@@ -12,8 +15,7 @@ languagePackage* languagePackage::getInstance() {
 }
 
 languagePackage::languagePackage()
-    : language_(kTLanguageDefault)
-    , instance_(nullptr){
+    : language_(kTLanguageDefault) {
 
 }
 

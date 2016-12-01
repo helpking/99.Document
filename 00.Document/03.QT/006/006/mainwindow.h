@@ -1,12 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "include/common.h"
+
 // QT
 #include <QMainWindow>
 
 // 自定义类型定义
+#include "include/memory_check.h"
 #include "include/ui/ui_types.h"
-
 #include "include/language/languagePackage.h"
 
 namespace Ui {

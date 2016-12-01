@@ -14,11 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
            mainwindow.cpp \
-           src/language/languagePackage.cpp
+           src/language/languagePackage.cpp \
+    src/memory_check.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += mainwindow.h  \
             include/common_types.h \
+            include/common.h \
             include/ui/ui_types.h \
-            include/language/languagePackage.h
+            include/language/languagePackage.h \
+            include/language/languagePackage_types.h \
+            include/language/languagePackage_text.h \
+    include/memory_check.h
 
 FORMS    += mainwindow.ui

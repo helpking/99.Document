@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete this->mainUi;
+//    delete this->mainUi;
 }
 
 #pragma mark －

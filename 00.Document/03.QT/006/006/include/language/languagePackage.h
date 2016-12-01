@@ -1,25 +1,13 @@
-#ifndef LANGUAGE_H
-#define LANGUAGE_H
+#ifndef LANGUAGE_PACKAGE_H
+#define LANGUAGE_PACKAGE_H
 
-#include "include/common_types.h"
+#include <QtGlobal>
+
+#include "include/common.h"
+#include "include/language/languagePackage_types.h"
+#include "include/language/languagePackage_text.h"
 
 namespace Language {
-
-/**
- * @brief 语言定义
- */
-typedef enum {
-    kTLanguageInvalid = -1,
-    /** \brief 英语 */
-    kTLanguageEnglish,
-    /** \brief 中文 */
-    kTLanguageChinese,
-    /** \brief 日语 */
-    kTLanguageJapanese,    
-    /** \brief 默认语言 */
-    kTLanguageDefault = kTLanguageEnglish,
-    kTLanguageMax
-}TLanguage;
 
 /**
  * \brief 语言包
@@ -48,6 +36,12 @@ public:
      */
     _INLINE void SetLanguage(const TLanguage iLanguage);
 
+    /**
+     * \brief 语言文本取得
+     * \param[in] iTxtId 文本ID
+     */
+    _INLINE const TChar* GetText(const TLanguageTextId iTxtId) const;
+
 protected:
     languagePackage();
 
@@ -61,8 +55,12 @@ _INLINE TLanguage languagePackage::GetLanguage() const {
 };
 _INLINE void languagePackage::SetLanguage(const TLanguage iLanguage) {
     this->language_ = iLanguage;
-}
+};
+_INLINE const TChar* languagePackage::GetText(const TLanguageTextId iTxtId) const {
+    Q_ASSERT_X((LangeTextInfo[iTxtId].TextId == iTxtId), __FUNCTION__, "The text id is invalid!!!");
+    return LangeTextInfo[iTxtId].Text[this->language_];
+};
 
 }
 
-#endif // LANGUAGE_H
+#endif // LANGUAGE_PACKAGE_H

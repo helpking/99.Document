@@ -2,7 +2,8 @@
 #define UI_TYPES_H
 
 #include "include/common_types.h"
-#include "include/language/languagePackage.h"
+#include "include/language/languagePackage_types.h"
+#include "include/language/languagePackage_text.h"
 
 namespace UITypes {
 
@@ -10,7 +11,7 @@ namespace UITypes {
  * \brief Menu ID定义
  */
 typedef enum {
-    kTMenuIdInvalid = -1,
+    kTMenuIdInvalid = kValueInvalid,
     /** \brief 文件 */
     kTMenuIdFile,
     /** \brief About */
@@ -22,7 +23,7 @@ typedef enum {
  * \brief Menu Action ID定义
  */
 typedef enum {
-    kTMenuActionIdInvalid = -1,
+    kTMenuActionIdInvalid = kValueInvalid,
     /** \brief File:新文件 */
     kTMenuActionIdFileNew,
     /** \brief File:打开文件 */
@@ -41,22 +42,67 @@ typedef enum {
  */
 typedef struct TMenuActionInfo {
     /** \brief Action Id */
-    CommonTypes::TS32 ActionId;
-    /** \brief Action Text */
-    CommonTypes::TChar* Text[Language::kTLanguageMax];
+    TS32 ActionId;
+    /** \brief Action TextId */
+    const Language::TLanguageTextId TextId;
 }TMenuActionInfo;
 
+/** \brief Menu最大Action数 */
+const TS32 kMaxMenuActionsCount = 10;
 /**
  * \brief Menu Info定义
  */
 typedef struct TMenuInfo {
     /** \brief Menu Id */
     TMenuId MenuId;
-    /** \brief Menu Text */
-    CommonTypes::TChar* Text[Language::kTLanguageMax];
-    /** \brief Menu Text */
-    TMenuActionInfo Actions[];
+    /** \brief Menu TextId */
+    const Language::TLanguageTextId TextID;
+    /** \brief Action Ids */
+    TMenuActionId ActionIds[kMaxMenuActionsCount];
 }TMenuInfo;
+
+/** \brief 菜单定义 */
+static TMenuInfo menusInfo[] = {
+    {
+        kTMenuIdFile, Language::kTLanguageTextIdMenuFile,
+        {
+            kTMenuActionIdFileNew,
+            kTMenuActionIdFileOpen,
+            kTMenuActionIdFileSaveAs,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid
+        }
+    },
+    {
+        kTMenuIdAbout, Language::kTLanguageTextIdMenuAbout,
+        {
+            kTMenuActionIdAboutLanguage,
+            kTMenuActionIdAboutHelp,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid,
+            kTMenuActionIdInvalid
+        }
+    }
+};
+
+/** \brief Action定义 */
+static TMenuActionInfo menuActionsInfo[] = {
+    { kTMenuActionIdFileNew, Language::kTLanguageTextIdMenuFileActionNew },
+    { kTMenuActionIdFileOpen, Language::kTLanguageTextIdMenuFileActionOpen },
+    { kTMenuActionIdFileSaveAs, Language::kTLanguageTextIdMenuFileActionSaveAs },
+    { kTMenuActionIdAboutLanguage, Language::kTLanguageTextIdMenuAboutActionLanguage },
+    { kTMenuActionIdAboutHelp, Language::kTLanguageTextIdMenuAboutActionHelp }
+};
 
 }
 
