@@ -3,6 +3,7 @@
 
 #include "include/common_types.h"
 #include <stdio.h>
+#include <iostream>
 
 /**
  * \brief new操作符重载
@@ -10,7 +11,7 @@
  * \param[in] fileName 文件名
  * \param[in] lineNo 行号
  */
-void *operator new(size_t size, const TChar* fileName, TS32 lineNo);
+void *operator new(std::size_t size, const TChar* fileName, TS32 lineNo);
 
 /**
  * \brief new[]操作符重载
@@ -18,7 +19,7 @@ void *operator new(size_t size, const TChar* fileName, TS32 lineNo);
  * \param[in] fileName 文件名
  * \param[in] lineNo 行号
  */
-void *operator new[](size_t size, const TChar* fileName, TS32 lineNo);
+void *operator new[](std::size_t size, const TChar* fileName, TS32 lineNo);
 
 /**
  * \brief 重载delete
@@ -37,5 +38,7 @@ void operator delete[](void *ptr) throw();
 
 static_assert(noexcept(operator delete(0)), "");
 static_assert(noexcept(operator delete[](0)), "");
+
+//#define new new(__FILE__, __LINE__)
 
 #endif // MEMORY_CHECK_H

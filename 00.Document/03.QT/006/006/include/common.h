@@ -2,7 +2,7 @@
 #define COMMON_H
 
 #include "include/common_types.h"
-//#include "include/memory_check.h"
+#include "include/memory_check.h"
 
 /** \brief 全局宏定义 */
 #define _INLINE inline

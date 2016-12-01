@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "include/common.h"
 #include "include/language/languagePackage.h"
 
 #include <QSettings>
@@ -18,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-//    delete this->mainUi;
+    delete this->mainUi;
 }
 
 #pragma mark －

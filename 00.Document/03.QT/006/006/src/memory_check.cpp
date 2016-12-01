@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "include/memory_check.h"
 
-#include <iostream>
+namespace {
 
 /**
  * \brief 存储信息定义
@@ -60,13 +60,15 @@ public:
 /** \brief 用一个全局对象，在程序退出前，析构这个对象，然后检测开始 */
 process_end pe;
 
+}
+
 /**
  * \brief new操作符重载
  * \param[in] size 内存大小
  * \param[in] fileName 文件名
  * \param[in] lineNo 行号
  */
-void *operator new(size_t size, const TChar *fileName, TS32 lineNo) {
+void *operator new(std::size_t size, const TChar *fileName, TS32 lineNo) {
 
     void *p = malloc(size);
 
@@ -85,7 +87,7 @@ void *operator new(size_t size, const TChar *fileName, TS32 lineNo) {
  * \param[in] fileName 文件名
  * \param[in] lineNo 行号
  */
-void *operator new[](size_t size, const TChar* fileName, TS32 lineNo) {
+void *operator new[](std::size_t size, const TChar* fileName, TS32 lineNo) {
     return operator new(size, fileName, lineNo);
 }
 
