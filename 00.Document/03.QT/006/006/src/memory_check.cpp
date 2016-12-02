@@ -70,8 +70,8 @@ process_end pe;
  */
 void *operator new(std::size_t size, const TChar *fileName, TS32 lineNo) {
 
-    void *p = malloc(size);
-
+    //void *p = malloc(size);
+    void *p = operator new(size);
     ptr_list[ptrn].ptr = p;
     ptr_list[ptrn].fileName = fileName;
     ptr_list[ptrn].lineNo = lineNo;

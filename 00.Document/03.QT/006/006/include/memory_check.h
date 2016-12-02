@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <iostream>
 
+using namespace std;
+
 /**
  * \brief new操作符重载
  * \param[in] size 内存大小
