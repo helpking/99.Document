@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include "include/common.h"
-#include "include/language/languagePackage.h"
+#include "include/SystemLib/language/languagePackage.h"
 
 #include <QSettings>
 
@@ -54,5 +54,5 @@ void MainWindow::loadUISettingInfo() {
  * \brief 加载设定情报
  */
 void MainWindow::loadSettingInfo() {
-    Language::languagePackage::getInstance()->loadLanguagePackage(Language::kTLanguageEnglish);
+    SystemLib::languagePackage::getInstance()->loadLanguagePackage(SystemLib::kTLanguageEnglish);
 }

@@ -2,8 +2,8 @@
 #define UI_TYPES_H
 
 #include "include/common_types.h"
-#include "include/language/languagePackage_types.h"
-#include "include/language/languagePackage_text.h"
+#include "include/SystemLib/language/languagePackage_types.h"
+#include "include/SystemLib/language/languagePackage_text.h"
 
 namespace UITypes {
 
@@ -44,7 +44,7 @@ typedef struct TMenuActionInfo {
     /** \brief Action Id */
     TS32 ActionId;
     /** \brief Action TextId */
-    const Language::TLanguageTextId TextId;
+    const SystemLib::TLanguageTextId TextId;
 }TMenuActionInfo;
 
 /** \brief Menu最大Action数 */
@@ -56,7 +56,7 @@ typedef struct TMenuInfo {
     /** \brief Menu Id */
     TMenuId MenuId;
     /** \brief Menu TextId */
-    const Language::TLanguageTextId TextID;
+    const SystemLib::TLanguageTextId TextID;
     /** \brief Action Ids */
     TMenuActionId ActionIds[kMaxMenuActionsCount];
 }TMenuInfo;
@@ -64,7 +64,7 @@ typedef struct TMenuInfo {
 /** \brief 菜单定义 */
 static TMenuInfo menusInfo[] = {
     {
-        kTMenuIdFile, Language::kTLanguageTextIdMenuFile,
+        kTMenuIdFile, SystemLib::kTLanguageTextIdMenuFile,
         {
             kTMenuActionIdFileNew,
             kTMenuActionIdFileOpen,
@@ -79,7 +79,7 @@ static TMenuInfo menusInfo[] = {
         }
     },
     {
-        kTMenuIdAbout, Language::kTLanguageTextIdMenuAbout,
+        kTMenuIdAbout, SystemLib::kTLanguageTextIdMenuAbout,
         {
             kTMenuActionIdAboutLanguage,
             kTMenuActionIdAboutHelp,
@@ -97,11 +97,11 @@ static TMenuInfo menusInfo[] = {
 
 /** \brief Action定义 */
 static TMenuActionInfo menuActionsInfo[] = {
-    { kTMenuActionIdFileNew, Language::kTLanguageTextIdMenuFileActionNew },
-    { kTMenuActionIdFileOpen, Language::kTLanguageTextIdMenuFileActionOpen },
-    { kTMenuActionIdFileSaveAs, Language::kTLanguageTextIdMenuFileActionSaveAs },
-    { kTMenuActionIdAboutLanguage, Language::kTLanguageTextIdMenuAboutActionLanguage },
-    { kTMenuActionIdAboutHelp, Language::kTLanguageTextIdMenuAboutActionHelp }
+    { kTMenuActionIdFileNew, SystemLib::kTLanguageTextIdMenuFileActionNew },
+    { kTMenuActionIdFileOpen, SystemLib::kTLanguageTextIdMenuFileActionOpen },
+    { kTMenuActionIdFileSaveAs, SystemLib::kTLanguageTextIdMenuFileActionSaveAs },
+    { kTMenuActionIdAboutLanguage, SystemLib::kTLanguageTextIdMenuAboutActionLanguage },
+    { kTMenuActionIdAboutHelp, SystemLib::kTLanguageTextIdMenuAboutActionHelp }
 };
 
 }

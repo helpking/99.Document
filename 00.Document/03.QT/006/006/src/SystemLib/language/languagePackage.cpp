@@ -1,7 +1,7 @@
-#include "include/language/languagePackage.h"
+#include "include/SystemLib/language/languagePackage.h"
 #include "include/ui/ui_types.h"
 
-namespace Language {
+namespace SystemLib {
 
 languagePackage* languagePackage::instance_ = nullptr;
 

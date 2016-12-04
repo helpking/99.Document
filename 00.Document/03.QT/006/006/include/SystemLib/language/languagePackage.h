@@ -1,13 +1,14 @@
 #ifndef LANGUAGE_PACKAGE_H
 #define LANGUAGE_PACKAGE_H
 
+#include "include/common.h"
+
 #include <QtGlobal>
 
-#include "include/common.h"
-#include "include/language/languagePackage_types.h"
-#include "include/language/languagePackage_text.h"
+#include "include/SystemLib/language/languagePackage_types.h"
+#include "include/SystemLib/language/languagePackage_text.h"
 
-namespace Language {
+namespace SystemLib {
 
 /**
  * \brief 语言包

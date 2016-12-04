@@ -7,9 +7,8 @@
 #include <QMainWindow>
 
 // 自定义类型定义
-#include "include/memory_check.h"
 #include "include/ui/ui_types.h"
-#include "include/language/languagePackage.h"
+#include "include/SystemLib/language/languagePackage.h"
 
 namespace Ui {
 class MainWindow;

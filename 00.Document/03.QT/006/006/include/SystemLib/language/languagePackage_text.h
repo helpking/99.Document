@@ -1,9 +1,9 @@
 #ifndef LANGUAGE_PACKAGE_TEXT_H
 #define LANGUAGE_PACKAGE_TEXT_H
 
-#include "include/language/languagePackage_types.h"
+#include "include/SystemLib/language/languagePackage_types.h"
 
-namespace Language {
+namespace SystemLib {
 
 /** \brief 语言文本 */
 static TLanguageTextInfo LangeTextInfo[kTLanguageTextIdMax] = {

@@ -2,13 +2,14 @@
 #define COMMON_H
 
 #include "include/common_types.h"
-#include "include/memory_check.h"
+#include "include/common_macro.h"
 
-/** \brief 全局宏定义 */
-#define _INLINE inline
+#include "include/SystemLib/log/log.h"
 
-/** \brief new重定义宏 */
-#define _MACRO_NEW(__FILE__, __LINE__) new
-#define new _MACRO_NEW(__FILE__, __LINE__)
+// 日志输出宏
+#define INFO_LOG(iFormat, ...) SystemLib::Log::GetIntance()->Output(SystemLib::kTLogTypeInfo, iFormat, ##__VA_ARGS__);
+#define WARNING_LOG(iFormat, ...) SystemLib::Log::GetIntance()->Output(SystemLib::kTLogTypeWarning, iFormat, ##__VA_ARGS__);
+#define ERROR_LOG(iFormat, ...) SystemLib::Log::GetIntance()->Output(SystemLib::kTLogTypeError, iFormat, ##__VA_ARGS__);
+#define EXCEPT_LOG(iFormat, ...) SystemLib::Log::GetIntance()->Output(SystemLib::kTLogTypeExcept, iFormat, ##__VA_ARGS__);
 
 #endif // COMMON_H

@@ -9,7 +9,7 @@
  */
 #ifndef _INT8_T
 #define _INT8_T
-typedef	__signed char int8_t;
+typedef char int8_t;
 #endif /* _INT8_T */
 typedef int8_t TS8;
 
@@ -121,7 +121,7 @@ typedef wchar_t TWchar;
 /**
  *  \brief boolean
  */
-typedef TS32 Bool;
+typedef TS32 TBool;
 
 #ifndef false
   /**
