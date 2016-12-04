@@ -68,26 +68,26 @@ namespace SystemLib {
         switch (iLogType) {
         case kTLogTypeInfo:
             {
-                return "[Info]";
+                return "Info";
             }
             break;
         case kTLogTypeWarning:
             {
-                return "[Warning]";
+                return "Warning";
             }
             break;
         case kTLogTypeError:
             {
-                return "[Error]";
+                return "Error";
             }
             break;
         case kTLogTypeExcept:
             {
-                return "[Except]";
+                return "Except";
             }
             break;
         default:
-            return "[Unknow]";
+            return "Unknow";
             break;
         }
     };
