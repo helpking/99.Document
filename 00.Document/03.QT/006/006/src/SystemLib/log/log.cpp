@@ -28,6 +28,8 @@ namespace SystemLib {
      */
     void Log::Output(const TLogType iLogType, const TChar* iLogFormat, ...) {
 
+#ifdef QT_DEBUG
+
         // 取得LogNo
         const TS64 logNo = this->GetLogNo();
 
@@ -77,6 +79,8 @@ namespace SystemLib {
         {
             this->Output(logNo, systemDateTime, logTypeMark, logTmp.c_str());
         }
+
+#endif
 
     }
 
