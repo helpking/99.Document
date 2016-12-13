@@ -79,42 +79,42 @@ void MainWindow::loadSettingInfo() {
 /**
  * \brief 打开新文件
  */
-void MainWindow::on_actionNew_triggered() {
+APPLY_SLOT(MainWindow, actionNew) {
     INFO_LOG("MainWindow::actionNew a");
 }
 
 /**
  * \brief 追加文件
  */
-void MainWindow::on_actionAdd_triggered() {
+APPLY_SLOT(MainWindow, actionAdd) {
     INFO_LOG("MainWindow::actionAdd a");
 }
 
 /**
  * \brief 打开文件
  */
-void MainWindow::on_actionOpen_triggered() {
+APPLY_SLOT(MainWindow, actionOpen) {
     INFO_LOG("MainWindow::actionOpen a");
 }
 
 /**
  * \brief 保存文件
  */
-void MainWindow::on_actionSaveAs_triggered() {
+APPLY_SLOT(MainWindow, actionSaveAs) {
     INFO_LOG("MainWindow::actionSaveAs a");
 }
 
 /**
  * \brief 切换语言
  */
-void MainWindow::on_actionLanguage_triggered() {
+APPLY_SLOT(MainWindow, actionLanguage) {
     INFO_LOG("MainWindow::actionLanguage a");
 }
 
 /**
  * \brief 帮助
  */
-void MainWindow::on_actionHelp_triggered() {
+APPLY_SLOT(MainWindow, actionHelp) {
     INFO_LOG("MainWindow::actionHelp a");
 }
 

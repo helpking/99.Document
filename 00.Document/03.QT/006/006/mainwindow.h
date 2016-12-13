@@ -58,35 +58,18 @@ public slots:
     /**
      * \brief (方法命名规则 on_Action名_triggered())
      */
-    /**
-     * \brief 打开新文件
-     */
-    void on_actionNew_triggered();
-
-    /**
-     * \brief 追加文件
-     */
-    void on_actionAdd_triggered();
-
-    /**
-     * \brief 打开文件
-     */
-    void on_actionOpen_triggered();
-
-    /**
-     * \brief 保存文件
-     */
-    void on_actionSaveAs_triggered();
-
-    /**
-     * \brief 切换语言
-     */
-    void on_actionLanguage_triggered();
-
-    /**
-     * \brief 帮助
-     */
-    void on_actionHelp_triggered();
+    /** \brief 打开新文件 */
+    DECLARE_SLOT(actionNew);
+    /** \brief 追加文件 */
+    DECLARE_SLOT(actionAdd);
+    /** \brief 打开文件 */
+    DECLARE_SLOT(actionOpen);
+    /** \brief 保存文件 */
+    DECLARE_SLOT(actionSaveAs);
+    /** \brief 切换语言 */
+    DECLARE_SLOT(actionLanguage);
+    /** \brief 帮助 */
+    DECLARE_SLOT(actionHelp);
 
 
 #pragma mark －
