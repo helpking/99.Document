@@ -1,0 +1,160 @@
+{\rtf1\ansi\ansicpg936\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red51\green51\blue51;\red51\green100\blue164;\red0\green150\blue149;
+\red51\green100\blue164;\red0\green150\blue149;\red245\green125\blue0;\red245\green125\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c20000\c20000\c20000;\csgenericrgb\c20000\c39216\c64314;\csgenericrgb\c0\c58824\c58431;
+\csgenericrgb\c20000\c39216\c64314;\csgenericrgb\c0\c58824\c58431;\csgenericrgb\c96078\c49020\c0;\csgenericrgb\c96078\c49020\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww22500\viewh7960\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 ================================================================\
+\
+
+\f1 \'b1\'e0\'bc\'ad\'c6\'f7\'b6\'a8\'d2\'e5
+\f0 \
+
+\f2 \cf2   [\cf3 CustomEditor\cf2 (\cf4 typeof\cf2  (\cf3 BindingContext\cf2 ))]\uc0\u8232   \cf4 public\cf2  \cf4 class\cf2  \cf3 BindingContextEditor\cf2  : UnityEditor.\cf3 Editor \{\
+	/// <summary>\
+	\cf5 /// 
+\f1 \'ca\'b1\'ca\'b1\'cb\'a2\'d0\'c2\'b5\'b1\'c7\'b0Editor\'d4\'daInspector\'ca\'d3\'cd\'bc\'d6\'d0\'b5\'c3\'d0\'c5\'cf\'a2
+\f2 \
+	\cf3 ///\cf5  </summary>\cf3 \
+\cf2   	\cf4 public\cf2  \cf4 override\cf2  \cf4 void\cf2  OnInspectorGUI()\uc0\u8232 	\{\
+		\cf4 base\cf2 .OnInspectorGUI();\uc0\u8232 		
+\f1 ...
+\f2 \
+	\}\
+  \cf3 \}\uc0\u8232 
+\f0 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0  {{\NeXTGraphic 屏幕快照 2017-02-15 下午3.21.24.png \width5440 \height1820
+}�}.  {{\NeXTGraphic 屏幕快照 2017-02-15 下午3.19.04.png \width5440 \height2220
+}�}   {{\NeXTGraphic 屏幕快照 2017-02-15 下午3.18.49.png \width5420 \height2200
+}�}.  {{\NeXTGraphic 屏幕快照 2017-02-15 下午3.19.13.png \width5420 \height2240
+}�}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+================================================================\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 1 
+\f1 \'b6\'a8\'d2\'e5\'c3\'b6\'be\'d9\'cc\'e5\'b2\'a2\'cc\'ed\'bc\'d3\'b5\'bd
+\f0 Inspector
+\f1 \'ca\'d3\'b4\'b0
+\f0 \
+\
+
+\f2 \cf2   \cf6 var\cf2  modes =\uc0\u8232       \cf5 Enum\cf2 .GetValues(\cf6 typeof\cf2  (\cf5 BindingContext\cf2 .\cf5 BindingContextMode\cf2 ))\uc0\u8232           .Cast<\cf5 BindingContext\cf2 .\cf5 BindingContextMode\cf2 >()\uc0\u8232           .Select(o => o.ToString())\u8232           .ToArray();\u8232   \cf6 var\cf2  index = \cf5 Array\cf2 .IndexOf(modes, Target.ContextMode.ToString());\uc0\u8232   \cf6 var\cf2  i = \cf5 EditorGUILayout\cf2 .Popup(\cf7 "Binding Mode"\cf2 , index, modes);\
+\
+
+\f1 \'c8\'e7\'cf\'c2\'cd\'bc\'a3\'ba
+\f2 \uc0\u8232 
+\f0 \cf0 {{\NeXTGraphic 屏幕快照 2017-02-15 下午2.34.55.png \width5500 \height440
+}�}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf6   
+\f1 // \'bd\'ab\'c9\'e8\'b6\'a8\'d6\'b5\'b8\'b3\'d6\'b5\'bb\'d8Source\'d6\'d0\'b5\'c4\'b1\'e4\'c1\'bf\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0    
+\f2 \cf4 if\cf2  (i != index)\uc0\u8232   \{\
+	Target.ContextMode =\uc0\u8232            (\cf3 BindingContext\cf2 .\cf3 BindingContextMode\cf2 ) \cf3 Enum\cf2 .Parse(\cf4 typeof\cf2 (\cf3 BindingContext\cf2 .\cf3 BindingContextMode\cf2 ), modes[i]);\
+  \}\
+
+\f0 \cf0 \
+================================================================\
+\
+2 
+\f1 \'cc\'ed\'bc\'d3\'b6\'d4\'cf\'f3\'b5\'bd
+\f0 Inspector
+\f1 \'ca\'d3\'b4\'b0
+\f0 \
+\
+
+\f2 \cf2   Target.ViewModel =\uc0\u8232         (\cf3 MonoBehaviour\cf2 )\uc0\u8232         \cf3 EditorGUILayout\cf2 .ObjectField(\cf8 "ViewModel Componenet"\cf2 , Target.ViewModel, \cf4 typeof\cf2  (\cf3 MonoBehaviour\cf2 ), \cf4 true\cf2 );\
+\
+
+\f1 \'c8\'e7\'cf\'c2\'cd\'bc\'a3\'ba
+\f2 \uc0\u8232 
+\f0 \cf0 {{\NeXTGraphic 屏幕快照 2017-02-15 下午2.55.23.png \width5380 \height420
+}�}\
+\
+================================================================\
+\
+
+\f2 \cf2 3 
+\f1 \'cc\'ed\'bc\'d3\'b1\'ea\'cc\'e2\'ce\'c4\'d7\'d6
+\f0 \cf0 Inspector
+\f1 \'ca\'d3\'b4\'b0\cf2 \
+
+\f2   \cf4 if\cf2  (Target.ViewModel != \cf4 null\cf2 )\uc0\u8232     \cf3 EditorGUILayout\cf2 .LabelField(Target.ViewModel.GetType().ToString());\
+\
+
+\f1 \'c8\'e7\'cf\'c2\'cd\'bc\'a3\'ba
+\f2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 {{\NeXTGraphic 屏幕快照 2017-02-15 下午2.59.54.png \width5380 \height400
+}�}
+\f2 \cf2 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+================================================================\
+\
+4 \'a0
+\f1 \'cc\'ed\'bc\'d3\'c3\'fc\'c3\'fb\'bf\'d5\'bc\'e4\'c1\'d0\'b1\'ed\'b5\'bd
+\f0 Inspector
+\f1 \'ca\'d3\'b4\'b0\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4   var\cf2  index = \cf3 Array\cf2 .IndexOf(\cf3 BindingContext\cf2 .NameSpaces, Target.ModelNamespace);\uc0\u8232 \cf4   var\cf2  i = \cf3 EditorGUILayout\cf2 .Popup(\cf8 "Namespace"\cf2 , index > \cf8 0\cf2  ? index : \cf8 0\cf2 , \cf3 BindingContext\cf2 .NameSpaces.ToArray());\uc0\u8232 
+\f0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf6   
+\f1 // \'bd\'ab\'c9\'e8\'b6\'a8\'d6\'b5\'b8\'b3\'d6\'b5\'bb\'d8Source\'d6\'d0\'b5\'c4\'b1\'e4\'c1\'bf\
+
+\f2   \cf4 if\cf2  (i != index)\uc0\u8232 \cf6   
+\f0 \cf0 \{\
+
+\f2 \cf6     \cf2 Target.ModelNamespace = i > \cf8 0\cf2  ? \cf3 BindingContext\cf2 .NameSpaces[i] : \cf4 null\cf2 ;\
+\cf6     \cf3 EditorUtility\cf2 .SetDirty(target);
+\f0 \cf0 \
+
+\f2 \cf6   
+\f0 \cf0 \}\
+\
+
+\f1 \'c8\'e7\'cf\'c2\'cd\'bc\'a3\'ba\
+
+\f0 {{\NeXTGraphic 屏幕快照 2017-02-15 下午3.06.18.png \width5480 \height400
+}�}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+================================================================\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 5 
+\f1 \'cc\'ed\'bc\'d3\'c0\'e0\'c1\'d0\'b1\'ed\'b5\'bd
+\f0 Inspector
+\f1 \'ca\'d3\'b4\'b0\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4 \
+\pard\pardeftab720\partightenfactor0
+\cf6   \cf4 var\cf2  list =\uc0\u8232 \cf6             \cf3 BindingContext\cf2 .ModelTypes.Where(\uc0\u8232 \cf6                                         \cf2 o => o.Namespace == Target.ModelNamespace && !o.HasAttribute<\cf3 HideInInspector\cf2 >())\uc0\u8232 \cf6                                      \cf2 .OrderBy(o => o.Name)\uc0\u8232 \cf6                                      \cf2 .ToArray();\uc0\u8232 \cf6   \cf4 var\cf2  type = \cf3 BindingContext\cf2 .ModelTypes.SingleOrDefault(o => Target.ModelFullName == o.FullName);\uc0\u8232 \cf6   \cf4 var\cf2  index = \cf3 Array\cf2 .IndexOf(list, type);\uc0\u8232 \cf6   \cf4 var\cf2  choices = list.Select(o => o.Name).ToArray();\uc0\u8232 \cf6   \cf4 var\cf2  i = \cf3 EditorGUILayout\cf2 .Popup(\cf8 "Model Class"\cf2 , index, choices);\uc0\u8232 \u8232 \cf6   \cf4 if\cf2  (i != index)\uc0\u8232 \cf6   \cf2 \{\uc0\u8232 \cf6     \cf2 Target.DataType = list[i];\uc0\u8232 \cf6     \cf3 EditorUtility\cf2 .SetDirty(target);\uc0\u8232 \cf6   \cf2 \}
+\f0 \cf0 \
+\
+
+\f1 \'c8\'e7\'cf\'c2\'cd\'bc\'a3\'ba
+\f0 \
+\pard\pardeftab720\partightenfactor0
+\cf0  {{\NeXTGraphic 屏幕快照 2017-02-15 下午3.12.44.png \width5460 \height380
+}�}\
+}
