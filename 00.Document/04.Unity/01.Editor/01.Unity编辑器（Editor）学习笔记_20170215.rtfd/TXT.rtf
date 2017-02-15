@@ -147,6 +147,23 @@
 \pard\pardeftab720\partightenfactor0
 
 \f2 \cf4 \
+  \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+\cf6 	
+\f1 \'b9\'a4\'b3\'cc\'c3\'fc\'c3\'fb\'bf\'d5\'bc\'e4\'d2\'d4\'bc\'b0\'c0\'e0\'c3\'fb\'c1\'d0\'b1\'ed\'bb\'f1\'b5\'c3
+\f2 \
+  \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+\cf4 \
+  if\cf2  (_assemblies == \cf4 null\cf2 )\uc0\u8232 \cf4   \{\
+	\cf2 _assemblies =\uc0\u8232 \cf4 		\cf3 AppDomain\cf2 .CurrentDomain.GetAssemblies()\uc0\u8232 \cf4 			\cf2 .Where(o => !o.Location.Contains(\cf8 "Editor"\cf2 ))\uc0\u8232 \cf4 			\cf2 .OrderBy(o => o.FullName)\uc0\u8232 \cf4 			\cf2 .ToArray();\uc0\u8232 \cf4 	\cf2 _modelTypes =\uc0\u8232 \cf4 		\cf2 _assemblies.SelectMany(o => o.GetTypes()).Where(o => o.IsPublic).OrderBy(o => o.Name).ToArray();\uc0\u8232 \cf4 		\cf2 _namespaces = _modelTypes.Select(o => o.Namespace).OrderBy(o => o).Distinct().ToArray();\cf4 \
+  \}\
+\
+\pard\pardeftab720\partightenfactor0
+\cf6   \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+\cf4 \
+\
 \pard\pardeftab720\partightenfactor0
 \cf6   \cf4 var\cf2  list =\uc0\u8232 \cf6             \cf3 BindingContext\cf2 .ModelTypes.Where(\uc0\u8232 \cf6                                         \cf2 o => o.Namespace == Target.ModelNamespace && !o.HasAttribute<\cf3 HideInInspector\cf2 >())\uc0\u8232 \cf6                                      \cf2 .OrderBy(o => o.Name)\uc0\u8232 \cf6                                      \cf2 .ToArray();\uc0\u8232 \cf6   \cf4 var\cf2  type = \cf3 BindingContext\cf2 .ModelTypes.SingleOrDefault(o => Target.ModelFullName == o.FullName);\uc0\u8232 \cf6   \cf4 var\cf2  index = \cf3 Array\cf2 .IndexOf(list, type);\uc0\u8232 \cf6   \cf4 var\cf2  choices = list.Select(o => o.Name).ToArray();\uc0\u8232 \cf6   \cf4 var\cf2  i = \cf3 EditorGUILayout\cf2 .Popup(\cf8 "Model Class"\cf2 , index, choices);\uc0\u8232 \u8232 \cf6   \cf4 if\cf2  (i != index)\uc0\u8232 \cf6   \cf2 \{\uc0\u8232 \cf6     \cf2 Target.DataType = list[i];\uc0\u8232 \cf6     \cf3 EditorUtility\cf2 .SetDirty(target);\uc0\u8232 \cf6   \cf2 \}
 \f0 \cf0 \
